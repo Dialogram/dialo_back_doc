@@ -282,7 +282,7 @@ curl --request POST <span class="se">\</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
-<p>The following request returns a JSON structured like this:</p>
+<p>The above request returns a JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -335,7 +335,7 @@ curl --request POST <span class="se">\</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
-<p>The above commande returns JSON structured like this:</p>
+<p>The above request returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -359,11 +359,7 @@ curl --request POST <span class="se">\</span>
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
-<h1 id='session'>Session</h1><h2 id='create-a-session'>Create a session</h2>
-<blockquote>
-<p>To create a new session, use this code:</p>
-</blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<h1 id='session'>Session</h1><h2 id='create-a-session'>Create a session</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
    http://51.38.179.218:3000/api/session <span class="se">\</span>
    -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
    -d <span class="s1">'{
@@ -389,7 +385,7 @@ Remember — a happy kitten is an authenticated kitten!
 <span class="p">});</span>
 </code></pre>
 <blockquote>
-<p>The following request returns a JSON structured like this:</p>
+<p>The above request returns a JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -404,7 +400,7 @@ Remember — a happy kitten is an authenticated kitten!
     </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint create a session linked to the specified user.</p>
+<p>This endpoint create a session linked to the specified user ID.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST http://51.38.179.218:3000/api/session</code></p>
 
