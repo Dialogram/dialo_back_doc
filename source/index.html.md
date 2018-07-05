@@ -55,7 +55,7 @@ $.ajax(settings).done(function (response) {
 	console.log(response);
 });
 ```
-> The following request returns a JSON structured like this:
+> The above request returns a JSON structured like this:
 
 ```json
 {
@@ -119,7 +119,7 @@ $.ajax(settings).done(function (response) {
 });
 ```
 
-> The above commande returns JSON structured like this:
+> The above request returns JSON structured like this:
 
 ```json
 {
@@ -154,8 +154,6 @@ Remember — a happy kitten is an authenticated kitten!
 
 ## Create a session
 
-> To create a new session, use this code:
-
 ```shell
 curl -X POST \
    http://51.38.179.218:3000/api/session \
@@ -186,7 +184,7 @@ $.ajax(settings).done(function (response) {
 });
 ```
 
-> The following request returns a JSON structured like this:
+> The above request returns a JSON structured like this:
 
 ```json
 {
@@ -203,7 +201,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-This endpoint create a session linked to the specified user.
+This endpoint create a session linked to the specified user ID.
 
 ### HTTP Request
 
