@@ -30,7 +30,7 @@ The Dialogram API is based on the node-express-boilerplate made with heart by [L
 ```shell
 # With shell, you can just copy and paste the following request after editing the needed body parameter.
 curl --request POST \
---url http://51.38.179.218:3000/api/user \
+--url http://api.dialogram.fr:3000/api/user \
 --header 'Content-Type: application/json' \
 --data '{\n"nickName" : "NewUser",\n"email" : "NewUser@mymail.com",\n"password" : "Password123"\n}'
 ```
@@ -42,7 +42,7 @@ curl --request POST \
 var settings = {
 	"async": true,
 	"crossDomain": true,
-	"url": "http://51.38.179.218:3000/api/user",
+	"url": "http://api.dialogram.fr:3000/api/user",
 	"method": "POST",
 	"headers": {
 		"Content-Type": "application/json",
@@ -84,7 +84,7 @@ This endpoint allow you to create a user
 
 ### HTTP Request
 
-`POST http://51.38.179.218:3000/api/user`
+`POST http://api.dialogram.fr:3000/api/user`
 
 The Dialogram API use token to allow access to the API. You can register a new Dialogram API token by creating a new user according the user creation route's specifications.
 
@@ -96,7 +96,7 @@ The Dialogram API use token to allow access to the API. You can register a new D
 
 ```shell
 curl -X GET \
-  http://51.38.179.218:3000/api/user/ \
+  http://api.dialogram.fr:3000/api/user/ \
    -d '{
       nickName = "Username",
       email = "myUser@domain.com",
@@ -108,7 +108,7 @@ curl -X GET \
 var settings = {
    "async": true,
    "crossDomain": true,
-   "url": "http://51.38.179.218:3000/api/user/",
+   "url": "http://api.dialogram.fr:3000/api/user/",
    "method": "GET",
    "headers": {},
    "data": "{\n\tnickName = \"Username\",\n\temail = \"myUser@domain.com\",\n\tpassword = \"JeSuisUnTest\"\n}"
@@ -127,9 +127,9 @@ $.ajax(settings).done(function (response) {
     {
       "type": "user",
       "id": "5b3536658eabca0aab16ab05",
-      "nickName": "Lucas",
+      "nickName": "UserName",
       "profile": {},
-      "email": "lucas.onillon@epitech.eu"
+      "email": "my-user@domain.com"
     }
    ],
   "includes": []
@@ -140,14 +140,14 @@ This endpoint retrieves all users.
 
 ### HTTP Request
 
-`GET http://51.38.179.218:3000/api/user/`
+`GET http://api.dialogram.fr:3000/api/user/`
 
 ### Query Parameters
 
 NONE
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Remember — a happy user is an authenticated user by token!
 </aside>
 
 # Session
@@ -156,7 +156,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 ```shell
 curl -X POST \
-   http://51.38.179.218:3000/api/session \
+   http://api.dialogram.fr:3000/api/session \
    -H 'Content-Type: application/json' \
    -d '{
       "nickName" : "NewUser",
@@ -170,7 +170,7 @@ curl -X POST \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://51.38.179.218:3000/api/session",
+  "url": "http://api.dialogram.fr:3000/api/session",
   "method": "POST",
   "headers": {
     "Content-Type": "application/json",
@@ -205,7 +205,7 @@ This endpoint create a session linked to the specified user ID.
 
 ### HTTP Request
 
-`POST http://51.38.179.218:3000/api/session`
+`POST http://api.dialogram.fr:3000/api/session`
 
 NONE
 
