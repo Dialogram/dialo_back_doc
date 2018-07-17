@@ -259,7 +259,7 @@
 <p>The Dialogram API is based on the node-express-boilerplate made with heart by <a href="https://github.com/Liroo/node-express-boilerplate">Liroo</a>.</p>
 <h1 id='user'>User</h1><h2 id='create-a-user'>Create a user</h2><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just copy and paste the following request after editing the needed body parameter.</span>
 curl --request POST <span class="se">\</span>
---url http://51.38.179.218:3000/api/user <span class="se">\</span>
+--url http://api.dialogram.fr:3000/api/user <span class="se">\</span>
 --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 --data <span class="s1">'{\n"nickName" : "NewUser",\n"email" : "NewUser@mymail.com",\n"password" : "Password123"\n}'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code>
@@ -268,7 +268,7 @@ curl --request POST <span class="se">\</span>
 <span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://51.38.179.218:3000/api/user"</span><span class="p">,</span>
+    <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:3000/api/user"</span><span class="p">,</span>
     <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
     <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -307,7 +307,7 @@ curl --request POST <span class="se">\</span>
 </span></code></pre>
 <p>This endpoint allow you to create a user</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST http://51.38.179.218:3000/api/user</code></p>
+<p><code>POST http://api.dialogram.fr:3000/api/user</code></p>
 
 <p>The Dialogram API use token to allow access to the API. You can register a new Dialogram API token by creating a new user according the user creation route&#39;s specifications.</p>
 
@@ -315,7 +315,7 @@ curl --request POST <span class="se">\</span>
   Remember — a happy user is an authenticated user!
 </aside>
 <h2 id='get-user'>Get User</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://51.38.179.218:3000/api/user/ <span class="se">\</span>
+  http://api.dialogram.fr:3000/api/user/ <span class="se">\</span>
    -d <span class="s1">'{
       nickName = "Username",
       email = "myUser@domain.com",
@@ -324,7 +324,7 @@ curl --request POST <span class="se">\</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
    <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
    <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-   <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://51.38.179.218:3000/api/user/"</span><span class="p">,</span>
+   <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:3000/api/user/"</span><span class="p">,</span>
    <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
    <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{},</span>
    <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\n\tnickName = \"Username\",\n\temail = \"myUser@domain.com\",\n\tpassword = \"JeSuisUnTest\"\n}"</span>
@@ -342,9 +342,9 @@ curl --request POST <span class="se">\</span>
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5b3536658eabca0aab16ab05"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lucas"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UserName"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lucas.onillon@epitech.eu"</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="w">
     </span><span class="p">}</span><span class="w">
    </span><span class="p">],</span><span class="w">
   </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
@@ -352,15 +352,15 @@ curl --request POST <span class="se">\</span>
 </span></code></pre>
 <p>This endpoint retrieves all users.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://51.38.179.218:3000/api/user/</code></p>
+<p><code>GET http://api.dialogram.fr:3000/api/user/</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <p>NONE</p>
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Remember — a happy user is an authenticated user by token!
 </aside>
 <h1 id='session'>Session</h1><h2 id='create-a-session'>Create a session</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-   http://51.38.179.218:3000/api/session <span class="se">\</span>
+   http://api.dialogram.fr:3000/api/session <span class="se">\</span>
    -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
    -d <span class="s1">'{
       "nickName" : "NewUser",
@@ -371,7 +371,7 @@ Remember — a happy kitten is an authenticated kitten!
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://51.38.179.218:3000/api/session"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:3000/api/session"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -402,7 +402,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span></code></pre>
 <p>This endpoint create a session linked to the specified user ID.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>POST http://51.38.179.218:3000/api/session</code></p>
+<p><code>POST http://api.dialogram.fr:3000/api/session</code></p>
 
 <p>NONE</p>
 
