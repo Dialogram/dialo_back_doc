@@ -12,6 +12,7 @@ toc_footers:
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - fortgotPassword
   - errors
 
 search: true
@@ -92,7 +93,7 @@ The Dialogram API use token to allow access to the API. You can register a new D
   Remember — a happy user is an authenticated user!
 </aside>
 
-## Get User
+## Get a user
 
 ```shell
 curl -X GET \
@@ -144,7 +145,77 @@ This endpoint retrieves all users.
 
 ### Query Parameters
 
-NONE
+``json
+{
+"nickName" : "UserName",
+"email" : "my-user@domain.com",
+"password" : "password123"
+}
+``
+
+<aside class="success">
+Remember — a happy user is an authenticated user by token!
+</aside>
+
+## Edit a user
+
+```shell
+curl -X POST \
+  http://api.dialogram.fr:3000/api/user/edit \
+   -d '{
+      nickName = "editUsername",
+      email = "editMyUser@domain.com",
+      password = "editPassword"
+}'
+```
+
+```javascript
+var settings = {
+   "async": true,
+   "crossDomain": true,
+   "url": "http://api.dialogram.fr:3000/api/user/edit",
+   "method": "POST",
+   "headers": {},
+   "data": "{\n\tnickName = \"editUsername\",\n\temail = \"editMyUser@domain.com\",\n\tpassword = \"editPassword\"\n}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns JSON structured like this:
+
+```json
+{
+    "data": [
+    {
+      "type": "user",
+      "id": "5b3536658eabca0aab16ab05",
+      "nickName": "editUserName",
+      "profile": {},
+      "email": "editMyUser@domain.com"
+    }
+   ],
+  "includes": []
+}
+```
+
+This endpoint edit all users.
+
+### HTTP Request
+
+`POST http://api.dialogram.fr:3000/api/user/edit`
+
+### Query Parameters
+
+``
+{
+"nickName" : "editUserName",
+"email" : "editMyUser@domain.com",
+"password" : "password1234"
+}
+``
 
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
@@ -162,7 +233,6 @@ curl -X POST \
       "nickName" : "NewUser",
       "email" : "usermail@domain.com",
       "password" : "JeSuisUnTest",
-      "userId": "Your User ID"
 }'
 ```
 
@@ -176,7 +246,7 @@ var settings = {
     "Content-Type": "application/json",
   },
   "processData": false,
-   "data": "{\n\t\"nickName\" : \"NewUser\",\n\t\"email\" : \"usermail@domain.com\",\n\t\"password\" : \"JeSuisUnTest\",\n\t\"userId\": \"Your User ID\"\n}"
+   "data": "{\n\t\"nickName\" : \"NewUser\",\n\t\"email\" : \"usermail@domain.com\",\n\t\"password\" : \"JeSuisUnTest\",\n}"
 }
 
 $.ajax(settings).done(function (response) {
@@ -194,7 +264,6 @@ $.ajax(settings).done(function (response) {
             "id": "Your Session ID",
             "token": "Your User token",
             "deviceName": "Unknown",
-            "user": "Your User ID"
         }
     ],
     "includes": []
@@ -206,6 +275,8 @@ This endpoint create a session linked to the specified user ID.
 ### HTTP Request
 
 `POST http://api.dialogram.fr:3000/api/session`
+
+### Query Parameters
 
 NONE
 
