@@ -227,10 +227,18 @@
                     <a href="#create-a-user" class="toc-h2 toc-link" data-title="create-a-user">Create a user</a>
                   </li>
                   <li>
-                    <a href="#get-user" class="toc-h2 toc-link" data-title="get-user">Get User</a>
+                    <a href="#get-a-user" class="toc-h2 toc-link" data-title="get-a-user">Get a user</a>
                   </li>
                   <li>
-                    <a href="#edit-user" class="toc-h2 toc-link" data-title="edit-user">Edit User</a>
+                    <a href="#edit-a-user" class="toc-h2 toc-link" data-title="edit-a-user">Edit a user</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#session" class="toc-h1 toc-link" data-title="session">Session</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-session" class="toc-h2 toc-link" data-title="create-a-session">Create a session</a>
                   </li>
               </ul>
           </li>
@@ -238,10 +246,16 @@
             <a href="#forgot-password" class="toc-h1 toc-link" data-title="forgot-password">Forgot Password</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#landing-page" class="toc-h2 toc-link" data-title="landing-page">Landing Page</a>
+                    <a href="#landing-page" class="toc-h2 toc-link" data-title="landing-page">Landing page</a>
                   </li>
                   <li>
-                    <a href="#send-email-to-reset-password" class="toc-h2 toc-link" data-title="send-email-to-reset-password">Send Email To Reset Password</a>
+                    <a href="#send-token-by-email" class="toc-h2 toc-link" data-title="send-token-by-email">Send token by email</a>
+                  </li>
+                  <li>
+                    <a href="#landing-page-reset-password" class="toc-h2 toc-link" data-title="landing-page-reset-password">Landing page reset password</a>
+                  </li>
+                  <li>
+                    <a href="#reset-password-by-token" class="toc-h2 toc-link" data-title="reset-password-by-token">Reset password by token</a>
                   </li>
               </ul>
           </li>
@@ -320,7 +334,7 @@ curl --request POST <span class="se">\</span>
 <aside class="success">
   Remember — a happy user is an authenticated user!
 </aside>
-<h2 id='get-user'>Get User</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+<h2 id='get-a-user'>Get a user</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
   http://api.dialogram.fr:3000/api/user/ <span class="se">\</span>
    -d <span class="s1">'{
       nickName = "Username",
@@ -359,16 +373,19 @@ curl --request POST <span class="se">\</span>
 <p>This endpoint retrieves all users.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET http://api.dialogram.fr:3000/api/user/</code></p>
-<h3 id='query-parameters'>Query Parameters</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-</span><span class="s2">"nickName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"UserName"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"password"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"password123"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<h3 id='query-parameters'>Query Parameters</h3>
+<p><code>json
+{
+&quot;nickName&quot; : &quot;UserName&quot;,
+&quot;email&quot; : &quot;my-user@domain.com&quot;,
+&quot;password&quot; : &quot;password123&quot;
+}
+</code></p>
+
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
 </aside>
-<h2 id='edit-user'>Edit User</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<h2 id='edit-a-user'>Edit a user</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://api.dialogram.fr:3000/api/user/edit <span class="se">\</span>
    -d <span class="s1">'{
       nickName = "editUsername",
@@ -407,30 +424,27 @@ Remember — a happy user is an authenticated user by token!
 <p>This endpoint edit all users.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST http://api.dialogram.fr:3000/api/user/edit</code></p>
-<h3 id='query-parameters-2'>Query Parameters</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-</span><span class="s2">"nickName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"editUserName"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"editMyUser@domain.com"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"password"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"password1234"</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<p><code>
+{
+&quot;nickName&quot; : &quot;editUserName&quot;,
+&quot;email&quot; : &quot;editMyUser@domain.com&quot;,
+&quot;password&quot; : &quot;password1234&quot;
+}
+</code></p>
 
-</span><span class="err">&lt;aside</span><span class="w"> </span><span class="err">class=</span><span class="s2">"success"</span><span class="err">&gt;</span><span class="w">
-</span><span class="err">Remember</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">happy</span><span class="w"> </span><span class="err">user</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">authenticated</span><span class="w"> </span><span class="err">user</span><span class="w"> </span><span class="err">by</span><span class="w"> </span><span class="err">token!</span><span class="w">
-</span><span class="err">&lt;/aside&gt;</span><span class="w">
-
-</span><span class="err">#</span><span class="w"> </span><span class="err">Session</span><span class="w">
-
-</span><span class="err">##</span><span class="w"> </span><span class="err">Create</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">session</span><span class="w">
-
-</span><span class="err">```shell</span><span class="w">
-</span><span class="err">curl</span><span class="w"> </span><span class="err">-X</span><span class="w"> </span><span class="err">POST</span><span class="w"> </span><span class="err">\</span><span class="w">
-   </span><span class="err">http</span><span class="p">:</span><span class="err">//api.dialogram.fr</span><span class="p">:</span><span class="mi">3000</span><span class="err">/api/session</span><span class="w"> </span><span class="err">\</span><span class="w">
-   </span><span class="err">-H</span><span class="w"> </span><span class="err">'Content-Type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json'</span><span class="w"> </span><span class="err">\</span><span class="w">
-   </span><span class="err">-d</span><span class="w"> </span><span class="err">'</span><span class="p">{</span><span class="w">
-      </span><span class="s2">"nickName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"NewUser"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"usermail@domain.com"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"password"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"JeSuisUnTest"</span><span class="p">,</span><span class="w">
-</span><span class="p">}</span><span class="err">'</span><span class="w">
-</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+<aside class="success">
+Remember — a happy user is an authenticated user by token!
+</aside>
+<h1 id='session'>Session</h1><h2 id='create-a-session'>Create a session</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+   http://api.dialogram.fr:3000/api/session <span class="se">\</span>
+   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+   -d <span class="s1">'{
+      "nickName" : "NewUser",
+      "email" : "usermail@domain.com",
+      "password" : "JeSuisUnTest",
+}'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:3000/api/session"</span><span class="p">,</span>
@@ -470,7 +484,7 @@ Remember — a happy user is an authenticated user by token!
 <aside class="success">
 Note that you need to create a user before being able to create its session.
 </aside>
-<h1 id='forgot-password'>Forgot Password</h1><h2 id='landing-page'>Landing Page</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+<h1 id='forgot-password'>Forgot Password</h1><h2 id='landing-page'>Landing page</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
    http://api.dialogram.fr:3000/api/password/reset <span class="se">\</span>
    -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
    -d <span class="s1">'{
@@ -500,15 +514,15 @@ Note that you need to create a user before being able to create its session.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint ask the user to enter the adress mail linked to the account he forgots the password.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code>GET http://api.dialogram.fr:3000/api/password/reset</code></p>
-<h3 id='query-parameters-4'>Query Parameters</h3>
+<h3 id='query-parameters'>Query Parameters</h3>
 <p>NONE</p>
 
 <aside class="success">
 You don't have to be authentificated.
 </aside>
-<h2 id='send-email-to-reset-password'>Send Email To Reset Password</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<h2 id='send-token-by-email'>Send token by email</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
    http://api.dialogram.fr:3000/api/password/reset <span class="se">\</span>
    -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
    -d <span class="s1">'{
@@ -538,12 +552,89 @@ You don't have to be authentificated.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint create a token and send it to the referenced email.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST http://api.dialogram.fr:3000/api/password/reset</code></p>
-<h3 id='query-parameters-5'>Query Parameters</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"myMail@domain.com"</span><span class="w">
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<p><code>
+{
+    &quot;email&quot; : &quot;myMail@domain.com&quot;
+}
+</code></p>
+<h2 id='landing-page-reset-password'>Landing page reset password</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+   http://api.dialogram.fr:3000/api/password/reset/:token <span class="se">\</span>
+   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+   -d <span class="s1">'{
+}'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:3000/api/password/reset/:token"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='errors'>Errors</h1>
+</span></code></pre>
+<p>This endpoint ask for the user to enter the new password.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET http://api.dialogram.fr:3000/api/password/reset/:token</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<p>NONE</p>
+<h2 id='reset-password-by-token'>Reset password by token</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+   http://api.dialogram.fr:3000/api/password/reset/:token <span class="se">\</span>
+   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+   -d <span class="s1">'{
+}'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:3000/api/password/reset/:token"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint reset the user password and create a new one.
+All the sessions will be deleted and an email will be sent to the account to inform that the password have been changed.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST http://api.dialogram.fr:3000/api/password/reset/:token</code></p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<p><code>
+{
+     &quot;paswword&quot; : &quot;myNewPassword1234&quot;
+     &quot;confirm&quot; : &quot;myNewPassword1234&quot;
+}
+</code></p>
+<h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section describes the most common error codes you may face while working with the Dialogram API. In a sense of normalization, we used the quite same error codes from routes to routes, despite this back work, you may face error codes that are not in the list. In this case, please refer to the standard http error codes according the RFC 2616.
 </aside>
