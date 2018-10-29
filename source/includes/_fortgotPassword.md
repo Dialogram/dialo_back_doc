@@ -197,7 +197,7 @@ All the sessions will be deleted and an email will be sent to the account to inf
 
 ``
 {
-     "paswword" : "myNewPassword1234"
+     "paswword" : "myNewPassword1234",
      "confirm" : "myNewPassword1234"
 }
 ``

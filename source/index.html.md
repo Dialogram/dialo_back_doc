@@ -8,7 +8,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='http://www.dialogram.fr/'>Follow us on our website !</a>
-  - <a href='https://www.getpostman.com/collections/e3c872477622e06c07da'>Get the postman collection !</a>
+  - <a href='https://www.getpostman.com/collections/8e084c6355a1adb78369'>Get the postman collection !</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
