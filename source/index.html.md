@@ -73,24 +73,27 @@ $.ajax(settings).done(function (response) {
 
 ```json
 {
-   "data": [
-      {
-          "type": "user",
-          "id": "5b3e092bf2e2422577a65013",
-          "nickName": "NewUser",
-          "profile": {},
-          "email": "NewUser@mymail.com"
-      }
-   ],
-   "includes": [
-       {
-           "type": "session",
-           "id": "5b3e092bf2e2422577a65014",
-           "token": "YOUR USER TOKEN",
-           "deviceName": "Unknown",
-           "user": "5b3e092bf2e2422577a65013" // User id
-       }
-   ]
+    "data": [
+        {
+            "type": "user",
+            "id": "5be1e7415f019d0b44ed1ff2",
+            "nickName": "UserName",
+            "profile": {
+                "firstName": "John",
+                "lastName": "Bryan"
+            },
+            "email": "my-user@domain.com"
+        }
+    ],
+    "includes": [
+        {
+            "type": "session",
+            "id": "5be1e7425f019d0b44ed1ff3",
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YmUxZTc0MTVmMDE5ZDBiNDRlZDFmZjIiLCJpYXQiOjE1NDE1MzE0NTgsImV4cCI6MTU3MzA4OTA1OH0.3Em43RVafYzpVOhdYEeLk7DZcjcJCdQ_lsvGz76QS-8",
+            "deviceName": "Safari on AndroidOS OS",
+            "user": "5be1e7415f019d0b44ed1ff2"
+        }
+    ]
 }
 ```
 
@@ -179,7 +182,7 @@ NONE
 Remember — a happy user is an authenticated user by token!
 </aside>
 
-## Update user public information
+## Update public information
 
 ```shell
 curl -X POST \
@@ -256,7 +259,7 @@ This endpoint edit all users.
 Remember — a happy user is an authenticated user by token!
 </aside>
 
-## Update user private information
+## Update private information
 
 ```shell
 curl -X POST \
