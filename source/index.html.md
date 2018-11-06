@@ -30,10 +30,21 @@ The Dialogram API is based on the node-express-boilerplate made with heart by [L
 
 ```shell
 # With shell, you can just copy and paste the following request after editing the needed body parameter.
-curl --request POST \
---url http://api.dialogram.fr:3000/api/user \
---header 'Content-Type: application/json' \
---data '{\n"nickName" : "NewUser",\n"email" : "NewUser@mymail.com",\n"password" : "Password123"\n}'
+curl -X POST \
+  http://localhost:3000/api/user \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: ce79c653-5c2f-40de-8df8-955ffac0ae8e' \
+  -H 'User-Agent: Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i Version/4.0 Mobile Safari/534.30' \
+  -H 'cache-control: no-cache' \
+  -d '{
+"nickName" : "UserName",
+  "profile": {
+			"firstName" : "John",
+			"lastName" : "Bryan"
+	},
+"email" : "my-user@domain.com",
+"password" : "password123"
+}'
 ```
 
 ```javascript
@@ -41,19 +52,21 @@ curl --request POST \
 # This snippet has been made using JQuery & Ajax.
 
 var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "http://api.dialogram.fr:3000/api/user",
-	"method": "POST",
-	"headers": {
-		"Content-Type": "application/json",
-	},
-	"processData": false,
-	"data": "{\n\t\"nickName\" : \"NewUser\",\n\t\"email\" : \"NewUser@mymail.com\",\n\t\"password\		" : \"Password123\"\n}"
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/user",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json",
+    "cache-control": "no-cache",
+    "Postman-Token": "f662c84a-7b42-4bc3-91fe-057f773361b5"
+  },
+  "processData": false,
+  "data": "{\n\t\"nickName\" : \"UserName\",\n\t\"profile\": {\n\t\t\"firstName\" : \"John\",\n\t\t\"lastName\" : \"Bryan\"\n\t},\n\t\"email\" : \"my-user@domain.com\",\n\t\"password\" : \"password123\"\n}"
 }
 
 $.ajax(settings).done(function (response) {
-	console.log(response);
+  console.log(response);
 });
 ```
 > The above request returns a JSON structured like this:
@@ -82,6 +95,21 @@ $.ajax(settings).done(function (response) {
 ```
 
 This endpoint allow you to create a user
+
+
+### Query Parameters
+
+``json
+{
+"nickName" : "UserName",
+  "profile": {
+			"firstName" : "John",
+			"lastName" : "Bryan"
+	},
+"email" : "my-user@domain.com",
+"password" : "password123"
+}
+``
 
 ### HTTP Request
 
@@ -145,38 +173,41 @@ This endpoint retrieves all users.
 
 ### Query Parameters
 
-``json
-{
-"nickName" : "UserName",
-"email" : "my-user@domain.com",
-"password" : "password123"
-}
-``
+NONE
 
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
 </aside>
 
-## Edit a user
+## Update user public information
 
 ```shell
 curl -X POST \
-  http://api.dialogram.fr:3000/api/user/edit \
-   -d '{
-      nickName = "editUsername",
-      email = "editMyUser@domain.com",
-      password = "editPassword"
-}'
+  http://localhost:3000/api/user/update/public \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: 7a6e79cf-df64-4f6f-ae71-493e574db8b4' \
+  -H 'cache-control: no-cache' \
+  -d ' { 
+	"profile": {
+			"firstName" : "Indiana",
+			"lastName" : "Jones"
+	}
+ } '
 ```
 
 ```javascript
 var settings = {
-   "async": true,
-   "crossDomain": true,
-   "url": "http://api.dialogram.fr:3000/api/user/edit",
-   "method": "POST",
-   "headers": {},
-   "data": "{\n\tnickName = \"editUsername\",\n\temail = \"editMyUser@domain.com\",\n\tpassword = \"editPassword\"\n}"
+  "async": true,
+  "crossDomain": true,
+  "url": "http://localhost:3000/api/user/update/public",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json",
+    "cache-control": "no-cache",
+    "Postman-Token": "1477f80b-dd81-42be-afea-4e727431ef50"
+  },
+  "processData": false,
+  "data": " { \n\t\"profile\": {\n\t\t\t\"firstName\" : \"Indiana\",\n\t\t\t\"lastName\" : \"Jones\"\n\t}\n } "
 }
 
 $.ajax(settings).done(function (response) {
@@ -193,7 +224,10 @@ $.ajax(settings).done(function (response) {
       "type": "user",
       "id": "5b3536658eabca0aab16ab05",
       "nickName": "editUserName",
-      "profile": {},
+      "profile": {
+         "firstName": "John",
+         "lastName": "Bryan"
+       },
       "email": "editMyUser@domain.com"
     }
    ],
@@ -205,16 +239,93 @@ This endpoint edit all users.
 
 ### HTTP Request
 
-`POST http://api.dialogram.fr:3000/api/user/edit`
+`POST http://api.dialogram.fr:3000/api/user/update/public`
 
 ### Query Parameters
 
 ``
-{
-"nickName" : "editUserName",
-"email" : "editMyUser@domain.com",
-"password" : "password1234"
+ { 
+	"profile": {
+			"firstName" : "Indiana",
+			"lastName" : "Jones"
+	}
+ } 
+``
+
+<aside class="success">
+Remember — a happy user is an authenticated user by token!
+</aside>
+
+## Update user private information
+
+```shell
+curl -X POST \
+  http://localhost:3000/api/user/update/private \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: dc779b0f-688e-46b4-98b9-04352cc65bea' \
+  -H 'cache-control: no-cache' \
+  -d '{
+	"nickName" : "editUserName",
+	"email" : "edit-my-user@domain.com",
+	"password" : "edit-password123"
+}'
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://localhost:3000/api/user/update/private",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json",
+    "cache-control": "no-cache",
+    "Postman-Token": "03dc8445-339e-4913-856d-562774d14530"
+  },
+  "processData": false,
+  "data": "{\n\t\"nickName\" : \"editUserName\",\n\t\"email\" : \"edit-my-user@domain.com\",\n\t\"password\" : \"edit-password123\"\n}"
 }
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns JSON structured like this:
+
+```json
+{
+    "data": [
+        {
+            "type": "user",
+            "id": "5be1e7415f019d0b44ed1ff2",
+            "nickName": "UserName",
+            "profile": {
+                "firstName": "John",
+                "lastName": "Bryan"
+            },
+            "email": "my-user@domain.com"
+        }
+    ],
+    "includes": []
+}
+```
+
+This endpoint edit all users.
+
+### HTTP Request
+
+`POST http://api.dialogram.fr:3000/api/user/update/private`
+
+### Query Parameters
+
+``
+ { 
+	"profile": {
+			"firstName" : "Indiana",
+			"lastName" : "Jones"
+	}
+ } 
 ``
 
 <aside class="success">
