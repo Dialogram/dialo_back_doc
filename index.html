@@ -230,10 +230,10 @@
                     <a href="#get-a-user" class="toc-h2 toc-link" data-title="get-a-user">Get a user</a>
                   </li>
                   <li>
-                    <a href="#update-user-public-information" class="toc-h2 toc-link" data-title="update-user-public-information">Update user public information</a>
+                    <a href="#update-public-information" class="toc-h2 toc-link" data-title="update-public-information">Update public information</a>
                   </li>
                   <li>
-                    <a href="#update-user-private-information" class="toc-h2 toc-link" data-title="update-user-private-information">Update user private information</a>
+                    <a href="#update-private-information" class="toc-h2 toc-link" data-title="update-private-information">Update private information</a>
                   </li>
               </ul>
           </li>
@@ -321,24 +321,27 @@ curl -X POST <span class="se">\</span>
 <p>The above request returns a JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5b3e092bf2e2422577a65013"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NewUser"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NewUser@mymail.com"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-   </span><span class="p">],</span><span class="w">
-   </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-       </span><span class="p">{</span><span class="w">
-           </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"session"</span><span class="p">,</span><span class="w">
-           </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5b3e092bf2e2422577a65014"</span><span class="p">,</span><span class="w">
-           </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YOUR USER TOKEN"</span><span class="p">,</span><span class="w">
-           </span><span class="s2">"deviceName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unknown"</span><span class="p">,</span><span class="w">
-           </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5b3e092bf2e2422577a65013"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">User</span><span class="w"> </span><span class="err">id</span><span class="w">
-       </span><span class="p">}</span><span class="w">
-   </span><span class="p">]</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5be1e7415f019d0b44ed1ff2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UserName"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"session"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5be1e7425f019d0b44ed1ff3"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YmUxZTc0MTVmMDE5ZDBiNDRlZDFmZjIiLCJpYXQiOjE1NDE1MzE0NTgsImV4cCI6MTU3MzA4OTA1OH0.3Em43RVafYzpVOhdYEeLk7DZcjcJCdQ_lsvGz76QS-8"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"deviceName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Safari on AndroidOS OS"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5be1e7415f019d0b44ed1ff2"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint allow you to create a user</p>
@@ -407,7 +410,7 @@ curl -X POST <span class="se">\</span>
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
 </aside>
-<h2 id='update-user-public-information'>Update user public information</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<h2 id='update-public-information'>Update public information</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://localhost:3000/api/user/update/public <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: 7a6e79cf-df64-4f6f-ae71-493e574db8b4'</span> <span class="se">\</span>
@@ -471,7 +474,7 @@ Remember — a happy user is an authenticated user by token!
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
 </aside>
-<h2 id='update-user-private-information'>Update user private information</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<h2 id='update-private-information'>Update private information</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://localhost:3000/api/user/update/private <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: dc779b0f-688e-46b4-98b9-04352cc65bea'</span> <span class="se">\</span>
