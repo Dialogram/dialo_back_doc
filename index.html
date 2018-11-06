@@ -458,7 +458,7 @@ Remember — a happy user is an authenticated user by token!
   </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint edit all users.</p>
+<p>This endpoint edit user public information.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST http://api.dialogram.fr:3000/api/user/update/public</code></p>
 <h3 id='query-parameters-3'>Query Parameters</h3>
@@ -521,16 +521,15 @@ Remember — a happy user is an authenticated user by token!
     </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint edit all users.</p>
+<p>This endpoint edit user private information.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>POST http://api.dialogram.fr:3000/api/user/update/private</code></p>
 <h3 id='query-parameters-4'>Query Parameters</h3>
 <p><code>
  { 
-    &quot;profile&quot;: {
-            &quot;firstName&quot; : &quot;Indiana&quot;,
-            &quot;lastName&quot; : &quot;Jones&quot;
-    }
+    &quot;nickName&quot; : &quot;editUserName&quot;,
+    &quot;email&quot; : &quot;editMyUser@domain.com&quot;,
+    &quot;password&quot; : &quot;password1234&quot; 
  } 
 </code></p>
 
