@@ -238,7 +238,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-This endpoint edit all users.
+This endpoint edit user public information.
 
 ### HTTP Request
 
@@ -314,7 +314,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-This endpoint edit all users.
+This endpoint edit user private information.
 
 ### HTTP Request
 
@@ -324,10 +324,9 @@ This endpoint edit all users.
 
 ``
  { 
-	"profile": {
-			"firstName" : "Indiana",
-			"lastName" : "Jones"
-	}
+	"nickName" : "editUserName",
+	"email" : "editMyUser@domain.com",
+	"password" : "password1234" 
  } 
 ``
 
