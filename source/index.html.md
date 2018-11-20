@@ -31,7 +31,7 @@ The Dialogram API is based on the node-express-boilerplate made with heart by [L
 ```shell
 # With shell, you can just copy and paste the following request after editing the needed body parameter.
 curl -X POST \
-  http://localhost:3000/api/user \
+  http://localhost:8080/api/user \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: ce79c653-5c2f-40de-8df8-955ffac0ae8e' \
   -H 'User-Agent: Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i Version/4.0 Mobile Safari/534.30' \
@@ -116,7 +116,7 @@ This endpoint allow you to create a user
 
 ### HTTP Request
 
-`POST http://api.dialogram.fr:3000/api/user`
+`POST http://api.dialogram.fr:8080/api/user`
 
 The Dialogram API use token to allow access to the API. You can register a new Dialogram API token by creating a new user according the user creation route's specifications.
 
@@ -128,7 +128,7 @@ The Dialogram API use token to allow access to the API. You can register a new D
 
 ```shell
 curl -X GET \
-  http://api.dialogram.fr:3000/api/user/ \
+  http://api.dialogram.fr:8080/api/user/ \
    -d '{
       nickName = "Username",
       email = "myUser@domain.com",
@@ -172,7 +172,7 @@ This endpoint retrieves all users.
 
 ### HTTP Request
 
-`GET http://api.dialogram.fr:3000/api/user/`
+`GET http://api.dialogram.fr:8080/api/user/`
 
 ### Query Parameters
 
@@ -202,7 +202,7 @@ curl -X POST \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://localhost:3000/api/user/update/public",
+  "url": "http://api.dialogram.fr:8080/api/user/update/public",
   "method": "POST",
   "headers": {
     "Content-Type": "application/json",
@@ -242,7 +242,7 @@ This endpoint edit user public information.
 
 ### HTTP Request
 
-`POST http://api.dialogram.fr:3000/api/user/update/public`
+`POST http://api.dialogram.fr:8080/api/user/update/public`
 
 ### Query Parameters
 
@@ -263,13 +263,13 @@ Remember — a happy user is an authenticated user by token!
 
 ```shell
 curl -X POST \
-  http://localhost:3000/api/user/update/private \
+  http://localhost:8080/api/user/update/private \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: dc779b0f-688e-46b4-98b9-04352cc65bea' \
   -H 'cache-control: no-cache' \
   -d '{
-	"nickName" : "editUserName",
-	"email" : "edit-my-user@domain.com",
+        "nickName" : "editUserName",
+        "email" : "edit-my-user@domain.com",
 	"password" : "edit-password123"
 }'
 ```
@@ -278,7 +278,7 @@ curl -X POST \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://localhost:3000/api/user/update/private",
+  "url": "http://localhost:8080/api/user/update/private",
   "method": "POST",
   "headers": {
     "Content-Type": "application/json",
@@ -318,7 +318,7 @@ This endpoint edit user private information.
 
 ### HTTP Request
 
-`POST http://api.dialogram.fr:3000/api/user/update/private`
+`POST http://api.dialogram.fr:8080/api/user/update/private`
 
 ### Query Parameters
 
@@ -340,10 +340,9 @@ Remember — a happy user is an authenticated user by token!
 
 ```shell
 curl -X POST \
-   http://api.dialogram.fr:3000/api/session \
+   http://api.dialogram.fr:8080/api/session \
    -H 'Content-Type: application/json' \
    -d '{
-      "nickName" : "NewUser",
       "email" : "usermail@domain.com",
       "password" : "JeSuisUnTest",
 }'
@@ -353,7 +352,7 @@ curl -X POST \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:3000/api/session",
+  "url": "http://api.dialogram.fr:8080/api/session",
   "method": "POST",
   "headers": {
     "Content-Type": "application/json",
@@ -387,11 +386,16 @@ This endpoint create a session linked to the specified user ID.
 
 ### HTTP Request
 
-`POST http://api.dialogram.fr:3000/api/session`
+`POST http://api.dialogram.fr:8080/api/session`
 
 ### Query Parameters
 
-NONE
+``
+   {
+      "email" : "usermail@domain.com",
+      "password" : "password1234"
+   }
+``
 
 <aside class="success">
 Note that you need to create a user before being able to create its session.
