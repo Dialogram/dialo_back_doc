@@ -282,7 +282,7 @@
 <p>The Dialogram API is based on the node-express-boilerplate made with heart by <a href="https://github.com/Liroo/node-express-boilerplate">Liroo</a>.</p>
 <h1 id='user'>User</h1><h2 id='create-a-user'>Create a user</h2><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just copy and paste the following request after editing the needed body parameter.</span>
 curl -X POST <span class="se">\</span>
-  http://localhost:3000/api/user <span class="se">\</span>
+  http://localhost:8080/api/user <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: ce79c653-5c2f-40de-8df8-955ffac0ae8e'</span> <span class="se">\</span>
   -H <span class="s1">'User-Agent: Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i Version/4.0 Mobile Safari/534.30'</span> <span class="se">\</span>
@@ -358,7 +358,7 @@ curl -X POST <span class="se">\</span>
 }
 </code></p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST http://api.dialogram.fr:3000/api/user</code></p>
+<p><code>POST http://api.dialogram.fr:8080/api/user</code></p>
 
 <p>The Dialogram API use token to allow access to the API. You can register a new Dialogram API token by creating a new user according the user creation route&#39;s specifications.</p>
 
@@ -366,7 +366,7 @@ curl -X POST <span class="se">\</span>
   Remember — a happy user is an authenticated user!
 </aside>
 <h2 id='get-a-user'>Get a user</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr:3000/api/user/ <span class="se">\</span>
+  http://api.dialogram.fr:8080/api/user/ <span class="se">\</span>
    -d <span class="s1">'{
       nickName = "Username",
       email = "myUser@domain.com",
@@ -403,7 +403,7 @@ curl -X POST <span class="se">\</span>
 </span></code></pre>
 <p>This endpoint retrieves all users.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://api.dialogram.fr:3000/api/user/</code></p>
+<p><code>GET http://api.dialogram.fr:8080/api/user/</code></p>
 <h3 id='query-parameters-2'>Query Parameters</h3>
 <p>NONE</p>
 
@@ -424,7 +424,7 @@ Remember — a happy user is an authenticated user by token!
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://localhost:3000/api/user/update/public"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/user/update/public"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -460,7 +460,7 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint edit user public information.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>POST http://api.dialogram.fr:3000/api/user/update/public</code></p>
+<p><code>POST http://api.dialogram.fr:8080/api/user/update/public</code></p>
 <h3 id='query-parameters-3'>Query Parameters</h3>
 <p><code>
  { 
@@ -475,19 +475,19 @@ Remember — a happy user is an authenticated user by token!
 Remember — a happy user is an authenticated user by token!
 </aside>
 <h2 id='update-private-information'>Update private information</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://localhost:3000/api/user/update/private <span class="se">\</span>
+  http://localhost:8080/api/user/update/private <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: dc779b0f-688e-46b4-98b9-04352cc65bea'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -d <span class="s1">'{
-    "nickName" : "editUserName",
-    "email" : "edit-my-user@domain.com",
+        "nickName" : "editUserName",
+        "email" : "edit-my-user@domain.com",
     "password" : "edit-password123"
 }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://localhost:3000/api/user/update/private"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://localhost:8080/api/user/update/private"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -523,7 +523,7 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint edit user private information.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST http://api.dialogram.fr:3000/api/user/update/private</code></p>
+<p><code>POST http://api.dialogram.fr:8080/api/user/update/private</code></p>
 <h3 id='query-parameters-4'>Query Parameters</h3>
 <p><code>
  { 
@@ -537,17 +537,16 @@ Remember — a happy user is an authenticated user by token!
 Remember — a happy user is an authenticated user by token!
 </aside>
 <h1 id='session'>Session</h1><h2 id='create-a-session'>Create a session</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-   http://api.dialogram.fr:3000/api/session <span class="se">\</span>
+   http://api.dialogram.fr:8080/api/session <span class="se">\</span>
    -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
    -d <span class="s1">'{
-      "nickName" : "NewUser",
       "email" : "usermail@domain.com",
       "password" : "JeSuisUnTest",
 }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:3000/api/session"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/session"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -577,9 +576,14 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint create a session linked to the specified user ID.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>POST http://api.dialogram.fr:3000/api/session</code></p>
+<p><code>POST http://api.dialogram.fr:8080/api/session</code></p>
 <h3 id='query-parameters-5'>Query Parameters</h3>
-<p>NONE</p>
+<p><code>
+   {
+      &quot;email&quot; : &quot;usermail@domain.com&quot;,
+      &quot;password&quot; : &quot;password1234&quot;
+   }
+</code></p>
 
 <aside class="success">
 Note that you need to create a user before being able to create its session.
