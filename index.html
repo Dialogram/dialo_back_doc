@@ -689,14 +689,14 @@ Remember — a happy user is an authenticated user by token!
 Remember — Your token will only be accessible in your mailbox !
 </aside>
 <h1 id='forgot-password'>Forgot Password</h1><h2 id='landing-page'>Landing page</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-   http://api.dialogram.fr:3000/api/password/reset <span class="se">\</span>
+   http://api.dialogram.fr:8080/api/password/reset <span class="se">\</span>
    -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
    -d <span class="s1">'{
 }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:3000/api/password/reset"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/password/reset"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -719,7 +719,7 @@ Remember — Your token will only be accessible in your mailbox !
 </span></code></pre>
 <p>This endpoint ask the user to enter the adress mail linked to the account he forgots the password.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://api.dialogram.fr:3000/api/password/reset</code></p>
+<p><code>GET http://api.dialogram.fr:8080/api/password/reset</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <p>NONE</p>
 
@@ -727,14 +727,14 @@ Remember — Your token will only be accessible in your mailbox !
 You don't have to be authentificated.
 </aside>
 <h2 id='send-token-by-email'>Send token by email</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-   http://api.dialogram.fr:3000/api/password/reset <span class="se">\</span>
+   http://api.dialogram.fr:8080/api/password/reset <span class="se">\</span>
    -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
    -d <span class="s1">'{
 }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:3000/api/password/reset"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/password/reset"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -757,7 +757,7 @@ You don't have to be authentificated.
 </span></code></pre>
 <p>This endpoint create a token and send it to the referenced email.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST http://api.dialogram.fr:3000/api/password/reset</code></p>
+<p><code>POST http://api.dialogram.fr:8080/api/password/reset</code></p>
 <h3 id='query-parameters-2'>Query Parameters</h3>
 <p><code>
 {
@@ -765,14 +765,14 @@ You don't have to be authentificated.
 }
 </code></p>
 <h2 id='landing-page-reset-password'>Landing page reset password</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-   http://api.dialogram.fr:3000/api/password/reset/:token <span class="se">\</span>
+   http://api.dialogram.fr:8080/api/password/reset/:token <span class="se">\</span>
    -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
    -d <span class="s1">'{
 }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:3000/api/password/reset/:token"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/password/reset/:token"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -795,18 +795,18 @@ You don't have to be authentificated.
 </span></code></pre>
 <p>This endpoint ask for the user to enter the new password.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET http://api.dialogram.fr:3000/api/password/reset/:token</code></p>
+<p><code>GET http://api.dialogram.fr:8080/api/password/reset/:token</code></p>
 <h3 id='query-parameters-3'>Query Parameters</h3>
 <p>NONE</p>
 <h2 id='reset-password-by-token'>Reset password by token</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-   http://api.dialogram.fr:3000/api/password/reset/:token <span class="se">\</span>
+   http://api.dialogram.fr:8080/api/password/reset/:token <span class="se">\</span>
    -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
    -d <span class="s1">'{
 }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:3000/api/password/reset/:token"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/password/reset/:token"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -830,7 +830,7 @@ You don't have to be authentificated.
 <p>This endpoint reset the user password and create a new one.
 All the sessions will be deleted and an email will be sent to the account to inform that the password have been changed.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST http://api.dialogram.fr:3000/api/password/reset/:token</code></p>
+<p><code>POST http://api.dialogram.fr:8080/api/password/reset/:token</code></p>
 <h3 id='query-parameters-4'>Query Parameters</h3>
 <p><code>
 {
