@@ -274,6 +274,17 @@
               </ul>
           </li>
           <li>
+            <a href="#documents" class="toc-h1 toc-link" data-title="documents">Documents</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#upload-pdf-document" class="toc-h2 toc-link" data-title="upload-pdf-document">Upload PDF document</a>
+                  </li>
+                  <li>
+                    <a href="#get-pdf-document" class="toc-h2 toc-link" data-title="get-pdf-document">Get PDF document</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
           </li>
       </div>
@@ -384,7 +395,7 @@ curl -X POST <span class="se">\</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
    <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
    <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-   <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:3000/api/user/"</span><span class="p">,</span>
+   <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/user/"</span><span class="p">,</span>
    <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
    <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{},</span>
    <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\n\tnickName = \"Username\",\n\temail = \"myUser@domain.com\",\n\tpassword = \"JeSuisUnTest\"\n}"</span>
@@ -838,6 +849,129 @@ All the sessions will be deleted and an email will be sent to the account to inf
      &quot;confirm&quot; : &quot;myNewPassword1234&quot;
 }
 </code></p>
+<h1 id='documents'>Documents</h1><h2 id='upload-pdf-document'>Upload PDF document</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  http://api.dialogram.fr:8080/api/document <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/x-www-form-urlencoded'</span> <span class="se">\</span>
+  -H <span class="s1">'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'</span> <span class="se">\</span>
+  -F <span class="s1">'file=@C:\path\to\my_file.pdf'</span> <span class="se">\</span>
+  -F <span class="nv">name</span><span class="o">=</span>myDocument <span class="se">\</span>
+  -F <span class="nv">nbPage</span><span class="o">=</span>35
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+<span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"file"</span><span class="p">,</span> <span class="s2">"C:\\Users\\path\\to\\my_file.pdf"</span><span class="p">);</span>
+<span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"myDocument"</span><span class="p">);</span>
+<span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"nbPage"</span><span class="p">,</span> <span class="s2">"35"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/x-www-form-urlencoded"</span><span class="p">,</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"contentType"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"mimeType"</span><span class="p">:</span> <span class="s2">"multipart/form-data"</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="nx">form</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c18a505c2706510b6b90598"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api.dialogram.fr:8080/medias/&lt;timestamp&gt;-&lt;file_name&gt;.pdf?accessToken=&lt;your_access_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint upload a new PDF document to the remote server. You will need to send the data by form-data since we are dealing with documents using HTTP.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST http://api.dialogram.fr:8080/api/document</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Key naming</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file (type: file)</td>
+<td>Your pdf file</td>
+</tr>
+<tr>
+<td>name (type: string)</td>
+<td>Your document name</td>
+</tr>
+<tr>
+<td>nbPage (type: string)</td>
+<td>The number of pages in the pdf file</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Remember — a happy user is an authenticated user by token!
+</aside>
+<h2 id='get-pdf-document'>Get PDF document</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  http://api.dialogram.fr:8080/api/document/&lt;id_document&gt; <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document/&lt;id_document&gt;"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c18a505c2706510b6b90598"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api.dialogram.fr:8080/medias/&lt;timestamp&gt;-&lt;file_name&gt;.pdf?accessToken=&lt;your_access_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint get a previously created PDF document from the remote server. You only need to be authenticated with the user that uploads the document and the document id.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET http://api.dialogram.fr:8080/api/document:&lt;document_id&gt;</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<p>NONE</p>
+
+<aside class="success">
+Remember — a happy user is an authenticated user by token!
+</aside>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section describes the most common error codes you may face while working with the Dialogram API. In a sense of normalization, we used the quite same error codes from routes to routes, despite this back work, you may face error codes that are not in the list. In this case, please refer to the standard http error codes according the RFC 2616.
