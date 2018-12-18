@@ -14,6 +14,7 @@ toc_footers:
 includes:
   - userSettings
   - fortgotPassword
+  - documents
   - errors
 
 search: true
@@ -139,7 +140,7 @@ curl -X GET \
 var settings = {
    "async": true,
    "crossDomain": true,
-   "url": "http://api.dialogram.fr:3000/api/user/",
+   "url": "http://api.dialogram.fr:8080/api/user/",
    "method": "GET",
    "headers": {},
    "data": "{\n\tnickName = \"Username\",\n\temail = \"myUser@domain.com\",\n\tpassword = \"JeSuisUnTest\"\n}"
