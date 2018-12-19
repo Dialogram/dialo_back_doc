@@ -204,11 +204,11 @@ This endpoint update the data file. You only need to be authenticated with the u
 
 #### Query Parameters
 ``
-{\n
-  "name" : "newName",\n
-	"description": "Now we have a nice description, and the file is public",\n
-	"public" : "true"\n
-}\n
+{
+  "name" : "newName",
+	"description": "Now we have a nice description, and the file is public",
+	"public" : "true"
+}
 ``
 
 <aside class="success">

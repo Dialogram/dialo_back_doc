@@ -97,9 +97,9 @@ This endpoint create a token and send it to the referenced email.
 #### Query Parameters
 
 ``
-{\n
-    "email" : "myMail@domain.com"\n
-}\n
+{
+    "email" : "myMail@domain.com"
+}
 ``
 
 ### Landing page reset password
@@ -196,8 +196,8 @@ All the sessions will be deleted and an email will be sent to the account to inf
 #### Query Parameters
 
 ``
-{\n
-     "paswword" : "myNewPassword1234",\n
-     "confirm" : "myNewPassword1234"\n
-}\n
+{
+     "paswword" : "myNewPassword1234",
+     "confirm" : "myNewPassword1234"
+}
 ``

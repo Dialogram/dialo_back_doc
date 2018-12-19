@@ -66,12 +66,12 @@ This endpoint update all public information of users.
 #### Query Parameters
 
 ``
- {\n
-	"profile": {\n
-			"firstName" : "Indiana",\n
-			"lastName" : "Jones"\n
-	}\n
- }\n
+ {
+	"profile": {
+			"firstName" : "Indiana",
+			"lastName" : "Jones"
+	}
+ }
 ``
 
 <aside class="success">
@@ -142,10 +142,10 @@ This endpoint update user password and send an email to informe the user.
 #### Query Parameters
 
 ``
-{\n
-  "currentPassword" : "password123",\n
-  "newPassword" : "qwerty123"\n
-}\n
+{
+  "currentPassword" : "password123",
+  "newPassword" : "qwerty123"
+}
 ``
 
 ## Update account
@@ -212,10 +212,10 @@ This endpoint update user account settings such as mail address or nickname. You
 #### Query Parameters
 
 ``
-{\n
-  "nickName" : "editUserName",\n
-  "email" : "editMyUser@domain.com"\n
-}\n
+{
+  "nickName" : "editUserName",
+  "email" : "editMyUser@domain.com"
+}
 ``
 
 ## Confirm Account

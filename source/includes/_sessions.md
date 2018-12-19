@@ -8,7 +8,7 @@ curl -X POST \
    -H 'Content-Type: application/json' \
    -d '{
       "email" : "usermail@domain.com",
-      "password" : "JeSuisUnTest",
+      "password" : "password1234",
 }'
 ```
 
@@ -55,10 +55,10 @@ This endpoint create a session linked to the specified user ID.
 #### Query Parameters
 
 ``
-   {\n
-      "email" : "usermail@domain.com",\n
-      "password" : "password1234"\n
-   }\n
+   {
+      "email" : "usermail@domain.com",
+      "password" : "password1234"
+   }
 ``
 
 <aside class="success">
