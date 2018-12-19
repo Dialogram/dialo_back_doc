@@ -61,11 +61,11 @@ $.ajax(settings).done(function (response) {
 
 This endpoint upload a new PDF document to the remote server. You will need to send the data by form-data since we are dealing with documents using HTTP.
 
-### HTTP Request
+#### HTTP Request
 
 `POST http://api.dialogram.fr:8080/api/document`
 
-### Query Parameters
+#### Query Parameters
 
 Key naming | Content
 ---------- | -------
@@ -123,11 +123,11 @@ $.ajax(settings).done(function (response) {
 
 This endpoint get a previously created PDF document from the remote server. You only need to be authenticated with the user that uploads the document and the document id.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://api.dialogram.fr:8080/api/document:<document_id>`
 
-### Query Parameters
+#### Query Parameters
 
 NONE
 

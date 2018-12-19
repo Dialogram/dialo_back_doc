@@ -59,11 +59,11 @@ $.ajax(settings).done(function (response) {
 
 This endpoint update all public information of users.
 
-### HTTP Request
+#### HTTP Request
 
 `PUT http://api.dialogram.fr:8080/api/user/settings/public`
 
-### Query Parameters
+#### Query Parameters
 
 ``
  {
@@ -135,11 +135,11 @@ $.ajax(settings).done(function (response) {
 
 This endpoint update user password and send an email to informe the user.
 
-### HTTP Request
+#### HTTP Request
 
 `PUT http://api.dialogram.fr:8080/api/user/settings/password`
 
-### Query Parameters
+#### Query Parameters
 
 ``
 {
@@ -205,11 +205,11 @@ $.ajax(settings).done(function (response) {
 
 This endpoint update user account settings such as mail address or nickname. You should confirm to your new mail address if it have been edited.
 
-### HTTP Request
+#### HTTP Request
 
 `PUT http://api.dialogram.fr:8080/api/user/settings/account`
 
-### Query Parameters
+#### Query Parameters
 
 ``
 {
@@ -259,7 +259,7 @@ $.ajax(settings).done(function (response) {
 
 This endpoint update the user mail address by token with the new one.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://api.dialogram.fr:8080/api/user/settings/account/email/:token`
 

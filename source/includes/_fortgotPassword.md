@@ -1,6 +1,6 @@
-# Forgot Password
+## Forgot Password 🗀
 
-## Landing page
+### Landing page
 
 ```shell
 curl -X GET \
@@ -39,11 +39,11 @@ $.ajax(settings).done(function (response) {
 
 This endpoint ask the user to enter the adress mail linked to the account he forgots the password.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://api.dialogram.fr:8080/api/password/reset`
 
-### Query Parameters
+#### Query Parameters
 
 NONE
 
@@ -51,7 +51,7 @@ NONE
 You don't have to be authentificated.
 </aside>
 
-## Send token by email
+### Send token by email
 
 ```shell
 curl -X POST \
@@ -90,11 +90,11 @@ $.ajax(settings).done(function (response) {
 
 This endpoint create a token and send it to the referenced email.
 
-### HTTP Request
+#### HTTP Request
 
 `POST http://api.dialogram.fr:8080/api/password/reset`
 
-### Query Parameters
+#### Query Parameters
 
 ``
 {
@@ -102,7 +102,7 @@ This endpoint create a token and send it to the referenced email.
 }
 ``
 
-## Landing page reset password
+### Landing page reset password
 
 ```shell
 curl -X GET \
@@ -141,15 +141,15 @@ $.ajax(settings).done(function (response) {
 
 This endpoint ask for the user to enter the new password.
 
-### HTTP Request
+#### HTTP Request
 
 `GET http://api.dialogram.fr:8080/api/password/reset/:token`
 
-### Query Parameters
+#### Query Parameters
 
 NONE
 
-## Reset password by token
+### Reset password by token
 
 ```shell
 curl -X POST \
@@ -189,11 +189,11 @@ $.ajax(settings).done(function (response) {
 This endpoint reset the user password and create a new one.
 All the sessions will be deleted and an email will be sent to the account to inform that the password have been changed.
 
-### HTTP Request
+#### HTTP Request
 
 `POST http://api.dialogram.fr:8080/api/password/reset/:token`
 
-### Query Parameters
+#### Query Parameters
 
 ``
 {
