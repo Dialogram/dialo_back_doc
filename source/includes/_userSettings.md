@@ -218,55 +218,6 @@ This endpoint update user account settings such as mail address or nickname. You
 }
 ``
 
-## Confirm Account
-
-```shell
-curl --request GET \
-  --url http://api.dialogram.fr:8080/api/user/settings/confirm/:token \
-  --header 'Content-Type: application/json' \
-  --header 'Postman-Token: 858fabaf-0acd-4eb7-9a63-e4057ff75bc7' \
-  --header 'cache-control: no-cache'
-```
-
-```javascript
-var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/user/settings/confirm/:token",
-  "method": "GET",
-  "headers": {
-    "Content-Type": "application/json",
-    "cache-control": "no-cache",
-    "Postman-Token": "47b12022-4582-4d68-972f-90de224f7ea6"
-  },
-  "processData": false,
-  "data": ""
-}
-
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-```
-
-> The above request returns JSON structured like this:
-
-```json
-{
-    "data": [],
-    "includes": []
-}
-```
-
-This endpoint confirm user account by token.
-
-#### HTTP Request
-
-`GET http://api.dialogram.fr:8080/api/user/settings/confirm/:token`
-
-<aside class="success">
-Remember — Your token will only be accessible in your mailbox !
-</aside>
-
 ## Confirm mail updated
 
 ```shell
@@ -311,6 +262,55 @@ This endpoint update the user mail address by token with the new one.
 #### HTTP Request
 
 `GET http://api.dialogram.fr:8080/api/user/settings/account/email/:token`
+
+<aside class="success">
+Remember — Your token will only be accessible in your mailbox !
+</aside>
+
+## Confirm Account
+
+```shell
+curl --request GET \
+  --url http://api.dialogram.fr:8080/api/user/settings/confirm/:token \
+  --header 'Content-Type: application/json' \
+  --header 'Postman-Token: 858fabaf-0acd-4eb7-9a63-e4057ff75bc7' \
+  --header 'cache-control: no-cache'
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/user/settings/confirm/:token",
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json",
+    "cache-control": "no-cache",
+    "Postman-Token": "47b12022-4582-4d68-972f-90de224f7ea6"
+  },
+  "processData": false,
+  "data": ""
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns JSON structured like this:
+
+```json
+{
+    "data": [],
+    "includes": []
+}
+```
+
+This endpoint confirm user account by token.
+
+#### HTTP Request
+
+`GET http://api.dialogram.fr:8080/api/user/settings/confirm/:token`
 
 <aside class="success">
 Remember — Your token will only be accessible in your mailbox !
