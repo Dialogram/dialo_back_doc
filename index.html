@@ -807,7 +807,7 @@ All the sessions will be deleted and an email will be sent to the account to inf
    -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
    -d <span class="s1">'{
       "email" : "usermail@domain.com",
-      "password" : "JeSuisUnTest",
+      "password" : "password1234",
 }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -845,10 +845,10 @@ All the sessions will be deleted and an email will be sent to the account to inf
 <p><code>POST http://api.dialogram.fr:8080/api/session</code></p>
 <h4 id='query-parameters'>Query Parameters</h4>
 <p><code>
-   {\n
-      &quot;email&quot; : &quot;usermail@domain.com&quot;,\n
-      &quot;password&quot; : &quot;password1234&quot;\n
-   }\n
+   {
+      &quot;email&quot; : &quot;usermail@domain.com&quot;,
+      &quot;password&quot; : &quot;password1234&quot;
+   }
 </code></p>
 
 <aside class="success">
@@ -1035,11 +1035,11 @@ Remember — a happy user is an authenticated user by token!
 <p><code>PUT http://api.dialogram.fr:8080/api/document/update/:id</code></p>
 <h4 id='query-parameters-3'>Query Parameters</h4>
 <p><code>
-{\n
-  &quot;name&quot; : &quot;newName&quot;,\n
-    &quot;description&quot;: &quot;Now we have a nice description, and the file is public&quot;,\n
-    &quot;public&quot; : &quot;true&quot;\n
-}\n
+{
+  &quot;name&quot; : &quot;newName&quot;,
+    &quot;description&quot;: &quot;Now we have a nice description, and the file is public&quot;,
+    &quot;public&quot; : &quot;true&quot;
+}
 </code></p>
 
 <aside class="success">
