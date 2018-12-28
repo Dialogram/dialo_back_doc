@@ -15,6 +15,7 @@ toc_footers:
 includes:
   - sessions
   - documents
+  - videos
   - errors
 
 search: true

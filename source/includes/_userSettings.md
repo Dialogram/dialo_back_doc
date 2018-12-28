@@ -315,3 +315,96 @@ This endpoint confirm user account by token.
 <aside class="success">
 Remember — Your token will only be accessible in your mailbox !
 </aside>
+
+## Landing Page Delete Account
+
+```shell
+curl -X GET \
+  http://api.dialogram.fr:8080/api/user/settings/account/delete \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: 8c338b67-b8ff-4303-9463-dcdf8868f8ee' \
+  -H 'cache-control: no-cache'
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/user/settings/account/delete",
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json",
+    "cache-control": "no-cache",
+    "Postman-Token": "763077d7-dd73-44b5-befd-4ab799d47120"
+  },
+  "processData": false,
+  "data": ""
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns JSON structured like this:
+
+```json
+{
+    "data": [],
+    "includes": []
+}
+```
+
+This endpoint is the landing page for deleting your user account.
+
+#### HTTP Request
+
+`GET http://api.dialogram.fr:8080/api/user/settings/account/delete`
+
+
+## Delete Account
+
+```shell
+curl -X DELETE \
+  http://api.dialogram.fr:8080/api/user/settings/account/delete \
+  -H 'Authorization: Bearer <your_access_token>' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: abcdff79-f8a5-4130-a870-426d100b03fc' \
+  -H 'cache-control: no-cache'
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/user/settings/account/delete",
+  "method": "DELETE",
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer <your_access_token>",
+    "cache-control": "no-cache",
+    "Postman-Token": "fabace17-36b7-42b6-ad17-e0bcc84abe58"
+  },
+  "processData": false,
+  "data": ""
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns JSON structured like this:
+
+```json
+{
+    "data": [],
+    "includes": []
+}
+```
+
+This endpoint delete an authenticated user account.
+
+#### HTTP Request
+
+`DELETE http://api.dialogram.fr:8080/api/user/settings/account/delete`
