@@ -503,6 +503,54 @@ Remember — Your token will only be accessible in your mailbox !
 </aside>
 
 
+## Delete Account
+
+```shell
+curl -X DELETE \
+  http://api.dialogram.fr:8080/api/user/settings/account/delete \
+  -H 'Authorization: Bearer <your_access_token>' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: abcdff79-f8a5-4130-a870-426d100b03fc' \
+  -H 'cache-control: no-cache'
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/user/settings/account/delete",
+  "method": "DELETE",
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer <your_access_token>",
+    "cache-control": "no-cache",
+    "Postman-Token": "fabace17-36b7-42b6-ad17-e0bcc84abe58"
+  },
+  "processData": false,
+  "data": ""
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns JSON structured like this:
+
+```json
+{
+    "data": [],
+    "includes": []
+}
+```
+
+This endpoint delete an authenticated user account.
+
+#### HTTP Request
+
+`DELETE http://api.dialogram.fr:8080/api/user/settings/account/delete`
+
+
 ## Forgot Password 🗀
 
 ### Landing page
