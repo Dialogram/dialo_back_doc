@@ -291,6 +291,20 @@
               </ul>
           </li>
           <li>
+            <a href="#videos" class="toc-h1 toc-link" data-title="Videos">Videos</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#upload-a-video" class="toc-h2 toc-link" data-title="Upload A Video">Upload A Video</a>
+                  </li>
+                  <li>
+                    <a href="#get-video" class="toc-h2 toc-link" data-title="Get Video">Get Video</a>
+                  </li>
+                  <li>
+                    <a href="#update-video" class="toc-h2 toc-link" data-title="Update Video">Update Video</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -1087,6 +1101,260 @@ Remember — a happy user is an authenticated user by token!
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
 </aside>
+<h1 id='videos'>Videos</h1><h2 id='upload-a-video'>Upload A Video</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  http://api.dialogram.fr:8080/api/document/5c26a80ece633f35dce3b790/video <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "idOwner" : "dzedaozeidjadaze",
+    "title" : "Detroit records talkshow",
+    "description" : "Mike Banks, the creator of Underground Resistance tell the story of the sound of detroit",
+    "public" : true,
+    "publishedAt" : "2018-02-02",
+    "tags" : ["detroit", "ur", "records"],
+    "metadata" : ["one", "two", "three"],
+    "source": {
+            "type" : "upload",
+            "uri" : "/videos/v2398v320EUioezj21"
+    },
+    "assets": {
+            "iframe" : "&lt;iframe src=\"https://embed.api.video/vod/dzio19328912ide\"&gt;",
+            "player" : "https://embed.api.video/vod/vi23uize3892",
+            "hls": "https://cdn.api.video/vod/ieozdjzi093209",
+            "thumbnail" : "https://cdn.api.video/vod/v239832923"
+    }
+}'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document/5c26a80ece633f35dce3b790/video"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"0daefc40-fbce-4f9a-8af8-a1e4d3d89053"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\n\t\"idOwner\" : \"dzedaozeidjadaze\",\n\t\"title\" : \"Detroit records talkshow\",\n\t\"description\" : \"Mike Banks, the creator of Underground Resistance tell the story of the sound of detroit\",\n\t\"public\" : true,\n\t\"publishedAt\" : \"2018-02-02\",\n\t\"tags\" : [\"detroit\", \"ur\", \"records\"],\n\t\"metadata\" : [\"one\", \"two\", \"three\"],\n\t\"source\": {\n\t\t\t\"type\" : \"upload\",\n\t\t\t\"uri\" : \"/videos/v2398v320EUioezj21\"\n\t},\n\t\"assets\": {\n\t\t\t\"iframe\" : \"&lt;iframe src=\\\"https://embed.api.video/vod/dzio19328912ide\\\"&gt;\",\n\t\t\t\"player\" : \"https://embed.api.video/vod/vi23uize3892\",\n\t\t\t\"hls\": \"https://cdn.api.video/vod/ieozdjzi093209\",\n\t\t\t\"thumbnail\" : \"https://cdn.api.video/vod/v239832923\"\n\t}\n}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"videos"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c26a818ce633f35dce3b793"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dzedaozeidjadaze"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Detroit records talkshow"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mike Banks, the creator of Underground Resistance tell the story of the sound of detroit"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"publishedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-02"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"detroit"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ur"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"records"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"one"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"two"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"three"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"upload"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/videos/v2398v320EUioezj21"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"iframe"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;iframe src=</span><span class="se">\"</span><span class="s2">https://embed.api.video/vod/dzio19328912ide</span><span class="se">\"</span><span class="s2">&gt;"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"player"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://embed.api.video/vod/vi23uize3892"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hls"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.api.video/vod/ieozdjzi093209"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.api.video/vod/v239832923"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint upload a video for the document to be translated.</p>
+<h4 id='http-request'>HTTP Request</h4>
+<p><code>POST http://api.dialogram.fr:8080/api/document/:idDocument/video</code></p>
+<h4 id='query-parameters'>Query Parameters</h4>
+<p><code>
+{
+    &quot;idOwner&quot; : &quot;dzedaozeidjadaze&quot;,
+    &quot;title&quot; : &quot;Detroit records talkshow&quot;,
+    &quot;description&quot; : &quot;Mike Banks, the creator of Underground Resistance tell the story of the sound of detroit&quot;,
+    &quot;public&quot; : true,
+    &quot;publishedAt&quot; : &quot;2018-02-02&quot;,
+    &quot;tags&quot; : [&quot;detroit&quot;, &quot;ur&quot;, &quot;records&quot;],
+    &quot;metadata&quot; : [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;],
+    &quot;source&quot;: {
+            &quot;type&quot; : &quot;upload&quot;,
+            &quot;uri&quot; : &quot;/videos/v2398v320EUioezj21&quot;
+    },
+    &quot;assets&quot;: {
+            &quot;iframe&quot; : &quot;&lt;iframe src=\&quot;https://embed.api.video/vod/dzio19328912ide\&quot;&gt;&quot;,
+            &quot;player&quot; : &quot;https://embed.api.video/vod/vi23uize3892&quot;,
+            &quot;hls&quot;: &quot;https://cdn.api.video/vod/ieozdjzi093209&quot;,
+            &quot;thumbnail&quot; : &quot;https://cdn.api.video/vod/v239832923&quot;
+    }
+}
+</code></p>
+<h2 id='get-video'>Get Video</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  http://api.dialogram.fr:8080/api/document//video/ <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Postman-Token: f2472e62-d64f-496e-8190-a115225d1e94'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document//video/"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"b68839fd-bcdf-4ee8-ac90-8dd5c667eacc"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"videos"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c26a818ce633f35dce3b793"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dzedaozeidjadaze"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Detroit records talkshow"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mike Banks, the creator of Underground Resistance tell the story of the sound of detroit"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"publishedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-02"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"detroit"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"ur"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"records"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"one"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"two"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"three"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"upload"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/videos/v2398v320EUioezj21"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"iframe"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;iframe src=</span><span class="se">\"</span><span class="s2">https://embed.api.video/vod/dzio19328912ide</span><span class="se">\"</span><span class="s2">&gt;"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"player"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://embed.api.video/vod/vi23uize3892"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hls"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.api.video/vod/ieozdjzi093209"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.api.video/vod/v239832923"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint get the video by ID.</p>
+<h4 id='http-request-2'>HTTP Request</h4>
+<p><code>GET http://api.dialogram.fr:8080/api/document/:idDocument/video</code></p>
+<h4 id='query-parameters-2'>Query Parameters</h4>
+<p>NONE</p>
+<h2 id='update-video'>Update Video</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
+  http://api.dialogram.fr:8080/api/document//video/ <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Postman-Token: 5927c68a-c72f-4da5-a1ca-49de4aa6d072'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "title" : "Chicago records talkshow",
+    "description" : "Marshall Jefferson, the creator of House music tell the story of the sound of chicago",
+    "public" : true,
+    "tags" : ["chicago", "jack youor body", "records"],
+    "metadata" : ["uno", "dos", "tres"]
+}'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document//video/"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"ed9cdbcf-4320-4f60-9a61-e3ca316e941f"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\n\t\"title\" : \"Chicago records talkshow\",\n\t\"description\" : \"Marshall Jefferson, the creator of House music tell the story of the sound of chicago\",\n\t\"public\" : true,\n\t\"tags\" : [\"chicago\", \"jack youor body\", \"records\"],\n\t\"metadata\" : [\"uno\", \"dos\", \"tres\"]\n}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"videos"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c26a0f7ec67c433405a506e"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dzedaozeidjadaze"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chicago records talkshow"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marshall Jefferson, the creator of House music tell the story of the sound of chicago"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"publishedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-02"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"chicago"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"jack youor body"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"records"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"uno"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"dos"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"tres"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"upload"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/videos/v2398v320EUioezj21"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"iframe"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;iframe src=</span><span class="se">\"</span><span class="s2">https://embed.api.video/vod/dzio19328912ide</span><span class="se">\"</span><span class="s2">&gt;"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"player"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://embed.api.video/vod/vi23uize3892"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hls"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.api.video/vod/ieozdjzi093209"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.api.video/vod/v239832923"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint update the video data of the document both specified by ID.</p>
+<h4 id='http-request-3'>HTTP Request</h4>
+<p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/video/:idVideo</code></p>
+<h4 id='query-parameters-3'>Query Parameters</h4>
+<p><code>
+{
+    &quot;title&quot; : &quot;Chicago records talkshow&quot;,
+    &quot;description&quot; : &quot;Marshall Jefferson, the creator of House music tell the story of the sound of chicago&quot;,
+    &quot;public&quot; : true,
+    &quot;tags&quot; : [&quot;chicago&quot;, &quot;jack youor body&quot;, &quot;records&quot;],
+    &quot;metadata&quot; : [&quot;uno&quot;, &quot;dos&quot;, &quot;tres&quot;]
+}
+</code></p>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section describes the most common error codes you may face while working with the Dialogram API. In a sense of normalization, we used the quite same error codes from routes to routes, despite this back work, you may face error codes that are not in the list. In this case, please refer to the standard http error codes according the RFC 2616.
