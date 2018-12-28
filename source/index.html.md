@@ -503,7 +503,7 @@ Remember — Your token will only be accessible in your mailbox !
 </aside>
 
 
-## Delete Account
+### Delete Account
 
 ```shell
 curl -X DELETE \
