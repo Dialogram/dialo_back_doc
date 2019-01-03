@@ -139,6 +139,83 @@ NONE
 Remember — a happy user is an authenticated user by token!
 </aside>
 
+## Get User Documents
+
+```shell
+curl -X GET \
+  http://api.dialogram.fr:8080/api/user/documents \
+  -H 'Authorization: Bearer <your_access_token>' \
+  -H 'Postman-Token: 5127421b-d83a-4730-b9b8-7a20955dac1c' \
+  -H 'cache-control: no-cache'
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/user/documents",
+  "method": "GET",
+  "headers": {
+    "Authorization": "Bearer <your_access_token>",
+    "cache-control": "no-cache",
+    "Postman-Token": "59497a27-d494-4bf5-a225-db888692d29a"
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns a JSON structured like this:
+
+```json
+{
+    "data": [
+        {
+            "type": "documents",
+            "id": "5c2e260e581ae035587a4346",
+            "name": "PLD Dialogram",
+            "link": "http://api.dialogram.fr:8080/medias/1546528270492-PLD_DIALOGRAM.pdf?accessToken=<your_access_token>",
+            "nbPage": 23,
+            "public": false,
+            "description": null,
+            "status": -1,
+            "idTranslation": null,
+            "idOwner": "5c2e2528581ae035587a4344"
+        },
+        {
+            "type": "documents",
+            "id": "5c2e349d1679630b18f5636f",
+            "name": "Insurance file",
+            "link": "http://api.dialogram.fr:8080/medias/1546531997311-INSURANCE_FILE.pdf?accessToken=<your_access_token>",
+            "nbPage": 2,
+            "public": false,
+            "description": "Medical insurance company",
+            "status": -1,
+            "idTranslation": null,
+            "idOwner": "5c2e2528581ae035587a4344"
+        }
+    ],
+    "includes": []
+}
+```
+
+This endpoint get all the user documents
+
+#### HTTP Request
+
+`GET http://api.dialogram.fr:8080/api/documents`
+
+#### Query Parameters
+
+NONE
+
+<aside class="success">
+Remember — a happy user is an authenticated user by token!
+</aside>
+
+
 ## Update PDF document
 
 ```shell
