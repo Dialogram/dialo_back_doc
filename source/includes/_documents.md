@@ -10,14 +10,16 @@ curl -X POST \
   -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
   -F 'file=@C:\path\to\my_file.pdf' \
   -F name=myDocument \
-  -F nbPage=35
+  -F description=My document description \
+  -F public=true
 ```
 
 ```javascript
 var form = new FormData();
 form.append("file", "C:\\Users\\path\\to\\my_file.pdf");
 form.append("name", "myDocument");
-form.append("nbPage", "35");
+form.append("description", "My document description");
+form.append("public", "true");
 
 var settings = {
   "async": true,
@@ -51,9 +53,8 @@ $.ajax(settings).done(function (response) {
             "link": "api.dialogram.fr:8080/medias/<timestamp>-<file_name>.pdf?accessToken=<your_access_token>",
             "nbPage": 35,
             "public": false,
-            "description": "Description of the file",
+            "description": "My document description",
             "status": 1,
-            "idTranslation": null,
             "idOwner": "<owner_id>"
         }
     ],
@@ -73,7 +74,8 @@ Key naming | Content
 ---------- | -------
 file (type: file) | Your pdf file
 name (type: string) | Your document name
-nbPage (type: string) | The number of pages in the pdf file
+description (type: string) | Your document description
+public (type: boolean) | Your document privacy
 
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
@@ -115,9 +117,8 @@ $.ajax(settings).done(function (response) {
             "link": "api.dialogram.fr:8080/medias/<timestamp>-<file_name>.pdf?accessToken=<your_access_token>",
             "nbPage": 35,
             "public": false,
-            "description": "Description of the file",
+            "description": "My document description",
             "status": 1,
-            "idTranslation": null,
             "idOwner": "<owner_id>"
         }
     ],
@@ -181,7 +182,6 @@ $.ajax(settings).done(function (response) {
             "public": false,
             "description": null,
             "status": -1,
-            "idTranslation": null,
             "idOwner": "5c2e2528581ae035587a4344"
         },
         {
@@ -193,7 +193,6 @@ $.ajax(settings).done(function (response) {
             "public": false,
             "description": "Medical insurance company",
             "status": -1,
-            "idTranslation": null,
             "idOwner": "5c2e2528581ae035587a4344"
         }
     ],
@@ -265,7 +264,6 @@ $.ajax(settings).done(function (response) {
           "public": true,
           "description": "Now we have a nice description, and the file is public",
           "status": 1,
-          "idTranslation": null,
           "idOwner": "<owner_id>"
         }
     ],
