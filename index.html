@@ -256,13 +256,7 @@
                     <a href="#forgot-password" class="toc-h2 toc-link" data-title="Forgot Password 🗀">Forgot Password 🗀</a>
                         <ul class="toc-list-h3">
                             <li>
-                              <a href="#landing-page" class="toc-h3 toc-link" data-title="Landing page">Landing page</a>
-                            </li>
-                            <li>
                               <a href="#send-token-by-email" class="toc-h3 toc-link" data-title="Send token by email">Send token by email</a>
-                            </li>
-                            <li>
-                              <a href="#landing-page-reset-password" class="toc-h3 toc-link" data-title="Landing page reset password">Landing page reset password</a>
                             </li>
                             <li>
                               <a href="#reset-password-by-token" class="toc-h3 toc-link" data-title="Reset password by token">Reset password by token</a>
@@ -305,6 +299,9 @@
                   <li>
                     <a href="#get-translation-by-id" class="toc-h2 toc-link" data-title="Get Translation by ID">Get Translation by ID</a>
                   </li>
+                  <li>
+                    <a href="#delete-translation" class="toc-h2 toc-link" data-title="Delete Translation">Delete Translation</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -331,7 +328,7 @@
         <ul class="toc-footer">
             <li><a href='http://www.dialogram.fr/'>Follow us on our website !</a></li>
             <li><a href='https://gitlab.com/Dialogram'>Contribute to the project !</a></li>
-            <li><a href='https://www.getpostman.com/collections/c9aca7f148255126c4c5'>Get the postman collection !</a></li>
+            <li><a href='https://www.getpostman.com/collections/ec4646f66c95dda4d8de'>Get the postman collection !</a></li>
             <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -764,45 +761,7 @@ Remember — Your token will only be accessible in your mailbox !
 <p>This endpoint delete an authenticated user account.</p>
 <h4 id='http-request-8'>HTTP Request</h4>
 <p><code>DELETE http://api.dialogram.fr:8080/api/user/settings/account/delete</code></p>
-<h2 id='forgot-password'>Forgot Password 🗀</h2><h3 id='landing-page'>Landing page</h3><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-   http://api.dialogram.fr:8080/api/password/reset <span class="se">\</span>
-   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-   -d <span class="s1">'{
-}'</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/password/reset"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
-  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-   <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{}"</span>
-<span class="p">}</span>
-
-<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>The above request returns a JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint ask the user to enter the adress mail linked to the account he forgots the password.</p>
-<h4 id='http-request-9'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr:8080/api/password/reset</code></p>
-<h4 id='query-parameters-6'>Query Parameters</h4>
-<p>NONE</p>
-
-<aside class="success">
-You don't have to be authentificated.
-</aside>
-<h3 id='send-token-by-email'>Send token by email</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<h2 id='forgot-password'>Forgot Password 🗀</h2><h3 id='send-token-by-email'>Send token by email</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
    http://api.dialogram.fr:8080/api/password/reset <span class="se">\</span>
    -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
    -d <span class="s1">'{
@@ -832,48 +791,14 @@ You don't have to be authentificated.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint create a token and send it to the referenced email.</p>
-<h4 id='http-request-10'>HTTP Request</h4>
+<h4 id='http-request-9'>HTTP Request</h4>
 <p><code>POST http://api.dialogram.fr:8080/api/password/reset</code></p>
-<h4 id='query-parameters-7'>Query Parameters</h4>
+<h4 id='query-parameters-6'>Query Parameters</h4>
 <p><code>
 {
     &quot;email&quot; : &quot;myMail@domain.com&quot;
 }
 </code></p>
-<h3 id='landing-page-reset-password'>Landing page reset password</h3><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-   http://api.dialogram.fr:8080/api/password/reset/:token <span class="se">\</span>
-   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-   -d <span class="s1">'{
-}'</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/password/reset/:token"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
-  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-   <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{}"</span>
-<span class="p">}</span>
-
-<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>The above request returns a JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint ask for the user to enter the new password.</p>
-<h4 id='http-request-11'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr:8080/api/password/reset/:token</code></p>
-<h4 id='query-parameters-8'>Query Parameters</h4>
-<p>NONE</p>
 <h3 id='reset-password-by-token'>Reset password by token</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
    http://api.dialogram.fr:8080/api/password/reset/:token <span class="se">\</span>
    -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -905,9 +830,9 @@ You don't have to be authentificated.
 </span></code></pre>
 <p>This endpoint reset the user password and create a new one.
 All the sessions will be deleted and an email will be sent to the account to inform that the password have been changed.</p>
-<h4 id='http-request-12'>HTTP Request</h4>
+<h4 id='http-request-10'>HTTP Request</h4>
 <p><code>POST http://api.dialogram.fr:8080/api/password/reset/:token</code></p>
-<h4 id='query-parameters-9'>Query Parameters</h4>
+<h4 id='query-parameters-7'>Query Parameters</h4>
 <p><code>
 {
      &quot;paswword&quot; : &quot;myNewPassword1234&quot;,
@@ -973,11 +898,13 @@ Note that you need to create a user before being able to create its session.
   -H <span class="s1">'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'</span> <span class="se">\</span>
   -F <span class="s1">'file=@C:\path\to\my_file.pdf'</span> <span class="se">\</span>
   -F <span class="nv">name</span><span class="o">=</span>myDocument <span class="se">\</span>
-  -F <span class="nv">nbPage</span><span class="o">=</span>35
+  -F <span class="nv">description</span><span class="o">=</span>My document description <span class="se">\</span>
+  -F <span class="nv">public</span><span class="o">=</span><span class="nb">true</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
 <span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"file"</span><span class="p">,</span> <span class="s2">"C:\\Users\\path\\to\\my_file.pdf"</span><span class="p">);</span>
 <span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"myDocument"</span><span class="p">);</span>
-<span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"nbPage"</span><span class="p">,</span> <span class="s2">"35"</span><span class="p">);</span>
+<span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"description"</span><span class="p">,</span> <span class="s2">"My document description"</span><span class="p">);</span>
+<span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"public"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -1010,9 +937,8 @@ Note that you need to create a user before being able to create its session.
             </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api.dialogram.fr:8080/medias/&lt;timestamp&gt;-&lt;file_name&gt;.pdf?accessToken=&lt;your_access_token&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description of the file"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My document description"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
@@ -1038,8 +964,12 @@ Note that you need to create a user before being able to create its session.
 <td>Your document name</td>
 </tr>
 <tr>
-<td>nbPage (type: string)</td>
-<td>The number of pages in the pdf file</td>
+<td>description (type: string)</td>
+<td>Your document description</td>
+</tr>
+<tr>
+<td>public (type: boolean)</td>
+<td>Your document privacy</td>
 </tr>
 </tbody></table>
 
@@ -1075,9 +1005,8 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api.dialogram.fr:8080/medias/&lt;timestamp&gt;-&lt;file_name&gt;.pdf?accessToken=&lt;your_access_token&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Description of the file"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My document description"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
@@ -1128,7 +1057,6 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c2e2528581ae035587a4344"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -1140,7 +1068,6 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Medical insurance company"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c2e2528581ae035587a4344"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
@@ -1198,7 +1125,6 @@ Remember — a happy user is an authenticated user by token!
           </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
           </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Now we have a nice description, and the file is public"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
           </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
@@ -1356,6 +1282,42 @@ Remember — a happy user is an authenticated user by token!
 <p><code>GET http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation</code></p>
 <h4 id='query-parameters-2'>Query Parameters</h4>
 <p>NONE</p>
+<h2 id='delete-translation'>Delete Translation</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
+  http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Postman-Token: abcdff79-f8a5-4130-a870-426d100b03fc'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"fabace17-36b7-42b6-ad17-e0bcc84abe58"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">""</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint delete a translation.</p>
+<h4 id='http-request-3'>HTTP Request</h4>
+<p><code>DELETE http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation</code></p>
 <h1 id='videos'>Videos</h1><h2 id='upload-a-video'>Upload A Video</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://api.dialogram.fr:8080/api/document/video <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
