@@ -20,6 +20,7 @@ form.append("file", "C:\\Users\\path\\to\\my_file.pdf");
 form.append("name", "myDocument");
 form.append("description", "My document description");
 form.append("public", "true");
+form.append("category", "entertainment")
 
 var settings = {
   "async": true,
@@ -57,7 +58,8 @@ $.ajax(settings).done(function (response) {
             "status": 1,
             "category": "entertainment",
             "idTranslation": null,
-            "idOwner": "<owner_id>"
+            "idOwner": "<owner_id>",
+            "creationDate": "2019-01-30T19:31:06.424Z"
         }
     ],
     "includes": []
@@ -124,7 +126,8 @@ $.ajax(settings).done(function (response) {
             "status": 1,
             "category": "entertainment",
             "idTranslation": null,
-            "idOwner": "<owner_id>"
+            "idOwner": "<owner_id>",
+            "creationDate": "2019-01-30T19:31:06.424Z"
         }
     ],
     "includes": []
@@ -181,7 +184,8 @@ $.ajax(settings).done(function (response) {
             "status": 1,
             "category": "entertainment",
             "idTranslation": null,
-            "idOwner": "<owner_id>"
+            "idOwner": "<owner_id>",
+            "creationDate": "2019-01-30T19:31:06.424Z"
         }
     ],
     "includes": []
@@ -247,7 +251,8 @@ $.ajax(settings).done(function (response) {
             "status": -1,
             "category": "health",
             "idTranslation": null,
-            "idOwner": "5c2e2528581ae035587a4344"
+            "idOwner": "5c2e2528581ae035587a4344",
+            "creationDate": "2019-01-29T19:31:06.424Z"
         },
         {
             "type": "documents",
@@ -260,7 +265,8 @@ $.ajax(settings).done(function (response) {
             "status": -1,
             "category": "health",
             "idTranslation": null,
-            "idOwner": "5c2e2528581ae035587a4344"
+            "idOwner": "5c2e2528581ae035587a4344",
+            "creationDate": "2019-01-29T19:31:06.424Z"
         }
     ],
     "includes": []
@@ -334,7 +340,8 @@ $.ajax(settings).done(function (response) {
           "status": 1,
           "category": "entertainment",
           "idTranslation": null,
-          "idOwner": "<owner_id>"
+          "idOwner": "<owner_id>",
+          "creationDate": "2019-01-29T19:31:06.424Z"
         }
     ],
     "includes": []
