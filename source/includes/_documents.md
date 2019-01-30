@@ -55,6 +55,8 @@ $.ajax(settings).done(function (response) {
             "public": false,
             "description": "My document description",
             "status": 1,
+            "category": "entertainment",
+            "idTranslation": null,
             "idOwner": "<owner_id>"
         }
     ],
@@ -76,10 +78,68 @@ file (type: file) | Your pdf file
 name (type: string) | Your document name
 description (type: string) | Your document description
 public (type: boolean) | Your document privacy
+category (type: string) | Your document category (health, finance, administrative entertainment, business)
 
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
 </aside>
+
+## Get document by category
+
+```shell
+curl -X GET \
+  http://api.dialogram.fr:8080/api/document/category/:category \
+  -H 'Authorization: Bearer <your_access_token>' \
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/document/catergory/:category",
+  "method": "GET",
+  "headers": {
+    "Authorization": "Bearer <your_access_token>",
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns a JSON structured like this:
+
+```json
+{
+    "data": [
+        {
+            "type": "documents",
+            "id": "<document_id>",
+            "name": "myDocument",
+            "link": "api.dialogram.fr:8080/medias/<timestamp>-<file_name>.pdf?accessToken=<your_access_token>",
+            "nbPage": 35,
+            "public": false,
+            "description": "My document description",
+            "status": 1,
+            "category": "entertainment",
+            "idTranslation": null,
+            "idOwner": "<owner_id>"
+        }
+    ],
+    "includes": []
+}
+```
+
+This endpoint get a previously created PDF document from the remote server. You only need to be authenticated and to specify the category on the URL parameter.
+
+#### HTTP Request
+
+`GET http://api.dialogram.fr:8080/api/document/category/:category`
+
+#### Query Parameters
+
+NONE
 
 ## Get PDF document
 
@@ -119,6 +179,8 @@ $.ajax(settings).done(function (response) {
             "public": false,
             "description": "My document description",
             "status": 1,
+            "category": "entertainment",
+            "idTranslation": null,
             "idOwner": "<owner_id>"
         }
     ],
@@ -139,6 +201,7 @@ NONE
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
 </aside>
+
 
 ## Get User Documents
 
@@ -182,6 +245,8 @@ $.ajax(settings).done(function (response) {
             "public": false,
             "description": null,
             "status": -1,
+            "category": "health",
+            "idTranslation": null,
             "idOwner": "5c2e2528581ae035587a4344"
         },
         {
@@ -193,6 +258,8 @@ $.ajax(settings).done(function (response) {
             "public": false,
             "description": "Medical insurance company",
             "status": -1,
+            "category": "health",
+            "idTranslation": null,
             "idOwner": "5c2e2528581ae035587a4344"
         }
     ],
@@ -226,7 +293,8 @@ curl -X PUT \
   -d '{
 	     "name" : "newName",
 	     "description": "Now we have a nice description, and the file is public",
-	     "public" : "true"
+	     "public" : "true",
+       "category": "entertainment"
 }'
 ```
 
@@ -264,6 +332,8 @@ $.ajax(settings).done(function (response) {
           "public": true,
           "description": "Now we have a nice description, and the file is public",
           "status": 1,
+          "category": "entertainment",
+          "idTranslation": null,
           "idOwner": "<owner_id>"
         }
     ],
@@ -282,7 +352,8 @@ This endpoint update the data file. You only need to be authenticated with the u
 {
   "name" : "newName",
 	"description": "Now we have a nice description, and the file is public",
-	"public" : "true"
+	"public" : "true",
+  "category" : "entertainment"
 }
 ``
 
