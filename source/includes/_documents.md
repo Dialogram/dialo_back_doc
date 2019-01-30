@@ -341,14 +341,15 @@ $.ajax(settings).done(function (response) {
           "category": "entertainment",
           "idTranslation": null,
           "idOwner": "<owner_id>",
-          "creationDate": "2019-01-29T19:31:06.424Z"
+          "creationDate": "2019-01-29T19:31:06.424Z",
+          "editDate": "2019-01-30T20:14:56.747Z"
         }
     ],
     "includes": []
 }
 ```
 
-This endpoint update the data file. You only need to be authenticated with the user that uploads the document and the document id.
+This endpoint update the data file. You only need to be authenticated with the user that uploads the document and the document id. A new field "editDate" will be set with the date of edit.
 
 #### HTTP Request
 
