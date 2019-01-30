@@ -908,6 +908,7 @@ Note that you need to create a user before being able to create its session.
 <span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"myDocument"</span><span class="p">);</span>
 <span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"description"</span><span class="p">,</span> <span class="s2">"My document description"</span><span class="p">);</span>
 <span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"public"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">);</span>
+<span class="nx">form</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"category"</span><span class="p">,</span> <span class="s2">"entertainment"</span><span class="p">)</span>
 
 <span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -944,7 +945,8 @@ Note that you need to create a user before being able to create its session.
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"entertainment"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="w">
+            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-30T19:31:06.424Z"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
@@ -1018,7 +1020,8 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"entertainment"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="w">
+            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-30T19:31:06.424Z"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
@@ -1062,7 +1065,8 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"entertainment"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="w">
+            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-30T19:31:06.424Z"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
@@ -1114,7 +1118,8 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
             </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"health"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c2e2528581ae035587a4344"</span><span class="w">
+            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c2e2528581ae035587a4344"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-29T19:31:06.424Z"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
@@ -1127,7 +1132,8 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
             </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"health"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c2e2528581ae035587a4344"</span><span class="w">
+            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c2e2528581ae035587a4344"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-29T19:31:06.424Z"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
@@ -1187,13 +1193,15 @@ Remember — a happy user is an authenticated user by token!
           </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
           </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"entertainment"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="w">
+          </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-29T19:31:06.424Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"editDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-30T20:14:56.747Z"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint update the data file. You only need to be authenticated with the user that uploads the document and the document id.</p>
+<p>This endpoint update the data file. You only need to be authenticated with the user that uploads the document and the document id. A new field &quot;editDate&quot; will be set with the date of edit.</p>
 <h4 id='http-request-5'>HTTP Request</h4>
 <p><code>PUT http://api.dialogram.fr:8080/api/document/update/:id</code></p>
 <h4 id='query-parameters-5'>Query Parameters</h4>
