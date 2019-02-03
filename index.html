@@ -291,6 +291,9 @@
                   <li>
                     <a href="#update-pdf-document" class="toc-h2 toc-link" data-title="Update PDF document">Update PDF document</a>
                   </li>
+                  <li>
+                    <a href="#delete-document-by-id" class="toc-h2 toc-link" data-title="Delete Document by ID">Delete Document by ID</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -321,6 +324,9 @@
                   </li>
                   <li>
                     <a href="#update-video" class="toc-h2 toc-link" data-title="Update Video">Update Video</a>
+                  </li>
+                  <li>
+                    <a href="#delete-video-by-id" class="toc-h2 toc-link" data-title="Delete Video by ID">Delete Video by ID</a>
                   </li>
               </ul>
           </li>
@@ -1217,6 +1223,40 @@ Remember — a happy user is an authenticated user by token!
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
 </aside>
+<h2 id='delete-document-by-id'>Delete Document by ID</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
+  http://api.dialogram.fr:8080/api/document/:idDocument <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Postman-Token: f2472e62-d64f-496e-8190-a115225d1e94'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document/:idDocument"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"b68839fd-bcdf-4ee8-ac90-8dd5c667eacc"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint delete a document by ID.</p>
+<h4 id='http-request-6'>HTTP Request</h4>
+<p><code>DELETE http://api.dialogram.fr:8080/api/document/:idDocument</code></p>
+<h4 id='query-parameters-6'>Query Parameters</h4>
+<p>NONE</p>
 <h1 id='translations'>Translations</h1><h2 id='create-translation'>Create Translation</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://api.dialogram.fr:8080/api/document/:idDocument/translation <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -1725,6 +1765,40 @@ Remember — a happy user is an authenticated user by token!
     &quot;metadata&quot; : [&quot;uno&quot;, &quot;dos&quot;, &quot;tres&quot;]
 }
 </code></p>
+<h2 id='delete-video-by-id'>Delete Video by ID</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
+  http://api.dialogram.fr:8080/api/document/video/:idVideo <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Postman-Token: f2472e62-d64f-496e-8190-a115225d1e94'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document/video/:idVideo"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"b68839fd-bcdf-4ee8-ac90-8dd5c667eacc"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint delete a video by ID.</p>
+<h4 id='http-request-5'>HTTP Request</h4>
+<p><code>DELETE http://api.dialogram.fr:8080/api/document/video/:idVideo</code></p>
+<h4 id='query-parameters-5'>Query Parameters</h4>
+<p>NONE</p>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section describes the most common error codes you may face while working with the Dialogram API. In a sense of normalization, we used the quite same error codes from routes to routes, despite this back work, you may face error codes that are not in the list. In this case, please refer to the standard http error codes according the RFC 2616.
