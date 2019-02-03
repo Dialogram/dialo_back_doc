@@ -386,3 +386,50 @@ This endpoint update the video data of the document both specified by ID.
 	"metadata" : ["uno", "dos", "tres"]
 }
 ``
+
+## Delete Video by ID
+
+```shell
+curl -X DELETE \
+  http://api.dialogram.fr:8080/api/document/video/:idVideo \
+  -H 'Authorization: Bearer <your_access_token>' \
+  -H 'Postman-Token: f2472e62-d64f-496e-8190-a115225d1e94' \
+  -H 'cache-control: no-cache'
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/document/video/:idVideo",
+  "method": "DELETE",
+  "headers": {
+    "Authorization": "Bearer <your_access_token>",
+    "cache-control": "no-cache",
+    "Postman-Token": "b68839fd-bcdf-4ee8-ac90-8dd5c667eacc"
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns a JSON structured like this:
+
+```json
+{
+    "data": [],
+    "includes": []
+}
+```
+
+This endpoint delete a video by ID.
+
+#### HTTP Request
+
+`DELETE http://api.dialogram.fr:8080/api/document/video/:idVideo`
+
+#### Query Parameters
+
+NONE

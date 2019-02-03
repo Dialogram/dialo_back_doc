@@ -368,3 +368,50 @@ This endpoint update the data file. You only need to be authenticated with the u
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
 </aside>
+
+## Delete Document by ID
+
+```shell
+curl -X DELETE \
+  http://api.dialogram.fr:8080/api/document/:idDocument \
+  -H 'Authorization: Bearer <your_access_token>' \
+  -H 'Postman-Token: f2472e62-d64f-496e-8190-a115225d1e94' \
+  -H 'cache-control: no-cache'
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/document/:idDocument",
+  "method": "DELETE",
+  "headers": {
+    "Authorization": "Bearer <your_access_token>",
+    "cache-control": "no-cache",
+    "Postman-Token": "b68839fd-bcdf-4ee8-ac90-8dd5c667eacc"
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns a JSON structured like this:
+
+```json
+{
+    "data": [],
+    "includes": []
+}
+```
+
+This endpoint delete a document by ID.
+
+#### HTTP Request
+
+`DELETE http://api.dialogram.fr:8080/api/document/:idDocument`
+
+#### Query Parameters
+
+NONE
