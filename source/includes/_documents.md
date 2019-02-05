@@ -120,6 +120,7 @@ $.ajax(settings).done(function (response) {
             "id": "<document_id>",
             "name": "myDocument",
             "link": "api.dialogram.fr:8080/medias/<timestamp>-<file_name>.pdf?accessToken=<your_access_token>",
+            "usageName": "<timestamp>-<file_name>.pdf",
             "nbPage": 35,
             "public": false,
             "description": "My document description",
@@ -143,6 +144,14 @@ This endpoint get a previously created PDF document from the remote server. You 
 #### Query Parameters
 
 NONE
+
+#### Categories
+-Administrative
+-Business
+-Entertainment
+-Finance
+-Health
+
 
 ## Get PDF document
 
@@ -178,6 +187,7 @@ $.ajax(settings).done(function (response) {
             "id": "<document_id>",
             "name": "myDocument",
             "link": "api.dialogram.fr:8080/medias/<timestamp>-<file_name>.pdf?accessToken=<your_access_token>",
+            "usageName": "<timestamp>-<file_name>.pdf",
             "nbPage": 35,
             "public": false,
             "description": "My document description",
@@ -245,6 +255,7 @@ $.ajax(settings).done(function (response) {
             "id": "5c2e260e581ae035587a4346",
             "name": "PLD Dialogram",
             "link": "http://api.dialogram.fr:8080/medias/1546528270492-PLD_DIALOGRAM.pdf?accessToken=<your_access_token>",
+            "usageName": "<timestamp>-<file_name>.pdf",
             "nbPage": 23,
             "public": false,
             "description": null,
@@ -259,6 +270,7 @@ $.ajax(settings).done(function (response) {
             "id": "5c2e349d1679630b18f5636f",
             "name": "Insurance file",
             "link": "http://api.dialogram.fr:8080/medias/1546531997311-INSURANCE_FILE.pdf?accessToken=<your_access_token>",
+            "usageName": "<timestamp>-<file_name>.pdf",
             "nbPage": 2,
             "public": false,
             "description": "Medical insurance company",
@@ -334,6 +346,7 @@ $.ajax(settings).done(function (response) {
           "id": "<document_id>",
           "name": "newName",
           "link": "api.dialogram.fr:8080/medias/<timestamp>-<file_name>.pdf?accessToken=<your_access_token>",
+          "usageName": "<timestamp>-<file_name>.pdf",
           "nbPage": 35,
           "public": true,
           "description": "Now we have a nice description, and the file is public",

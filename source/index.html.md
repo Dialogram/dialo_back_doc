@@ -17,6 +17,7 @@ includes:
   - documents
   - translation
   - videos
+  - explore
   - errors
 
 search: true
