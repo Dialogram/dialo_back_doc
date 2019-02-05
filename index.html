@@ -331,6 +331,14 @@
               </ul>
           </li>
           <li>
+            <a href="#explore" class="toc-h1 toc-link" data-title="Explore">Explore</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#search" class="toc-h2 toc-link" data-title="Search">Search</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -1020,6 +1028,7 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;document_id&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api.dialogram.fr:8080/medias/&lt;timestamp&gt;-&lt;file_name&gt;.pdf?accessToken=&lt;your_access_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;timestamp&gt;-&lt;file_name&gt;.pdf"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My document description"</span><span class="p">,</span><span class="w">
@@ -1038,6 +1047,12 @@ Remember — a happy user is an authenticated user by token!
 <p><code>GET http://api.dialogram.fr:8080/api/document/category/:category</code></p>
 <h4 id='query-parameters-2'>Query Parameters</h4>
 <p>NONE</p>
+<h4 id='categories'>Categories</h4>
+<p>-Administrative
+-Business
+-Entertainment
+-Finance
+-Health</p>
 <h2 id='get-pdf-document'>Get PDF document</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
   http://api.dialogram.fr:8080/api/document/:idDocument <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
@@ -1065,6 +1080,7 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;document_id&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api.dialogram.fr:8080/medias/&lt;timestamp&gt;-&lt;file_name&gt;.pdf?accessToken=&lt;your_access_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;timestamp&gt;-&lt;file_name&gt;.pdf"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My document description"</span><span class="p">,</span><span class="w">
@@ -1118,6 +1134,7 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c2e260e581ae035587a4346"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLD Dialogram"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.dialogram.fr:8080/medias/1546528270492-PLD_DIALOGRAM.pdf?accessToken=&lt;your_access_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;timestamp&gt;-&lt;file_name&gt;.pdf"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -1132,6 +1149,7 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c2e349d1679630b18f5636f"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Insurance file"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.dialogram.fr:8080/medias/1546531997311-INSURANCE_FILE.pdf?accessToken=&lt;your_access_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;timestamp&gt;-&lt;file_name&gt;.pdf"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Medical insurance company"</span><span class="p">,</span><span class="w">
@@ -1193,6 +1211,7 @@ Remember — a happy user is an authenticated user by token!
           </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;document_id&gt;"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"newName"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api.dialogram.fr:8080/medias/&lt;timestamp&gt;-&lt;file_name&gt;.pdf?accessToken=&lt;your_access_token&gt;"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;timestamp&gt;-&lt;file_name&gt;.pdf"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
           </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
           </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Now we have a nice description, and the file is public"</span><span class="p">,</span><span class="w">
@@ -1799,6 +1818,97 @@ Remember — a happy user is an authenticated user by token!
 <p><code>DELETE http://api.dialogram.fr:8080/api/document/video/:idVideo</code></p>
 <h4 id='query-parameters-5'>Query Parameters</h4>
 <p>NONE</p>
+<h1 id='explore'>Explore</h1><h2 id='search'>Search</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  <span class="s1">'http://api.dialogram.fr:8080/api/search/?limit=5&amp;page=2'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Postman-Token: 9ae7f131-5f76-4cf6-9c54-51c0a31af75c'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/search/?limit=5&amp;page=2"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"749eb01d-2208-45c5-81a0-f2fc93b2966b"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;document_id&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api.dialogram.fr:8080/medias/&lt;timestamp&gt;-&lt;file_name&gt;.pdf?accessToken=&lt;your_access_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;timestamp&gt;-&lt;file_name&gt;.pdf"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My document description"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"entertainment"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-30T19:31:06.424Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;document_id&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api.dialogram.fr:8080/medias/&lt;timestamp&gt;-&lt;file_name&gt;.pdf?accessToken=&lt;your_access_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;timestamp&gt;-&lt;file_name&gt;.pdf"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My document description"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"entertainment"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-30T19:31:06.424Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"__v"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pagination"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint return all the documents using a pagination system.</p>
+<h4 id='http-request'>HTTP Request</h4>
+<p><code>GET http://api.dialogram.fr:8080/api/search/</code></p>
+<h4 id='query-parameters'>Query Parameters</h4>
+<table><thead>
+<tr>
+<th>Key naming</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>The limit of documents per page</td>
+</tr>
+<tr>
+<td>page</td>
+<td>The page number</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Use offset or page to skip a position</td>
+</tr>
+</tbody></table>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section describes the most common error codes you may face while working with the Dialogram API. In a sense of normalization, we used the quite same error codes from routes to routes, despite this back work, you may face error codes that are not in the list. In this case, please refer to the standard http error codes according the RFC 2616.
