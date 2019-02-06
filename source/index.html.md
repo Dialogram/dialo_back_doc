@@ -86,17 +86,23 @@ $.ajax(settings).done(function (response) {
             "profile": {
                 "firstName": "John",
                 "lastName": "Bryan"
+                "profilePicture": {
+                    "url": "http://res.cloudinary.com/dialogram/image/<URL>",
+                    "public_id": "profile_pictures/<ID>"
+                }
             },
-            "email": "my-user@domain.com"
+            "email": "my-user@domain.com",
+            "registerDate": "2019-02-06T21:30:51.461Z",
+            "timestamp": 1549490327518
         }
     ],
     "includes": [
         {
             "type": "session",
             "id": "5be1e7425f019d0b44ed1ff3",
-            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YmUxZTc0MTVmMDE5ZDBiNDRlZDFmZjIiLCJpYXQiOjE1NDE1MzE0NTgsImV4cCI6MTU3MzA4OTA1OH0.3Em43RVafYzpVOhdYEeLk7DZcjcJCdQ_lsvGz76QS-8",
+            "token": "<User_Token>",
             "deviceName": "Safari on AndroidOS OS",
-            "user": "5be1e7415f019d0b44ed1ff2"
+            "user": "<User ID>"
         }
     ]
 }
@@ -160,15 +166,32 @@ $.ajax(settings).done(function (response) {
 ```json
 {
     "data": [
-    {
-      "type": "user",
-      "id": "5b3536658eabca0aab16ab05",
-      "nickName": "UserName",
-      "profile": {},
-      "email": "my-user@domain.com"
-    }
-   ],
-  "includes": []
+        {
+            "type": "user",
+            "id": "5be1e7415f019d0b44ed1ff2",
+            "nickName": "UserName",
+            "profile": {
+                "firstName": "John",
+                "lastName": "Bryan"
+                "profilePicture": {
+                    "url": "http://res.cloudinary.com/dialogram/image/<URL>",
+                    "public_id": "profile_pictures/<ID>"
+                }
+            },
+            "email": "my-user@domain.com",
+            "registerDate": "2019-02-06T21:30:51.461Z",
+            "timestamp": 1549490327518
+        }
+    ],
+    "includes": [
+        {
+            "type": "session",
+            "id": "5be1e7425f019d0b44ed1ff3",
+            "token": "<User_Token>",
+            "deviceName": "Safari on AndroidOS OS",
+            "user": "<User ID>"
+        }
+    ]
 }
 ```
 
@@ -230,18 +253,32 @@ $.ajax(settings).done(function (response) {
 ```json
 {
     "data": [
-    {
-      "type": "user",
-      "id": "5be1e7415f019d0b44ed1ff2",
-      "nickName": "UserName",
-      "profile": {
-         "firstName": "Indiana",
-         "lastName": "Jones"
-       },
-      "email": "my-user@domain.com"
-    }
-   ],
-  "includes": []
+        {
+            "type": "user",
+            "id": "5be1e7415f019d0b44ed1ff2",
+            "nickName": "UserName",
+            "profile": {
+                "firstName": "Indiana",
+                "lastName": "Jones"
+                "profilePicture": {
+                    "url": "http://res.cloudinary.com/dialogram/image/<URL>",
+                    "public_id": "profile_pictures/<ID>"
+                }
+            },
+            "email": "my-user@domain.com",
+            "registerDate": "2019-02-06T21:30:51.461Z",
+            "timestamp": 1549490327518
+        }
+    ],
+    "includes": [
+        {
+            "type": "session",
+            "id": "5be1e7425f019d0b44ed1ff3",
+            "token": "<User_Token>",
+            "deviceName": "Safari on AndroidOS OS",
+            "user": "<User ID>"
+        }
+    ]
 }
 ```
 
@@ -264,6 +301,85 @@ This endpoint update all public information of users.
 
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
+</aside>
+
+### Update Profil Picture
+
+```shell
+curl --request POST \
+  --url http://api.dialogram.fr:8080/api/user/settings/profilePicture \
+  --header 'Content-Type: application/json' \
+  --header 'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc' \
+  --header 'cache-control: no-cache' \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  -F 'image=@/home/user/Images/<file_name>.jpg'
+```
+
+```javascript
+var form = new FormData();
+form.append("image", "/home/hazer/Images/<file_name>.jpg");
+
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/user/settings/profilePicture",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json",
+    "cache-control": "no-cache",
+    "Postman-Token": "46cb8c95-74e6-4435-9ad0-f20abeaece71"
+  },
+  "processData": false,
+  "contentType": false,
+  "mimeType": "multipart/form-data",
+  "data": form
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns JSON structured like this:
+
+```json
+{
+    "data": [
+        {
+            "type": "user",
+            "id": "5c5b520b0f780b589bec0334",
+            "nickName": "UserName",
+            "profile": {
+                "firstName": "John",
+                "lastName": "Bryan",
+                "profilePicture": {
+                    "url": "http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures_dev/daa3ryctayyqidxoodpc.jpg",
+                    "public_id": "profile_pictures_dev/daa3ryctayyqidxoodpc"
+                }
+            },
+            "email": "my-user@domain.com",
+            "registerDate": "2019-02-06T21:30:51.461Z",
+            "timestamp": 1549490327518
+        }
+    ],
+    "includes": []
+}
+```
+
+This endpoint upload a profil picture.
+
+#### HTTP Request
+
+`POST http://api.dialogram.fr:8080/api/user/settings/profilePicture`
+
+#### Query Parameters
+
+Key naming | Content
+---------- | -------
+picture (type: file) | Your picture
+
+<aside class="success">
+  Remember — a happy user is an authenticated user by token!
 </aside>
 
 ### Update password account
@@ -313,11 +429,25 @@ $.ajax(settings).done(function (response) {
             "profile": {
                 "firstName": "John",
                 "lastName": "Bryan"
+                "profilePicture": {
+                    "url": "http://res.cloudinary.com/dialogram/image/<URL>",
+                    "public_id": "profile_pictures/<ID>"
+                }
             },
-            "email": "my-user@domain.com"
+            "email": "my-user@domain.com",
+            "registerDate": "2019-02-06T21:30:51.461Z",
+            "timestamp": 1549490327518
         }
     ],
-    "includes": []
+    "includes": [
+        {
+            "type": "session",
+            "id": "5be1e7425f019d0b44ed1ff3",
+            "token": "<User_Token>",
+            "deviceName": "Safari on AndroidOS OS",
+            "user": "<User ID>"
+        }
+    ]
 }
 ```
 
@@ -383,11 +513,25 @@ $.ajax(settings).done(function (response) {
             "profile": {
                 "firstName": "John",
                 "lastName": "Bryan"
+                "profilePicture": {
+                    "url": "http://res.cloudinary.com/dialogram/image/<URL>",
+                    "public_id": "profile_pictures/<ID>"
+                }
             },
-            "email": "editMyUser@domain.com"
+            "email": "editMyUser@domain.com",
+            "registerDate": "2019-02-06T21:30:51.461Z",
+            "timestamp": 1549490327518
         }
     ],
-    "includes": []
+    "includes": [
+        {
+            "type": "session",
+            "id": "5be1e7425f019d0b44ed1ff3",
+            "token": "<User_Token>",
+            "deviceName": "Safari on AndroidOS OS",
+            "user": "<User ID>"
+        }
+    ]
 }
 ```
 
