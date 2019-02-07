@@ -221,7 +221,7 @@ Remember — a happy user is an authenticated user by token!
 
 ```shell
 curl -X GET \
-  http://api.dialogram.fr:8080/api/user/documents \
+  http://api.dialogram.fr:8080/api/user/document \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Postman-Token: 5127421b-d83a-4730-b9b8-7a20955dac1c' \
   -H 'cache-control: no-cache'
@@ -231,7 +231,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/user/documents",
+  "url": "http://api.dialogram.fr:8080/api/user/document",
   "method": "GET",
   "headers": {
     "Authorization": "Bearer <your_access_token>",
@@ -289,7 +289,7 @@ This endpoint get all the user documents
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr:8080/api/documents`
+`GET http://api.dialogram.fr:8080/api/user/document`
 
 #### Query Parameters
 
