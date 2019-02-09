@@ -87,8 +87,8 @@ $.ajax(settings).done(function (response) {
                 "firstName": "John",
                 "lastName": "Bryan"
                 "profilePicture": {
-                    "url": "http://res.cloudinary.com/dialogram/image/<URL>",
-                    "public_id": "profile_pictures/<ID>"
+                    "url": "https://ui-avatars.com/api/?name=John+Bryan",
+                    "public_id": "null"
                 }
             },
             "email": "my-user@domain.com",
@@ -174,8 +174,8 @@ $.ajax(settings).done(function (response) {
                 "firstName": "John",
                 "lastName": "Bryan"
                 "profilePicture": {
-                    "url": "http://res.cloudinary.com/dialogram/image/<URL>",
-                    "public_id": "profile_pictures/<ID>"
+                    "url": "https://ui-avatars.com/api/?name=John+Bryan",
+                    "public_id": "null"
                 }
             },
             "email": "my-user@domain.com",
@@ -261,8 +261,8 @@ $.ajax(settings).done(function (response) {
                 "firstName": "Indiana",
                 "lastName": "Jones"
                 "profilePicture": {
-                    "url": "http://res.cloudinary.com/dialogram/image/<URL>",
-                    "public_id": "profile_pictures/<ID>"
+                    "url": "https://ui-avatars.com/api/?name=John+Bryan",
+                    "public_id": "null"
                 }
             },
             "email": "my-user@domain.com",
@@ -353,7 +353,7 @@ $.ajax(settings).done(function (response) {
                 "firstName": "John",
                 "lastName": "Bryan",
                 "profilePicture": {
-                    "url": "http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures_dev/daa3ryctayyqidxoodpc.jpg",
+                    "url": "http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/<id>.jpg",
                     "public_id": "profile_pictures_dev/daa3ryctayyqidxoodpc"
                 }
             },
