@@ -297,6 +297,9 @@
                   <li>
                     <a href="#delete-document-by-id" class="toc-h2 toc-link" data-title="Delete Document by ID">Delete Document by ID</a>
                   </li>
+                  <li>
+                    <a href="#search-document" class="toc-h2 toc-link" data-title="Search document">Search document</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -410,8 +413,8 @@ curl -X POST <span class="se">\</span>
                 </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="w">
                 </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://res.cloudinary.com/dialogram/image/&lt;URL&gt;"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"profile_pictures/&lt;ID&gt;"</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui-avatars.com/api/?name=John+Bryan"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="p">,</span><span class="w">
@@ -484,8 +487,8 @@ curl -X POST <span class="se">\</span>
                 </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="w">
                 </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://res.cloudinary.com/dialogram/image/&lt;URL&gt;"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"profile_pictures/&lt;ID&gt;"</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui-avatars.com/api/?name=John+Bryan"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="p">,</span><span class="w">
@@ -556,8 +559,8 @@ Remember — a happy user is an authenticated user by token!
                 </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indiana"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jones"</span><span class="w">
                 </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://res.cloudinary.com/dialogram/image/&lt;URL&gt;"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"profile_pictures/&lt;ID&gt;"</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui-avatars.com/api/?name=John+Bryan"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="p">,</span><span class="w">
@@ -635,7 +638,7 @@ Remember — a happy user is an authenticated user by token!
                 </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures_dev/daa3ryctayyqidxoodpc.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/&lt;id&gt;.jpg"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"profile_pictures_dev/daa3ryctayyqidxoodpc"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">},</span><span class="w">
@@ -1417,6 +1420,19 @@ Remember — a happy user is an authenticated user by token!
 <h4 id='http-request-6'>HTTP Request</h4>
 <p><code>DELETE http://api.dialogram.fr:8080/api/document/:idDocument</code></p>
 <h4 id='query-parameters-6'>Query Parameters</h4>
+<p>NONE</p>
+<h2 id='search-document'>Search document</h2><pre class="highlight shell tab-shell"><code>
+</code></pre><pre class="highlight javascript tab-javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p>This endpoint retrieve all the documents where there is occurences of the search query.</p>
+<h4 id='http-request-7'>HTTP Request</h4>
+<p><code>DELETE http://api.dialogram.fr:8080/api/document/:idDocument</code></p>
+<h4 id='query-parameters-7'>Query Parameters</h4>
 <p>NONE</p>
 <h1 id='translations'>Translations</h1><h2 id='create-translation'>Create Translation</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://api.dialogram.fr:8080/api/document/:idDocument/translation <span class="se">\</span>
