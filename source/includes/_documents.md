@@ -428,3 +428,85 @@ This endpoint delete a document by ID.
 #### Query Parameters
 
 NONE
+
+## Search document
+
+```shell
+curl -X GET \
+  http://api.dialogram.fr:8080/api/document/search/health \
+  -H 'Authorization: Bearer <your_access_token>' \
+  -H 'Content-Type: application/json' \
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/document/search/health",
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer <your_access_token>",
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns a JSON structured like this:
+
+```json
+{
+    "data": [
+        {
+            "type": "documents",
+            "id": "idDoc1",
+            "name": "document1",
+            "link": "link_to_document",
+            "usageName": "1549878031571-document1.pdf",
+            "nbPage": 35,
+            "public": true,
+            "description": "je suis un test contenant la recherche health",
+            "status": -1,
+            "category": "entertainment",
+            "idTranslation": null,
+            "idOwner": "idUser1",
+            "creationDate": "2019-02-11T09:40:34.409Z",
+            "timestamp": 1549876559
+        },
+        {
+            "type": "documents",
+            "id": "idDoc2",
+            "name": "document2",
+            "link": "link_to_document",
+            "usageName": "1549878041525-document2.pdf",
+            "nbPage": 35,
+            "public": true,
+            "description": "moi aussi je suis un test",
+            "status": -1,
+            "category": "health",
+            "idTranslation": null,
+            "idOwner": "idUser2",
+            "creationDate": "2019-02-11T09:40:43.471Z",
+            "timestamp": 1549876559
+        }
+    ],
+    "includes": []
+}
+```
+
+This endpoint retrieve all the documents where there is occurences of the search query.
+Note that the search query will be applied to the name, the description and the category of the document.
+
+#### HTTP Request
+
+`GET http://api.dialogram.fr:8080/api/document/search/:to_find`
+
+#### Query Parameters
+
+``
+to_find: the string/character that will be search in all the documents in database.
+``
+

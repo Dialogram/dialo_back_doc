@@ -209,6 +209,104 @@ NONE
 Remember — a happy user is an authenticated user by token!
 </aside>
 
+## Search user(s)
+
+```shell
+curl -X GET \
+  http://api.dialogram.fr:8080/api/search/user/to_find \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YzYxM2Y1YmQ0YTMzYjc5ZWNiZjU1ZTMiLCJpYXQiOjE1NDk4NzcwODMsImV4cCI6MTU4MTQzNDY4M30.FW6yuM4x3-Oi7Nlxv_iRTE-pSwpIzgBC_Kuyf45sRY8' \
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/search/user/to_find",
+  "method": "GET",
+  "headers": {
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YzYxM2Y1YmQ0YTMzYjc5ZWNiZjU1ZTMiLCJpYXQiOjE1NDk4NzcwODMsImV4cCI6MTU4MTQzNDY4M30.FW6yuM4x3-Oi7Nlxv_iRTE-pSwpIzgBC_Kuyf45sRY8"
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns JSON structured like this:
+
+```json
+{
+    "data": [
+        {
+            "type": "user",
+            "id": "userID1",
+            "nickName": "to_find1",
+            "profile": {
+                "firstName": "John",
+                "lastName": "Bryan",
+                "profilePicture": {
+                    "url": "https://ui-avatars.com/api/?name=John+Bryan&background=AA0015&color=fff",
+                    "public_id": null
+                }
+            },
+            "email": "my-user1@domain.com",
+            "registerDate": "2019-02-10T08:49:34.263Z",
+            "timestamp": 1549788570
+        },
+        {
+            "type": "user",
+            "id": "userID2",
+            "nickName": "try_to_find_me",
+            "profile": {
+                "firstName": "John",
+                "lastName": "Bryan",
+                "profilePicture": {
+                    "url": "https://ui-avatars.com/api/?name=John+Bryan&background=D6E001&color=222",
+                    "public_id": null
+                }
+            },
+            "email": "my-user2@domain.com",
+            "registerDate": "2019-02-11T05:34:15.529Z",
+            "timestamp": 1549863210
+        },
+        {
+            "type": "user",
+            "id": "userID3",
+            "nickName": "not_hard_to_find",
+            "profile": {
+                "firstName": "John",
+                "lastName": "Bryan",
+                "profilePicture": {
+                    "url": "https://ui-avatars.com/api/?name=John+Bryan&background=D6E001&color=222",
+                    "public_id": null
+                }
+            },
+            "email": "my-user3@domain.com",
+            "registerDate": "2019-02-11T09:24:43.314Z",
+            "timestamp": 1549876559
+        }
+    ],
+    "includes": []
+}
+```
+
+This endpoint retrieves all users wherein the query parameter can be found using fuzzy search.
+
+#### HTTP Request
+
+`GET http://api.dialogram.fr:8080/apisearch/user/:to_find`
+
+#### Query Parameters
+
+``
+to_find: the string that will be search in all the users nickname in database.
+``
+
+<aside class="success">
+Remember — a happy user is an authenticated user by token!
+</aside>
+
 ## Settings 🗀
 
 ### Update public information
