@@ -510,7 +510,7 @@ curl -X POST <span class="se">\</span>
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all users.</p>
+<p>This endpoint retrieves a specific user.</p>
 <h4 id='http-request-2'>HTTP Request</h4>
 <p><code>GET http://api.dialogram.fr:8080/api/user/</code></p>
 <h4 id='query-parameters-2'>Query Parameters</h4>
@@ -595,7 +595,7 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint retrieves all users wherein the query parameter can be found using fuzzy search.</p>
 <h4 id='http-request-3'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr:8080/apisearch/user/:to_find</code></p>
+<p><code>GET http://api.dialogram.fr:8080/api/search/user/:to_find</code></p>
 <h4 id='query-parameters-3'>Query Parameters</h4>
 <p><code>
 to_find: the string that will be search in all the users nickname in database.
