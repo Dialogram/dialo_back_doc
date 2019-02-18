@@ -195,7 +195,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-This endpoint retrieves all users.
+This endpoint retrieves a specific user.
 
 #### HTTP Request
 
@@ -295,7 +295,7 @@ This endpoint retrieves all users wherein the query parameter can be found using
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr:8080/apisearch/user/:to_find`
+`GET http://api.dialogram.fr:8080/api/search/user/:to_find`
 
 #### Query Parameters
 
