@@ -348,6 +348,14 @@
               </ul>
           </li>
           <li>
+            <a href="#api-video" class="toc-h1 toc-link" data-title="API Video">API Video</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#api-video-auth" class="toc-h2 toc-link" data-title="API Video Auth">API Video Auth</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -2210,6 +2218,49 @@ Remember — a happy user is an authenticated user by token!
 <td>Use offset or page to skip a position</td>
 </tr>
 </tbody></table>
+<h1 id='api-video'>API Video</h1><h2 id='api-video-auth'>API Video Auth</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  http://api.dialogram.fr:8080/api/video/auth <span class="se">\ \</span>
+  -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/video/auth"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"0daefc40-fbce-4f9a-8af8-a1e4d3d89053"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"videosApi"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;ACESS_TOKEN&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expiresIn"</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint authenticate you to the video API</p>
+<h4 id='http-request'>HTTP Request</h4>
+<p><code>GET http://api.dialogram.fr:8080/api/video/auth</code></p>
+<h4 id='query-parameters'>Query Parameters</h4>
+<p>NONE</p>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section describes the most common error codes you may face while working with the Dialogram API. In a sense of normalization, we used the quite same error codes from routes to routes, despite this back work, you may face error codes that are not in the list. In this case, please refer to the standard http error codes according the RFC 2616.
