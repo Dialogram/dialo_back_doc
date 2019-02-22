@@ -18,6 +18,7 @@ includes:
   - translation
   - videos
   - explore
+  - apiVideo
   - errors
 
 search: true
