@@ -353,6 +353,9 @@
                     <a href="#create-translation" class="toc-h2 toc-link" data-title="Create Translation">Create Translation</a>
                   </li>
                   <li>
+                    <a href="#update-translation" class="toc-h2 toc-link" data-title="Update Translation">Update Translation</a>
+                  </li>
+                  <li>
                     <a href="#get-translation-by-id" class="toc-h2 toc-link" data-title="Get Translation by ID">Get Translation by ID</a>
                   </li>
                   <li>
@@ -403,7 +406,7 @@
         <ul class="toc-footer">
             <li><a href='http://www.dialogram.fr/'>Follow us on our website !</a></li>
             <li><a href='https://gitlab.com/Dialogram'>Contribute to the project !</a></li>
-            <li><a href='https://www.getpostman.com/collections/90a5c0baf4481d11a8f4'>Get the postman collection !</a></li>
+            <li><a href='https://www.getpostman.com/collections/6e0b0a2f11082442a416'>Get the postman collection !</a></li>
             <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -412,7 +415,7 @@
       <div class="content">
         <p>Welcome to the Dialogram API documentation! You can use our API to access API endpoints, which can be used to interacte with our server. You will find all the informations you need to build your app or module according to the respectives routes.</p>
 
-<p>We have language bindings with Curl and Javascript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>We have language bindings with Curl and Javascript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right. </p>
 <h1 id='user'>User</h1>
 <p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
 <h2 id='create-a-user'>Create a user</h2><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just copy and paste the following request after editing the needed body parameter.</span>
@@ -2132,6 +2135,72 @@ to_find: the string/character that will be search in all the documents in databa
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
 </aside>
+<h2 id='update-translation'>Update Translation</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
+  http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Postman-Token: ebeff399-a623-42a5-a917-0dbbcf01c189'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "translation":[
+        [
+            {"x":"999", "y":"999", "width":"555", "height":"555", "idVideo": "6dzed4545d922bd46b1724"},
+            {"x":"111", "y":"111", "width":"666", "height":"666", "idVideo": "6dzed4545d922bd46b1724"}
+        ]
+    ]
+}
+'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"dc9b3b70-4657-4d73-becd-8ab957e69e38"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\n    \"translation\": [\n        [\n            {\n                \"x\": \"999\",\n                \"y\": \"999\",\n                \"width\": \"555\",\n                \"height\": \"555\",\n                \"idVideo\": \"6dzed4545d922bd46b1724\"\n            },\n            {\n                \"x\": \"111\",\n                \"y\": \"111\",\n                \"width\": \"666\",\n                \"height\": \"666\",\n                \"idVideo\": \"6dzed4545d922bd46b1724\"\n            }\n        ]\n    ]\n}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"translations"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c2e68cba133a6173c81eb84"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"idDocument"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c2e684cce87402410164056"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"translation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="s2">"x"</span><span class="p">:</span><span class="s2">"999"</span><span class="p">,</span><span class="w"> </span><span class="s2">"y"</span><span class="p">:</span><span class="s2">"999"</span><span class="p">,</span><span class="w"> </span><span class="s2">"width"</span><span class="p">:</span><span class="s2">"555"</span><span class="p">,</span><span class="w"> </span><span class="s2">"height"</span><span class="p">:</span><span class="s2">"555"</span><span class="p">,</span><span class="w"> </span><span class="s2">"idVideo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6dzed4545d922bd46b1724"</span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="s2">"x"</span><span class="p">:</span><span class="s2">"111"</span><span class="p">,</span><span class="w"> </span><span class="s2">"y"</span><span class="p">:</span><span class="s2">"111"</span><span class="p">,</span><span class="w"> </span><span class="s2">"width"</span><span class="p">:</span><span class="s2">"666"</span><span class="p">,</span><span class="w"> </span><span class="s2">"height"</span><span class="p">:</span><span class="s2">"666"</span><span class="p">,</span><span class="w"> </span><span class="s2">"idVideo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6dzed4545d922bd46b1724"</span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint update the translation of the document.</p>
+<h4 id='http-request-2'>HTTP Request</h4>
+<p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation</code></p>
+<h4 id='query-parameters-2'>Query Parameters</h4>
+<p><code>
+{
+  &quot;translation&quot;: [
+    [
+      {&quot;x&quot;:&quot;999&quot;, &quot;y&quot;:&quot;999&quot;, &quot;width&quot;:&quot;555&quot;, &quot;height&quot;:&quot;555&quot;, &quot;idVideo&quot;: &quot;6dzed4545d922bd46b1724&quot;},
+      {&quot;x&quot;:&quot;111&quot;, &quot;y&quot;:&quot;111&quot;, &quot;width&quot;:&quot;666&quot;, &quot;height&quot;:&quot;666&quot;, &quot;idVideo&quot;: &quot;6dzed4545d922bd46b1724&quot;}
+    ]
+  ]
+}
+</code></p>
 <h2 id='get-translation-by-id'>Get Translation by ID</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
   http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
@@ -2181,10 +2250,10 @@ Remember — a happy user is an authenticated user by token!
     </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint get the translation of the document.</p>
-<h4 id='http-request-2'>HTTP Request</h4>
+<p>This endpoint get the translation of the document. </p>
+<h4 id='http-request-3'>HTTP Request</h4>
 <p><code>GET http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation</code></p>
-<h4 id='query-parameters-2'>Query Parameters</h4>
+<h4 id='query-parameters-3'>Query Parameters</h4>
 <p>NONE</p>
 <h2 id='delete-translation'>Delete Translation</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
   http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation <span class="se">\</span>
@@ -2220,7 +2289,7 @@ Remember — a happy user is an authenticated user by token!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint delete a translation.</p>
-<h4 id='http-request-3'>HTTP Request</h4>
+<h4 id='http-request-4'>HTTP Request</h4>
 <p><code>DELETE http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation</code></p>
 <h1 id='videos'>Videos</h1><h2 id='upload-a-video'>Upload A Video</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://api.dialogram.fr:8080/api/document/video <span class="se">\</span>
