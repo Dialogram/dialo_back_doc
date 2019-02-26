@@ -364,11 +364,16 @@ $.ajax(settings).done(function (response) {
             "email": "my-user@domain.com",
             "registerDate": "2019-02-06T21:30:51.461Z",
             "timestamp": 1549490327518,
-            "follows" : [
-              "<Indiana_jones ID>"
-            ],
-            "followers" : []
-        }
+            "features": {
+                "follows": [
+                    "<Indiana_jones ID>"
+                ],
+                "followers": [],
+                "documentsLiked": [],
+                "documentsCommented": [],
+                "documentsFavorite": []
+            }
+          }
     ],
     "includes": [
     ]
@@ -434,8 +439,13 @@ $.ajax(settings).done(function (response) {
             "email": "my-user@domain.com",
             "registerDate": "2019-02-06T21:30:51.461Z",
             "timestamp": 1549490327518,
-            "follows" : [],
-            "followers" : []
+            "features": {
+                "follows": [],
+                "followers": [],
+                "documentsLiked": [],
+                "documentsCommented": [],
+                "documentsFavorite": []
+            }
         }
     ],
     "includes": [

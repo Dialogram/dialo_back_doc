@@ -510,3 +510,138 @@ Note that the search query will be applied to the name, the description and the 
 to_find: the string/character that will be search in all the documents in database.
 ``
 
+## Likes 🗀
+
+### Likes a document
+```shell
+curl --request PUT \
+  --url http://api.dialogram.fr:8080/api/document/:idDocument/like \
+  --header 'Content-Type: application/json' \
+  --header 'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc' \
+  --header 'cache-control: no-cache' \
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/document/:idDocument/like",
+  "method": "PUT",
+  "headers": {
+    "Content-Type": "application/json",
+    "cache-control": "no-cache",
+    "Postman-Token": "46cb8c95-74e6-4435-9ad0-f20abeaece71"
+  },
+  "processData": false
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns JSON structured like this:
+
+```json
+{
+    "data": [
+        {
+            "type": "user",
+            "id": "5be1e7415f019d0b44ed1ff2",
+            "nickName": "UserName",
+            "profile": {
+                "firstName": "John",
+                "lastName": "Bryan"
+                "profilePicture": {
+                    "url": "https://ui-avatars.com/api/?name=John+Bryan",
+                    "public_id": "null"
+                }
+            },
+            "email": "my-user@domain.com",
+            "registerDate": "2019-02-06T21:30:51.461Z",
+            "timestamp": 1549490327518,
+            "features": {
+                "likes": [
+                    "<user ID>"
+                ],
+                "favorites": [],
+                "comments": []
+            }
+          }
+    ],
+    "includes": [
+    ]
+}
+```
+
+This endpoint like a document.
+
+#### HTTP Request
+
+`PUT http://api.dialogram.fr:8080/api/document/:idDocument/like`
+
+### Remove like on a document
+```shell
+curl --request PUT \
+  --url http://api.dialogram.fr:8080/api/document/:idDocument/unlike \
+  --header 'Content-Type: application/json' \
+  --header 'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc' \
+  --header 'cache-control: no-cache' \
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/document/:idDocument/unlike",
+  "method": "PUT",
+  "headers": {
+    "Content-Type": "application/json",
+    "cache-control": "no-cache",
+    "Postman-Token": "46cb8c95-74e6-4435-9ad0-f20abeaece71"
+  },
+  "processData": false
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns JSON structured like this:
+
+```json
+{
+    "data": [
+        {
+            "type": "user",
+            "id": "5be1e7415f019d0b44ed1ff2",
+            "nickName": "UserName",
+            "profile": {
+                "firstName": "John",
+                "lastName": "Bryan"
+                "profilePicture": {
+                    "url": "https://ui-avatars.com/api/?name=John+Bryan",
+                    "public_id": "null"
+                }
+            },
+            "email": "my-user@domain.com",
+            "registerDate": "2019-02-06T21:30:51.461Z",
+            "timestamp": 1549490327518,
+            "features": {
+                "likes": [],
+                "favorites": [],
+                "comments": []
+            }
+          }
+    ],
+    "includes": [
+    ]
+}
+```
+
+This endpoint remove the like of a document previously liked.
+
+#### HTTP Request
+
+`PUT http://api.dialogram.fr:8080/api/document/:idDocument/unlike`
