@@ -9,7 +9,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 toc_footers:
   - <a href='http://www.dialogram.fr/'>Follow us on our website !</a>
   - <a href='https://gitlab.com/Dialogram'>Contribute to the project !</a>
-  - <a href='https://www.getpostman.com/collections/90a5c0baf4481d11a8f4'>Get the postman collection !</a>
+  - <a href='https://www.getpostman.com/collections/6e0b0a2f11082442a416'>Get the postman collection !</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -26,7 +26,7 @@ search: true
 
 Welcome to the Dialogram API documentation! You can use our API to access API endpoints, which can be used to interacte with our server. You will find all the informations you need to build your app or module according to the respectives routes.
 
-We have language bindings with Curl and Javascript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+We have language bindings with Curl and Javascript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right. 
 
 # User
 

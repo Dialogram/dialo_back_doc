@@ -94,6 +94,84 @@ This endpoint create the translation of the document by indicating the field tha
 Remember — a happy user is an authenticated user by token!
 </aside>
 
+## Update Translation
+
+```shell
+curl -X PUT \
+  http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: ebeff399-a623-42a5-a917-0dbbcf01c189' \
+  -H 'cache-control: no-cache' \
+  -d '{
+	"translation":[
+		[
+			{"x":"999", "y":"999", "width":"555", "height":"555", "idVideo": "6dzed4545d922bd46b1724"},
+			{"x":"111", "y":"111", "width":"666", "height":"666", "idVideo": "6dzed4545d922bd46b1724"}
+		]
+	]
+}
+'
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation",
+  "method": "PUT",
+  "headers": {
+    "Content-Type": "application/json",
+    "cache-control": "no-cache",
+    "Postman-Token": "dc9b3b70-4657-4d73-becd-8ab957e69e38"
+  },
+  "processData": false,
+  "data": "{\n    \"translation\": [\n        [\n            {\n                \"x\": \"999\",\n                \"y\": \"999\",\n                \"width\": \"555\",\n                \"height\": \"555\",\n                \"idVideo\": \"6dzed4545d922bd46b1724\"\n            },\n            {\n                \"x\": \"111\",\n                \"y\": \"111\",\n                \"width\": \"666\",\n                \"height\": \"666\",\n                \"idVideo\": \"6dzed4545d922bd46b1724\"\n            }\n        ]\n    ]\n}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns a JSON structured like this:
+
+```json
+{
+    "data": [
+        {
+            "type": "translations",
+            "id": "5c2e68cba133a6173c81eb84",
+            "idDocument": "5c2e684cce87402410164056",
+            "translation": [
+              [
+          			{"x":"999", "y":"999", "width":"555", "height":"555", "idVideo": "6dzed4545d922bd46b1724"},
+          			{"x":"111", "y":"111", "width":"666", "height":"666", "idVideo": "6dzed4545d922bd46b1724"}
+          		]
+            ]
+        }
+    ],
+    "includes": []
+}
+```
+
+This endpoint update the translation of the document.
+
+#### HTTP Request
+
+`PUT http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation`
+
+#### Query Parameters
+``
+{
+  "translation": [
+    [
+      {"x":"999", "y":"999", "width":"555", "height":"555", "idVideo": "6dzed4545d922bd46b1724"},
+      {"x":"111", "y":"111", "width":"666", "height":"666", "idVideo": "6dzed4545d922bd46b1724"}
+    ]
+  ]
+}
+``
+
 ## Get Translation by ID
 
 ```shell
@@ -151,7 +229,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-This endpoint get the translation of the document.
+This endpoint get the translation of the document. 
 
 #### HTTP Request
 
