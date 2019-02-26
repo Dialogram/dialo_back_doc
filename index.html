@@ -314,6 +314,17 @@
                   <li>
                     <a href="#search-document" class="toc-h2 toc-link" data-title="Search document">Search document</a>
                   </li>
+                  <li>
+                    <a href="#likes" class="toc-h2 toc-link" data-title="Likes 🗀">Likes 🗀</a>
+                        <ul class="toc-list-h3">
+                            <li>
+                              <a href="#likes-a-document" class="toc-h3 toc-link" data-title="Likes a document">Likes a document</a>
+                            </li>
+                            <li>
+                              <a href="#remove-like-on-a-document" class="toc-h3 toc-link" data-title="Remove like on a document">Remove like on a document</a>
+                            </li>
+                        </ul>
+                  </li>
               </ul>
           </li>
           <li>
@@ -670,11 +681,16 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-06T21:30:51.461Z"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1549490327518</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"follows"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-              </span><span class="s2">"&lt;Indiana_jones ID&gt;"</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="s2">"followers"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+            </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"follows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"&lt;Indiana_jones ID&gt;"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsLiked"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsCommented"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsFavorite"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -730,8 +746,13 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-06T21:30:51.461Z"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1549490327518</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"follows"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-            </span><span class="s2">"followers"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"follows"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsLiked"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsCommented"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsFavorite"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1714,6 +1735,120 @@ Note that the search query will be applied to the name, the description and the 
 <p><code>
 to_find: the string/character that will be search in all the documents in database.
 </code></p>
+<h2 id='likes'>Likes 🗀</h2><h3 id='likes-a-document'>Likes a document</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
+  --url http://api.dialogram.fr:8080/api/document/:idDocument/like <span class="se">\</span>
+  --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc'</span> <span class="se">\</span>
+  --header <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document/:idDocument/like"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"46cb8c95-74e6-4435-9ad0-f20abeaece71"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5be1e7415f019d0b44ed1ff2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UserName"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="w">
+                </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui-avatars.com/api/?name=John+Bryan"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-06T21:30:51.461Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1549490327518</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"&lt;user ID&gt;"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"favorites"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint like a document.</p>
+<h4 id='http-request-8'>HTTP Request</h4>
+<p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/like</code></p>
+<h3 id='remove-like-on-a-document'>Remove like on a document</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
+  --url http://api.dialogram.fr:8080/api/document/:idDocument/unlike <span class="se">\</span>
+  --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc'</span> <span class="se">\</span>
+  --header <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document/:idDocument/unlike"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"46cb8c95-74e6-4435-9ad0-f20abeaece71"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5be1e7415f019d0b44ed1ff2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UserName"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="w">
+                </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui-avatars.com/api/?name=John+Bryan"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-06T21:30:51.461Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1549490327518</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"favorites"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint remove the like of a document previously liked.</p>
+<h4 id='http-request-9'>HTTP Request</h4>
+<p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/unlike</code></p>
 <h1 id='translations'>Translations</h1><h2 id='create-translation'>Create Translation</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://api.dialogram.fr:8080/api/document/:idDocument/translation <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
