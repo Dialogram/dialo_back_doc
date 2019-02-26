@@ -210,6 +210,7 @@ NONE
 Remember — a happy user is an authenticated user by token!
 </aside>
 
+
 ## Search user(s)
 
 ```shell
@@ -307,6 +308,147 @@ to_find: the string that will be search in all the users nickname in database.
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
 </aside>
+
+## Follow 🗀
+
+### Follow an user
+```shell
+curl --request PUT \
+  --url http://api.dialogram.fr:8080/api/user/follow \
+  --header 'Content-Type: application/json' \
+  --header 'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc' \
+  --header 'cache-control: no-cache' \
+  --data '
+  {
+  	"nickName": "Indiana_jones"
+  } '
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/user/follow",
+  "method": "PUT",
+  "headers": {
+    "Content-Type": "application/json",
+    "cache-control": "no-cache",
+    "Postman-Token": "46cb8c95-74e6-4435-9ad0-f20abeaece71"
+  },
+  "processData": false,
+  "data": "{\n\t\"nickName\": \"Indiana_jones\"\n}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns JSON structured like this:
+
+```json
+{
+    "data": [
+        {
+            "type": "user",
+            "id": "5be1e7415f019d0b44ed1ff2",
+            "nickName": "UserName",
+            "profile": {
+                "firstName": "John",
+                "lastName": "Bryan"
+                "profilePicture": {
+                    "url": "https://ui-avatars.com/api/?name=John+Bryan",
+                    "public_id": "null"
+                }
+            },
+            "email": "my-user@domain.com",
+            "registerDate": "2019-02-06T21:30:51.461Z",
+            "timestamp": 1549490327518,
+            "follows" : [
+              "<Indiana_jones ID>"
+            ],
+            "followers" : []
+        }
+    ],
+    "includes": [
+    ]
+}
+```
+
+This endpoint follow an user.
+
+#### HTTP Request
+
+`PUT http://api.dialogram.fr:8080/api/user/follow`
+
+### Unfollow an user
+```shell
+curl --request PUT \
+  --url http://api.dialogram.fr:8080/api/user/unfollow \
+  --header 'Content-Type: application/json' \
+  --header 'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc' \
+  --header 'cache-control: no-cache' \
+  --data '
+  {
+  	"nickName": "Indiana_jones"
+  } '
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/user/unfollow",
+  "method": "PUT",
+  "headers": {
+    "Content-Type": "application/json",
+    "cache-control": "no-cache",
+    "Postman-Token": "46cb8c95-74e6-4435-9ad0-f20abeaece71"
+  },
+  "processData": false,
+  "data": "{\n\t\"nickName\": \"Indiana_jones\"\n}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns JSON structured like this:
+
+```json
+{
+    "data": [
+        {
+            "type": "user",
+            "id": "5be1e7415f019d0b44ed1ff2",
+            "nickName": "UserName",
+            "profile": {
+                "firstName": "John",
+                "lastName": "Bryan"
+                "profilePicture": {
+                    "url": "https://ui-avatars.com/api/?name=John+Bryan",
+                    "public_id": "null"
+                }
+            },
+            "email": "my-user@domain.com",
+            "registerDate": "2019-02-06T21:30:51.461Z",
+            "timestamp": 1549490327518,
+            "follows" : [],
+            "followers" : []
+        }
+    ],
+    "includes": [
+    ]
+}
+```
+
+This endpoint follow an user.
+
+#### HTTP Request
+
+`PUT http://api.dialogram.fr:8080/api/user/unfollow`
+
 
 ## Settings 🗀
 
