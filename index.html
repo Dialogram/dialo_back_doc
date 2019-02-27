@@ -2751,7 +2751,19 @@ Remember — a happy user is an authenticated user by token!
 <td>offset</td>
 <td>Use offset or page to skip a position</td>
 </tr>
+<tr>
+<td>field</td>
+<td>Use a document field</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>Use a field and a sort system (&#39;asc&#39; or &#39;desc&#39;)</td>
+</tr>
 </tbody></table>
+
+<aside class="success">
+Exemple of request : http://api.dialogram.fr:8080/api/search/?limit=5&page=2&category=health&sort=name%2Casc
+</aside>
 <h1 id='api-video'>API Video</h1><h2 id='api-video-auth'>API Video Auth</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
   http://api.dialogram.fr:8080/api/video/auth <span class="se">\ \</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
