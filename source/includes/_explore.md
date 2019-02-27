@@ -89,3 +89,9 @@ Key naming | Content
 limit | The limit of documents per page
 page | The page number
 offset | Use offset or page to skip a position
+category | Use a document category
+sort | Use a field and a sort system ('asc' or 'desc')
+
+<aside class="success">
+Exemple of request : http://api.dialogram.fr:8080/api/search/?limit=5&page=2&category=health&sort=name%2Casc
+</aside>
