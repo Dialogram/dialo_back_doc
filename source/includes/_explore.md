@@ -89,7 +89,7 @@ Key naming | Content
 limit | The limit of documents per page
 page | The page number
 offset | Use offset or page to skip a position
-category | Use a document category
+field | Use a document field
 sort | Use a field and a sort system ('asc' or 'desc')
 
 <aside class="success">
