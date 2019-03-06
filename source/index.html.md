@@ -627,7 +627,7 @@ This endpoint upload a profil picture.
 
 Key naming | Content
 ---------- | -------
-picture (type: file) | Your picture
+image (type: file) | Your picture
 
 <aside class="success">
   Remember — a happy user is an authenticated user by token!
