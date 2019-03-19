@@ -297,9 +297,6 @@
                     <a href="#upload-pdf-document" class="toc-h2 toc-link" data-title="Upload PDF document">Upload PDF document</a>
                   </li>
                   <li>
-                    <a href="#get-document-by-category" class="toc-h2 toc-link" data-title="Get document by category">Get document by category</a>
-                  </li>
-                  <li>
                     <a href="#get-pdf-document" class="toc-h2 toc-link" data-title="Get PDF document">Get PDF document</a>
                   </li>
                   <li>
@@ -310,9 +307,6 @@
                   </li>
                   <li>
                     <a href="#delete-document-by-id" class="toc-h2 toc-link" data-title="Delete Document by ID">Delete Document by ID</a>
-                  </li>
-                  <li>
-                    <a href="#search-document" class="toc-h2 toc-link" data-title="Search document">Search document</a>
                   </li>
                   <li>
                     <a href="#likes" class="toc-h2 toc-link" data-title="Likes 🗀">Likes 🗀</a>
@@ -343,6 +337,23 @@
                               <a href="#comment-a-document" class="toc-h3 toc-link" data-title="Comment a document">Comment a document</a>
                             </li>
                         </ul>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#permissions" class="toc-h1 toc-link" data-title="Permissions">Permissions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#add-edit-permission" class="toc-h2 toc-link" data-title="Add edit permission">Add edit permission</a>
+                  </li>
+                  <li>
+                    <a href="#add-deletion-permission" class="toc-h2 toc-link" data-title="Add deletion permission">Add deletion permission</a>
+                  </li>
+                  <li>
+                    <a href="#remove-edit-permission" class="toc-h2 toc-link" data-title="Remove edit permission">Remove edit permission</a>
+                  </li>
+                  <li>
+                    <a href="#remove-deletion-permission" class="toc-h2 toc-link" data-title="Remove deletion permission">Remove deletion permission</a>
                   </li>
               </ul>
           </li>
@@ -406,7 +417,7 @@
         <ul class="toc-footer">
             <li><a href='http://www.dialogram.fr/'>Follow us on our website !</a></li>
             <li><a href='https://gitlab.com/Dialogram'>Contribute to the project !</a></li>
-            <li><a href='https://www.getpostman.com/collections/6e0b0a2f11082442a416'>Get the postman collection !</a></li>
+            <li><a href='https://www.getpostman.com/collections/06741fce9874bbce4f72'>Get the postman collection !</a></li>
             <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -1414,58 +1425,6 @@ Note that you need to create a user before being able to create its session.
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
 </aside>
-<h2 id='get-document-by-category'>Get document by category</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr:8080/api/document/category/:category <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document/catergory/:category"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
-  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>The above request returns a JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;document_id&gt;"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api.dialogram.fr:8080/medias/&lt;timestamp&gt;-&lt;file_name&gt;.pdf?accessToken=&lt;your_access_token&gt;"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;timestamp&gt;-&lt;file_name&gt;.pdf"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My document description"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"entertainment"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-30T19:31:06.424Z"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint get a previously created PDF document from the remote server. You only need to be authenticated and to specify the category on the URL parameter.</p>
-<h4 id='http-request-2'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr:8080/api/document/category/:category</code></p>
-<h4 id='query-parameters-2'>Query Parameters</h4>
-<p>NONE</p>
-<h4 id='categories'>Categories</h4>
-<p>-Administrative
--Business
--Entertainment
--Finance
--Health</p>
 <h2 id='get-pdf-document'>Get PDF document</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
   http://api.dialogram.fr:8080/api/document/:idDocument <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
@@ -1508,9 +1467,9 @@ Remember — a happy user is an authenticated user by token!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint get a previously created PDF document from the remote server. You only need to be authenticated with the user that uploads the document and the document id.</p>
-<h4 id='http-request-3'>HTTP Request</h4>
+<h4 id='http-request-2'>HTTP Request</h4>
 <p><code>GET http://api.dialogram.fr:8080/api/document/:idDocument</code></p>
-<h4 id='query-parameters-3'>Query Parameters</h4>
+<h4 id='query-parameters-2'>Query Parameters</h4>
 <p>NONE</p>
 
 <aside class="success">
@@ -1577,9 +1536,9 @@ Remember — a happy user is an authenticated user by token!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint get all the user documents</p>
-<h4 id='http-request-4'>HTTP Request</h4>
+<h4 id='http-request-3'>HTTP Request</h4>
 <p><code>GET http://api.dialogram.fr:8080/api/user/document</code></p>
-<h4 id='query-parameters-4'>Query Parameters</h4>
+<h4 id='query-parameters-3'>Query Parameters</h4>
 <p>NONE</p>
 
 <aside class="success">
@@ -1640,9 +1599,9 @@ Remember — a happy user is an authenticated user by token!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint update the data file. You only need to be authenticated with the user that uploads the document and the document id. A new field &quot;editDate&quot; will be set with the date of edit.</p>
-<h4 id='http-request-5'>HTTP Request</h4>
+<h4 id='http-request-4'>HTTP Request</h4>
 <p><code>PUT http://api.dialogram.fr:8080/api/document/update/:id</code></p>
-<h4 id='query-parameters-5'>Query Parameters</h4>
+<h4 id='query-parameters-4'>Query Parameters</h4>
 <p><code>
 {
   &quot;name&quot; : &quot;newName&quot;,
@@ -1685,78 +1644,10 @@ Remember — a happy user is an authenticated user by token!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint delete a document by ID.</p>
-<h4 id='http-request-6'>HTTP Request</h4>
+<h4 id='http-request-5'>HTTP Request</h4>
 <p><code>DELETE http://api.dialogram.fr:8080/api/document/:idDocument</code></p>
-<h4 id='query-parameters-6'>Query Parameters</h4>
+<h4 id='query-parameters-5'>Query Parameters</h4>
 <p>NONE</p>
-<h2 id='search-document'>Search document</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr:8080/api/document/search/health <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document/search/health"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
-  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>The above request returns a JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"idDoc1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"link_to_document"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1549878031571-document1.pdf"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"je suis un test contenant la recherche health"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"entertainment"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"idUser1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-11T09:40:34.409Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1549876559</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"idDoc2"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document2"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"link_to_document"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1549878041525-document2.pdf"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"moi aussi je suis un test"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"health"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"idUser2"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-11T09:40:43.471Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1549876559</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieve all the documents where there is occurences of the search query.
-Note that the search query will be applied to the name, the description and the category of the document.</p>
-<h4 id='http-request-7'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr:8080/api/document/search/:to_find</code></p>
-<h4 id='query-parameters-7'>Query Parameters</h4>
-<p><code>
-to_find: the string/character that will be search in all the documents in database.
-</code></p>
 <h2 id='likes'>Likes 🗀</h2><h3 id='likes-a-document'>Likes a document</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
   --url http://api.dialogram.fr:8080/api/document/:idDocument/like <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -1813,7 +1704,7 @@ to_find: the string/character that will be search in all the documents in databa
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint like a document.</p>
-<h4 id='http-request-8'>HTTP Request</h4>
+<h4 id='http-request-6'>HTTP Request</h4>
 <p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/like</code></p>
 <h3 id='remove-like-on-a-document'>Remove like on a document</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
   --url http://api.dialogram.fr:8080/api/document/:idDocument/unlike <span class="se">\</span>
@@ -1869,7 +1760,7 @@ to_find: the string/character that will be search in all the documents in databa
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint remove the like of a document previously liked.</p>
-<h4 id='http-request-9'>HTTP Request</h4>
+<h4 id='http-request-7'>HTTP Request</h4>
 <p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/unlike</code></p>
 <h2 id='favorite'>Favorite 🗀</h2><h3 id='favorite-a-document'>Favorite a document</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
   --url http://api.dialogram.fr:8080/api/document/:idDocument/favorite <span class="se">\</span>
@@ -1927,7 +1818,7 @@ to_find: the string/character that will be search in all the documents in databa
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint favorite a document.</p>
-<h4 id='http-request-10'>HTTP Request</h4>
+<h4 id='http-request-8'>HTTP Request</h4>
 <p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/favorite</code></p>
 <h3 id='remove-favorite-on-a-document'>Remove favorite on a document</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
   --url http://api.dialogram.fr:8080/api/document/:idDocument/unfavorite <span class="se">\</span>
@@ -1983,7 +1874,7 @@ to_find: the string/character that will be search in all the documents in databa
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint remove the favorite of a document.</p>
-<h4 id='http-request-11'>HTTP Request</h4>
+<h4 id='http-request-9'>HTTP Request</h4>
 <p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/unfavorite</code></p>
 <h2 id='comment'>Comment 🗀</h2><h3 id='comment-a-document'>Comment a document</h3><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
   http://api.dialogram.fr:8080/api/document/5c7514695564472c282e6396/comment <span class="se">\</span>
@@ -2051,8 +1942,176 @@ to_find: the string/character that will be search in all the documents in databa
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint comment a document.</p>
-<h4 id='http-request-12'>HTTP Request</h4>
+<h4 id='http-request-10'>HTTP Request</h4>
 <p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/comment</code></p>
+<h1 id='permissions'>Permissions</h1><h2 id='add-edit-permission'>Add edit permission</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
+  http://api.dialogram.fr:8085/api/document/:idDocument/waccess <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer &lt;user token&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "user": [
+        "userId1",
+        "userId2"
+        ]
+    }'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8085/api/document/:idDocument/waccess"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;user_token&gt;"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\n\t\"user\": [\n\t\t\"userId\"\n\t\t]\n}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint add the permission to a user or a list of user to edit the data of a specified document.</p>
+<h4 id='http-request'>HTTP Request</h4>
+<p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/waccess</code></p>
+<h4 id='query-parameters'>Query Parameters</h4>
+<p><code>
+idDocument: The id of the target document.
+</code></p>
+<h2 id='add-deletion-permission'>Add deletion permission</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
+  http://api.dialogram.fr:8085/api/document/:idDocument/daccess <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer &lt;user token&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "user": [
+        "userId1",
+        "userId2"
+        ]
+    }'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8085/api/document/:idDocument/daccess"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;user_token&gt;"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\n\t\"user\": [\n\t\t\"userId\"\n\t\t]\n}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint add the permission to a user or a list of user to delete the data of a specified document.</p>
+<h4 id='http-request-2'>HTTP Request</h4>
+<p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/daccess</code></p>
+<h4 id='query-parameters-2'>Query Parameters</h4>
+<p><code>
+idDocument: The id of the target document.
+</code></p>
+<h2 id='remove-edit-permission'>Remove edit permission</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
+  http://api.dialogram.fr:8085/api/document/:idDocument/waccess <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer &lt;user token&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "user": [
+        "userId1",
+        "userId2"
+        ]
+    }'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8085/api/document/:idDocument/waccess"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;user_token&gt;"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\n\t\"user\": [\n\t\t\"userId\"\n\t\t]\n}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint add the permission to a user or a list of user to remove the edit permission of other user(s) toward the data of a specified document.</p>
+<h4 id='http-request-3'>HTTP Request</h4>
+<p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/waccess</code></p>
+<h4 id='query-parameters-3'>Query Parameters</h4>
+<p><code>
+idDocument: The id of the target document.
+</code></p>
+<h2 id='remove-deletion-permission'>Remove deletion permission</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
+  http://api.dialogram.fr:8085/api/document/:idDocument/daccess <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer &lt;user token&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "user": [
+        "userId1",
+        "userId2"
+        ]
+    }'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8085/api/document/:idDocument/daccess"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;user_token&gt;"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\n\t\"user\": [\n\t\t\"userId\"\n\t\t]\n}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint add the permission to a user or a list of user to remove the deletion permission of other user(s) toward the data of a specified document.</p>
+<h4 id='http-request-4'>HTTP Request</h4>
+<p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/daccess</code></p>
+<h4 id='query-parameters-4'>Query Parameters</h4>
+<p><code>
+idDocument: The id of the target document.
+</code></p>
 <h1 id='translations'>Translations</h1><h2 id='create-translation'>Create Translation</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://api.dialogram.fr:8080/api/document/:idDocument/translation <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
