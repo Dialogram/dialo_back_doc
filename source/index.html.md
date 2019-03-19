@@ -9,12 +9,13 @@ language_tabs: # must be one of https://git.io/vQNgJ
 toc_footers:
   - <a href='http://www.dialogram.fr/'>Follow us on our website !</a>
   - <a href='https://gitlab.com/Dialogram'>Contribute to the project !</a>
-  - <a href='https://www.getpostman.com/collections/6e0b0a2f11082442a416'>Get the postman collection !</a>
+  - <a href='https://www.getpostman.com/collections/06741fce9874bbce4f72'>Get the postman collection !</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
   - sessions
   - documents
+  - permissions
   - translation
   - videos
   - explore
