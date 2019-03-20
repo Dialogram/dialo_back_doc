@@ -1874,14 +1874,14 @@ Remember — a happy user is an authenticated user by token!
 Remember — a happy user is an authenticated user by token!
 </aside>
 <h2 id='get-user-documents'>Get User Documents</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr:8080/api/user/document <span class="se">\</span>
+  http://api.dialogram.fr:8080/api/user/documents <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: 5127421b-d83a-4730-b9b8-7a20955dac1c'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/user/document"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/user/documents"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
@@ -1935,7 +1935,7 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint get all the user documents</p>
 <h4 id='http-request-3'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr:8080/api/user/document</code></p>
+<p><code>GET http://api.dialogram.fr:8080/api/user/documents</code></p>
 <h4 id='query-parameters-3'>Query Parameters</h4>
 <p>NONE</p>
 
