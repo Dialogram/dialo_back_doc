@@ -1,10 +1,10 @@
-# Videos
+# Translation Videos
 
-## Upload A Video
+## Upload A Translation Video
 
 ```shell
 curl -X POST \
-  http://api.dialogram.fr:8080/api/video \
+  http://api.dialogram.fr:8080/api/translationVideo \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0' \
@@ -13,7 +13,6 @@ curl -X POST \
 	"title" : "Detroit records talkshow",
 	"description" : "Mike Banks, the creator of Underground Resistance tell the story of the sound of detroit",
 	"public" : true,
-  "category" : "entertainment"
 	"publishedAt" : "2018-02-02",
 	"tags" : ["detroit", "ur", "records"],
 	"metadata" : ["one", "two", "three"],
@@ -34,7 +33,7 @@ curl -X POST \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/video",
+  "url": "http://api.dialogram.fr:8080/api/translationVideo",
   "method": "POST",
   "headers": {
     "Content-Type": "application/json",
@@ -43,7 +42,7 @@ var settings = {
     "Postman-Token": "0daefc40-fbce-4f9a-8af8-a1e4d3d89053"
   },
   "processData": false,
-  "data": "{\n\t\"title\" : \"Detroit records talkshow\",\n\t\"description\" : \"Mike Banks, the creator of Underground Resistance tell the story of the sound of detroit\",\n\t\"public\" : true,\n\t\"category\" : \"entertainment\",\n\t\"publishedAt\" : \"2018-02-02\",\n\t\"tags\" : [\"detroit\", \"ur\", \"records\"],\n\t\"metadata\" : [\"one\", \"two\", \"three\"],\n\t\"source\": {\n\t\t\t\"type\" : \"upload\",\n\t\t\t\"uri\" : \"/videos/v2398v320EUioezj21\"\n\t},\n\t\"assets\": {\n\t\t\t\"iframe\" : \"<iframe src=\\\"https://embed.api.video/vod/dzio19328912ide\\\">\",\n\t\t\t\"player\" : \"https://embed.api.video/vod/vi23uize3892\",\n\t\t\t\"hls\": \"https://cdn.api.video/vod/ieozdjzi093209\",\n\t\t\t\"thumbnail\" : \"https://cdn.api.video/vod/v239832923\"\n\t}\n}"
+  "data": "{\n\t\"title\" : \"Detroit records talkshow\",\n\t\"description\" : \"Mike Banks, the creator of Underground Resistance tell the story of the sound of detroit\",\n\t\"public\" : true,\n\t\"publishedAt\" : \"2018-02-02\",\n\t\"tags\" : [\"detroit\", \"ur\", \"records\"],\n\t\"metadata\" : [\"one\", \"two\", \"three\"],\n\t\"source\": {\n\t\t\t\"type\" : \"upload\",\n\t\t\t\"uri\" : \"/videos/v2398v320EUioezj21\"\n\t},\n\t\"assets\": {\n\t\t\t\"iframe\" : \"<iframe src=\\\"https://embed.api.video/vod/dzio19328912ide\\\">\",\n\t\t\t\"player\" : \"https://embed.api.video/vod/vi23uize3892\",\n\t\t\t\"hls\": \"https://cdn.api.video/vod/ieozdjzi093209\",\n\t\t\t\"thumbnail\" : \"https://cdn.api.video/vod/v239832923\"\n\t}\n}"
 }
 
 $.ajax(settings).done(function (response) {
@@ -57,13 +56,12 @@ $.ajax(settings).done(function (response) {
 {
     "data": [
         {
-            "type": "videos",
+            "type": "translation_videos",
             "id": "5c26a818ce633f35dce3b793",
             "idOwner": "6c26a965ce632935dce3b785",
             "title": "Detroit records talkshow",
             "description": "Mike Banks, the creator of Underground Resistance tell the story of the sound of detroit",
             "public": true,
-            "category" : "entertainment",
             "publishedAt": "2018-02-02",
             "tags": [
                 "detroit",
@@ -91,11 +89,11 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-This endpoint upload a video.
+This endpoint upload a video translation for the document or video to be translated.
 
 #### HTTP Request
 
-`POST http://api.dialogram.fr:8080/api/video`
+`POST http://api.dialogram.fr:8080/api/translationVideo`
 
 #### Query Parameters
 ``
@@ -103,7 +101,6 @@ This endpoint upload a video.
 	"title" : "Detroit records talkshow",
 	"description" : "Mike Banks, the creator of Underground Resistance tell the story of the sound of detroit",
 	"public" : true,
-  "category" : "entertainment",
 	"publishedAt" : "2018-02-02",
 	"tags" : ["detroit", "ur", "records"],
 	"metadata" : ["one", "two", "three"],
@@ -120,11 +117,11 @@ This endpoint upload a video.
 }
 ``
 
-## Get Video
+## Get Translation Video
 
 ```shell
 curl -X GET \
-  http://api.dialogram.fr:8080/api/video/:idVideo \
+  http://api.dialogram.fr:8080/api/translationVideo/:idVideo \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Postman-Token: f2472e62-d64f-496e-8190-a115225d1e94' \
   -H 'cache-control: no-cache'
@@ -134,7 +131,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/video/:idVideo",
+  "url": "http://api.dialogram.fr:8080/api/translationVideo/:idVideo",
   "method": "GET",
   "headers": {
     "Authorization": "Bearer <your_access_token>",
@@ -154,13 +151,12 @@ $.ajax(settings).done(function (response) {
 {
     "data": [
         {
-            "type": "videos",
+            "type": "translation_videos",
             "id": "5c26a818ce633f35dce3b793",
             "idOwner": "6c26a965ce632935dce3b785",
             "title": "Detroit records talkshow",
             "description": "Mike Banks, the creator of Underground Resistance tell the story of the sound of detroit",
             "public": true,
-            "category" : "entertainment",
             "publishedAt": "2018-02-02",
             "tags": [
                 "detroit",
@@ -188,21 +184,21 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-This endpoint get the video by ID.
+This endpoint get the translation video by ID.
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr:8080/api/video/:idVideo`
+`GET http://api.dialogram.fr:8080/api/translationVideo/:idVideo`
 
 #### Query Parameters
 
 NONE
 
-## Get User Videos
+## Get User Translation Videos
 
 ```shell
 curl -X GET \
-  http://api.dialogram.fr:8080/api/user/video \
+  http://api.dialogram.fr:8080/api/user/videos \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'cache-control: no-cache'
 ```
@@ -211,7 +207,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/user/video",
+  "url": "http://api.dialogram.fr:8080/api/user/videos",
   "method": "GET",
   "headers": {
     "Authorization": "Bearer <your_access_token>",
@@ -231,13 +227,12 @@ $.ajax(settings).done(function (response) {
 {
     "data": [
         {
-            "type": "videos",
+            "type": "translation_videos",
             "id": "5c26a818ce633f35dce3b793",
             "idOwner": "6c26a965ce632935dce3b785",
             "title": "Video number one",
             "description": "Description of video number one",
             "public": true,
-            "category": "entertainment",
             "publishedAt": "2018-09-10",
             "tags": [
                 "one"
@@ -257,7 +252,7 @@ $.ajax(settings).done(function (response) {
             }
         },
         {
-            "type": "videos",
+            "type": "translation_videos",
             "id": "2c26a818ce633f35dce66b6",
             "idOwner": "6c26a965ce632935dce3b785",
             "title": "Video number two",
@@ -282,26 +277,32 @@ $.ajax(settings).done(function (response) {
             }
         }
     ],
-    "includes": []
+    "includes": [
+        {
+            "type": "pagination",
+            "total": 2,
+            "limit": 2
+        }
+    ]
 }
 ```
 
-This endpoint get all the user videos.
+This endpoint get all the user translation videos.
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr:8080/api/user/video`
+`GET http://api.dialogram.fr:8080/api/user/translationVideos`
 
 #### Query Parameters
 
 NONE
 
 
-## Update Video
+## Update Translation Video
 
 ```shell
 curl -X PUT \
-  http://api.dialogram.fr:8080/api/video/:idVideo \
+  http://api.dialogram.fr:8080/api/translationVideo/:idVideo \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: 5927c68a-c72f-4da5-a1ca-49de4aa6d072' \
@@ -310,7 +311,6 @@ curl -X PUT \
 	"title" : "Chicago records talkshow",
 	"description" : "Marshall Jefferson, the creator of House music tell the story of the sound of chicago",
 	"public" : true,
-  "category": "entertainment",
 	"tags" : ["chicago", "jack youor body", "records"],
 	"metadata" : ["uno", "dos", "tres"]
 }'
@@ -320,7 +320,7 @@ curl -X PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/video/:idVideo",
+  "url": "http://api.dialogram.fr:8080/api/translationVideo/:idVideo",
   "method": "PUT",
   "headers": {
     "Content-Type": "application/json",
@@ -329,7 +329,7 @@ var settings = {
     "Postman-Token": "ed9cdbcf-4320-4f60-9a61-e3ca316e941f"
   },
   "processData": false,
-  "data": "{\n\t\"title\" : \"Chicago records talkshow\",\n\t\"description\" : \"Marshall Jefferson, the creator of House music tell the story of the sound of chicago\",\n\t\"public\" : true,\n\t\"category\" : \"entertainment\",\n\t\"tags\" : [\"chicago\", \"jack youor body\", \"records\"],\n\t\"metadata\" : [\"uno\", \"dos\", \"tres\"]\n}"
+  "data": "{\n\t\"title\" : \"Chicago records talkshow\",\n\t\"description\" : \"Marshall Jefferson, the creator of House music tell the story of the sound of chicago\",\n\t\"public\" : true,\n\t\"tags\" : [\"chicago\", \"jack youor body\", \"records\"],\n\t\"metadata\" : [\"uno\", \"dos\", \"tres\"]\n}"
 }
 
 $.ajax(settings).done(function (response) {
@@ -343,13 +343,12 @@ $.ajax(settings).done(function (response) {
 {
     "data": [
         {
-            "type": "videos",
+            "type": "translation_videos",
             "id": "5c26a0f7ec67c433405a506e",
             "idOwner": "6c26a965ce632935dce3b785",
             "title": "Chicago records talkshow",
             "description": "Marshall Jefferson, the creator of House music tell the story of the sound of chicago",
             "public": true,
-            "category": "entertainment"
             "publishedAt": "2018-02-02",
             "tags": [
                 "chicago",
@@ -377,7 +376,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-This endpoint update the video data specified by ID.
+This endpoint update the translation video data specified by ID.
 
 #### HTTP Request
 
@@ -389,7 +388,6 @@ This endpoint update the video data specified by ID.
 	"title" : "Chicago records talkshow",
 	"description" : "Marshall Jefferson, the creator of House music tell the story of the sound of chicago",
 	"public" : true,
-  "category" : "entertainment",
 	"tags" : ["chicago", "jack youor body", "records"],
 	"metadata" : ["uno", "dos", "tres"]
 }
@@ -432,11 +430,11 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-This endpoint delete a video by ID.
+This endpoint delete a translation video by ID.
 
 #### HTTP Request
 
-`DELETE http://api.dialogram.fr:8080/api/video/:idVideo`
+`DELETE http://api.dialogram.fr:8080/api/translationVideo/:idVideo`
 
 #### Query Parameters
 
