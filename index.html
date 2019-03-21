@@ -3228,7 +3228,7 @@ Remember — a happy user is an authenticated user by token!
 Exemple of request : http://api.dialogram.fr:8080/api/search/?limit=5&page=2&category=health&sort=name%2Casc
 </aside>
 <h1 id='api-video'>API Video</h1><h2 id='api-video-auth'>API Video Auth</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr:8080/api/video/auth <span class="se">\ \</span>
+  http://api.dialogram.fr:8080/api/apiVideo/auth <span class="se">\ \</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0'</span> <span class="se">\</span>
@@ -3236,7 +3236,7 @@ Exemple of request : http://api.dialogram.fr:8080/api/search/?limit=5&page=2&cat
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/video/auth"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/apiVideo/auth"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -3267,7 +3267,7 @@ Exemple of request : http://api.dialogram.fr:8080/api/search/?limit=5&page=2&cat
 </span></code></pre>
 <p>This endpoint authenticate you to the video API</p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr:8080/api/video/auth</code></p>
+<p><code>GET http://api.dialogram.fr:8080/api/apiVideo/auth</code></p>
 <h4 id='query-parameters'>Query Parameters</h4>
 <p>NONE</p>
 <h1 id='errors'>Errors</h1>
