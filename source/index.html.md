@@ -21,6 +21,7 @@ includes:
   - translationVideo
   - explore
   - apiVideo
+  - tickets
   - errors
 
 search: true
