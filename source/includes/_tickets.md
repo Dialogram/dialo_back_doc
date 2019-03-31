@@ -130,7 +130,7 @@ This endpoint get a ticket by ID.
 
 #### HTTP Request
 
-`POST http://api.dialogram.fr:8080/api/report/:idTicket`
+`GET http://api.dialogram.fr:8080/api/report/:idTicket`
 
 #### Query Parameters
 
@@ -191,7 +191,7 @@ This endpoint get a ticket by category.
 
 #### HTTP Request
 
-`POST http://api.dialogram.fr:8080/api/report/category/:category`
+`GET http://api.dialogram.fr:8080/api/report/category/:category`
 
 #### Query Parameters
 
@@ -252,7 +252,7 @@ This endpoint get a ticket by status.
 
 #### HTTP Request
 
-`POST http://api.dialogram.fr:8080/api/report/status/:status`
+`GET http://api.dialogram.fr:8080/api/report/status/:status`
 
 #### Query Parameters
 
