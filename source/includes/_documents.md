@@ -52,6 +52,7 @@ $.ajax(settings).done(function (response) {
             "id": "<document_id>",
             "name": "myDocument",
             "link": "api.dialogram.fr:8080/medias/<timestamp>-<file_name>.pdf?accessToken=<your_access_token>",
+            "usageName": "<timestamp>-<file_name>.pdf",
             "nbPage": 35,
             "public": false,
             "description": "My document description",
@@ -59,7 +60,14 @@ $.ajax(settings).done(function (response) {
             "category": "entertainment",
             "idTranslation": null,
             "idOwner": "<owner_id>",
-            "creationDate": "2019-01-30T19:31:06.424Z"
+            "creationDate": "2019-01-30T19:31:06.424Z",
+            "editDate": null,
+            "timestamp": 1554198073930,
+            "features": {
+                "likes": [],
+                "favorites": [],
+                "comments": []
+            }
         }
     ],
     "includes": []
@@ -128,7 +136,14 @@ $.ajax(settings).done(function (response) {
             "category": "entertainment",
             "idTranslation": null,
             "idOwner": "<owner_id>",
-            "creationDate": "2019-01-30T19:31:06.424Z"
+            "creationDate": "2019-01-30T19:31:06.424Z",
+            "editDate": null,
+            "timestamp": 1554198073930,
+            "features": {
+                "likes": [],
+                "favorites": [],
+                "comments": []
+            }
         }
     ],
     "includes": []
@@ -196,7 +211,18 @@ $.ajax(settings).done(function (response) {
             "category": "health",
             "idTranslation": null,
             "idOwner": "5c2e2528581ae035587a4344",
-            "creationDate": "2019-01-29T19:31:06.424Z"
+            "creationDate": "2019-01-29T19:31:06.424Z",
+            "editDate": null,
+            "timestamp": 1554198073930,
+            "access": [
+                "W",
+                "D"
+            ],
+            "features": {
+                "likes": [],
+                "favorites": [],
+                "comments": []
+            }
         },
         {
             "type": "documents",
@@ -211,7 +237,18 @@ $.ajax(settings).done(function (response) {
             "category": "health",
             "idTranslation": null,
             "idOwner": "5c2e2528581ae035587a4344",
-            "creationDate": "2019-01-29T19:31:06.424Z"
+            "creationDate": "2019-01-29T19:31:06.424Z",
+            "editDate": null,
+            "timestamp": 1554198073930,
+            "access": [
+                "W",
+                "D"
+            ],
+            "features": {
+                "likes": [],
+                "favorites": [],
+                "comments": []
+            }
         }
     ],
     "includes": []
@@ -288,7 +325,18 @@ $.ajax(settings).done(function (response) {
           "idTranslation": null,
           "idOwner": "<owner_id>",
           "creationDate": "2019-01-29T19:31:06.424Z",
-          "editDate": "2019-01-30T20:14:56.747Z"
+          "editDate": "2019-01-30T20:14:56.747Z",
+          "editDate": null,
+            "timestamp": 1554198073930,
+            "access": [
+                "W",
+                "D"
+            ],
+            "features": {
+                "likes": [],
+                "favorites": [],
+                "comments": []
+            }
         }
     ],
     "includes": []
@@ -398,31 +446,31 @@ $.ajax(settings).done(function (response) {
 {
     "data": [
         {
-            "type": "user",
-            "id": "5be1e7415f019d0b44ed1ff2",
-            "nickName": "UserName",
-            "profile": {
-                "firstName": "John",
-                "lastName": "Bryan"
-                "profilePicture": {
-                    "url": "https://ui-avatars.com/api/?name=John+Bryan",
-                    "public_id": "null"
-                }
-            },
-            "email": "my-user@domain.com",
-            "registerDate": "2019-02-06T21:30:51.461Z",
-            "timestamp": 1549490327518,
+            "type": "documents",
+            "id": "5ca32c243a6a6d45c456c495",
+            "name": "myDocument",
+            "link": "http://api.dialogram.fr:8080/medias/document.pdf?accessToken=<acess_token>",
+            "usageName": "document.pdf",
+            "nbPage": 35,
+            "public": true,
+            "description": "My document description",
+            "status": -1,
+            "category": "health",
+            "idTranslation": null,
+            "idOwner": "5ca32c0c3a6a6d45c456c490",
+            "creationDate": "2019-04-02T09:32:20.342Z",
+            "editDate": null,
+            "timestamp": 1554198073930,
             "features": {
                 "likes": [
-                    "<user ID>"
-                ],
+                  <user_ID>
+                  ],
                 "favorites": [],
                 "comments": []
             }
-          }
+        }
     ],
-    "includes": [
-    ]
+    "includes": []
 }
 ```
 
@@ -466,29 +514,29 @@ $.ajax(settings).done(function (response) {
 {
     "data": [
         {
-            "type": "user",
-            "id": "5be1e7415f019d0b44ed1ff2",
-            "nickName": "UserName",
-            "profile": {
-                "firstName": "John",
-                "lastName": "Bryan"
-                "profilePicture": {
-                    "url": "https://ui-avatars.com/api/?name=John+Bryan",
-                    "public_id": "null"
-                }
-            },
-            "email": "my-user@domain.com",
-            "registerDate": "2019-02-06T21:30:51.461Z",
-            "timestamp": 1549490327518,
+            "type": "documents",
+            "id": "5ca32c243a6a6d45c456c495",
+            "name": "myDocument",
+            "link": "http://api.dialogram.fr:8080/medias/document.pdf?accessToken=<acess_token>",
+            "usageName": "document.pdf",
+            "nbPage": 35,
+            "public": true,
+            "description": "My document description",
+            "status": -1,
+            "category": "health",
+            "idTranslation": null,
+            "idOwner": "5ca32c0c3a6a6d45c456c490",
+            "creationDate": "2019-04-02T09:32:20.342Z",
+            "editDate": null,
+            "timestamp": 1554198073930,
             "features": {
                 "likes": [],
                 "favorites": [],
                 "comments": []
             }
-          }
+        }
     ],
-    "includes": [
-    ]
+    "includes": []
 }
 ```
 
@@ -534,31 +582,31 @@ $.ajax(settings).done(function (response) {
 {
     "data": [
         {
-            "type": "user",
-            "id": "5be1e7415f019d0b44ed1ff2",
-            "nickName": "UserName",
-            "profile": {
-                "firstName": "John",
-                "lastName": "Bryan"
-                "profilePicture": {
-                    "url": "https://ui-avatars.com/api/?name=John+Bryan",
-                    "public_id": "null"
-                }
-            },
-            "email": "my-user@domain.com",
-            "registerDate": "2019-02-06T21:30:51.461Z",
-            "timestamp": 1549490327518,
+            "type": "documents",
+            "id": "5ca32c243a6a6d45c456c495",
+            "name": "myDocument",
+            "link": "http://api.dialogram.fr:8080/medias/document.pdf?accessToken=<acess_token>",
+            "usageName": "document.pdf",
+            "nbPage": 35,
+            "public": true,
+            "description": "My document description",
+            "status": -1,
+            "category": "health",
+            "idTranslation": null,
+            "idOwner": "5ca32c0c3a6a6d45c456c490",
+            "creationDate": "2019-04-02T09:32:20.342Z",
+            "editDate": null,
+            "timestamp": 1554198073930,
             "features": {
                 "likes": [],
                 "favorites": [
-                  "<user ID>"
+                  <user_ID>
                 ],
                 "comments": []
             }
-          }
+        }
     ],
-    "includes": [
-    ]
+    "includes": []
 }
 ```
 
@@ -602,29 +650,29 @@ $.ajax(settings).done(function (response) {
 {
     "data": [
         {
-            "type": "user",
-            "id": "5be1e7415f019d0b44ed1ff2",
-            "nickName": "UserName",
-            "profile": {
-                "firstName": "John",
-                "lastName": "Bryan"
-                "profilePicture": {
-                    "url": "https://ui-avatars.com/api/?name=John+Bryan",
-                    "public_id": "null"
-                }
-            },
-            "email": "my-user@domain.com",
-            "registerDate": "2019-02-06T21:30:51.461Z",
-            "timestamp": 1549490327518,
+            "type": "documents",
+            "id": "5ca32c243a6a6d45c456c495",
+            "name": "myDocument",
+            "link": "http://api.dialogram.fr:8080/medias/document.pdf?accessToken=<acess_token>",
+            "usageName": "document.pdf",
+            "nbPage": 35,
+            "public": true,
+            "description": "My document description",
+            "status": -1,
+            "category": "health",
+            "idTranslation": null,
+            "idOwner": "5ca32c0c3a6a6d45c456c490",
+            "creationDate": "2019-04-02T09:32:20.342Z",
+            "editDate": null,
+            "timestamp": 1554198073930,
             "features": {
                 "likes": [],
                 "favorites": [],
                 "comments": []
             }
-          }
+        }
     ],
-    "includes": [
-    ]
+    "includes": []
 }
 ```
 
@@ -639,7 +687,7 @@ This endpoint remove the favorite of a document.
 ### Comment a document
 ```shell
 curl -X PUT \
-  http://api.dialogram.fr:8080/api/document/5c7514695564472c282e6396/comment \
+  http://api.dialogram.fr:8080/api/document/:idDocument/comment \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: fab6e99e-bbd3-4b36-87a7-3cc8da86a743' \
   -H 'cache-control: no-cache' \
@@ -674,37 +722,29 @@ $.ajax(settings).done(function (response) {
 {
     "data": [
         {
-            "type": "user",
-            "id": "5be1e7415f019d0b44ed1ff2",
-            "nickName": "UserName",
-            "profile": {
-                "firstName": "John",
-                "lastName": "Bryan"
-                "profilePicture": {
-                    "url": "https://ui-avatars.com/api/?name=John+Bryan",
-                    "public_id": "null"
-                }
-            },
-            "email": "my-user@domain.com",
-            "registerDate": "2019-02-06T21:30:51.461Z",
-            "timestamp": 1549490327518,
+            "type": "documents",
+            "id": "5ca32c243a6a6d45c456c495",
+            "name": "myDocument",
+            "link": "http://api.dialogram.fr:8080/medias/document.pdf?accessToken=<acess_token>",
+            "usageName": "document.pdf",
+            "nbPage": 35,
+            "public": true,
+            "description": "My document description",
+            "status": -1,
+            "category": "health",
+            "idTranslation": null,
+            "idOwner": "5ca32c0c3a6a6d45c456c490",
+            "creationDate": "2019-04-02T09:32:20.342Z",
+            "editDate": null,
+            "timestamp": 1554198073930,
             "features": {
                 "likes": [],
                 "favorites": [],
-                "comments": [
-                  {
-                        "likes": [],
-                        "creationDate": "2019-02-26T10:26:58.020Z",
-                        "_id": "<user ID>",
-                        "comment": "A new comment for your document",
-                        "ownerId": "5c7514595564472c282e6391"
-                    },
-                ]
+                "comments": []
             }
-          }
+        }
     ],
-    "includes": [
-    ]
+    "includes": []
 }
 ```
 
@@ -713,3 +753,70 @@ This endpoint comment a document.
 #### HTTP Request
 
 `PUT http://api.dialogram.fr:8080/api/document/:idDocument/comment`
+
+### Uncomment a document
+```shell
+curl -X DELETE \
+  http://api.dialogram.fr:8080/api/document/:idDocument/uncomment/:idComment \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: fab6e99e-bbd3-4b36-87a7-3cc8da86a743' \
+  -H 'cache-control: no-cache'
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/document/:idDocument/uncomment/:idComment",
+  "method": "DELETE",
+  "headers": {
+    "Content-Type": "application/json",
+    "cache-control": "no-cache",
+    "Postman-Token": "46cb8c95-74e6-4435-9ad0-f20abeaece71"
+  },
+  "processData": false,
+  "data": ""
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns JSON structured like this:
+
+```json
+{
+    "data": [
+        {
+            "type": "documents",
+            "id": "5ca32c243a6a6d45c456c495",
+            "name": "myDocument",
+            "link": "http://api.dialogram.fr:8080/medias/document.pdf?accessToken=<acess_token>",
+            "usageName": "document.pdf",
+            "nbPage": 35,
+            "public": true,
+            "description": "My document description",
+            "status": -1,
+            "category": "health",
+            "idTranslation": null,
+            "idOwner": "5ca32c0c3a6a6d45c456c490",
+            "creationDate": "2019-04-02T09:32:20.342Z",
+            "editDate": null,
+            "timestamp": 1554198073930,
+            "features": {
+                "likes": [],
+                "favorites": [],
+                "comments": []
+            }
+        }
+    ],
+    "includes": []
+}
+```
+
+This endpoint comment a document.
+
+#### HTTP Request
+
+`DELETE http://api.dialogram.fr:8080/api/document/:idDocument/uncomment/:idComment`
