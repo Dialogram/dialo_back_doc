@@ -357,7 +357,16 @@
                               <a href="#comment-a-document" class="toc-h3 toc-link" data-title="Comment a document">Comment a document</a>
                             </li>
                             <li>
-                              <a href="#uncomment-a-document" class="toc-h3 toc-link" data-title="Uncomment a document">Uncomment a document</a>
+                              <a href="#edit-your-document-comment" class="toc-h3 toc-link" data-title="Edit your document comment">Edit your document comment</a>
+                            </li>
+                            <li>
+                              <a href="#like-a-document-comment" class="toc-h3 toc-link" data-title="Like a document comment">Like a document comment</a>
+                            </li>
+                            <li>
+                              <a href="#remove-like-on-a-document-comment" class="toc-h3 toc-link" data-title="Remove like on a document comment">Remove like on a document comment</a>
+                            </li>
+                            <li>
+                              <a href="#delete-a-document-comment" class="toc-h3 toc-link" data-title="Delete a document comment">Delete a document comment</a>
                             </li>
                         </ul>
                   </li>
@@ -2395,7 +2404,18 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
                 </span><span class="s2">"favorites"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-                </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;comment_id&gt;"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A new comment"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                      </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-02T14:31:12.602Z"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"lastUpdateDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"edited"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"ownerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
@@ -2405,7 +2425,214 @@ Remember — a happy user is an authenticated user by token!
 <p>This endpoint comment a document.</p>
 <h4 id='http-request-10'>HTTP Request</h4>
 <p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/comment</code></p>
-<h3 id='uncomment-a-document'>Uncomment a document</h3><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
+<h3 id='edit-your-document-comment'>Edit your document comment</h3><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
+  http://api.dialogram.fr:8080/api/document/:idDocument/comment/edit/:idComment <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Postman-Token: fab6e99e-bbd3-4b36-87a7-3cc8da86a743'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "comment": "An edited comment for your document"
+}'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document/:idDocument/comment/edit/:idComment"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"46cb8c95-74e6-4435-9ad0-f20abeaece71"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\n\t\"comment\": \"An edited comment for your document\"\n}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ca32c243a6a6d45c456c495"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.dialogram.fr:8080/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document.pdf"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My document description"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"health"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ca32c0c3a6a6d45c456c490"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-02T09:32:20.342Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"editDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1554198073930</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"favorites"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;comment_id&gt;"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A new comment"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                      </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-02T14:31:12.602Z"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"lastUpdateDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-03T15:10:40.102Z"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"edited"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"ownerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint comment a document.</p>
+<h4 id='http-request-11'>HTTP Request</h4>
+<p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/comment/edit/:idComment</code></p>
+<h3 id='like-a-document-comment'>Like a document comment</h3><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
+  http://api.dialogram.fr:8080/api/document/:idDocument/comment/:idComment/like <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Postman-Token: fab6e99e-bbd3-4b36-87a7-3cc8da86a743'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document/:idDocument/comment/:idComment/like"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"46cb8c95-74e6-4435-9ad0-f20abeaece71"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ca32c243a6a6d45c456c495"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.dialogram.fr:8080/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document.pdf"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My document description"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"health"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ca32c0c3a6a6d45c456c490"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-02T09:32:20.342Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"editDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1554198073930</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"favorites"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;comment_id&gt;"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A new comment"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"&lt;user_id&gt;"</span><span class="w">
+                      </span><span class="p">],</span><span class="w">
+                      </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-02T14:31:12.602Z"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"lastUpdateDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"edited"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"ownerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint like a document comment.</p>
+<h4 id='http-request-12'>HTTP Request</h4>
+<p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/comment/:idComment/like</code></p>
+<h3 id='remove-like-on-a-document-comment'>Remove like on a document comment</h3><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
+  http://api.dialogram.fr:8080/api/document/:idDocument/comment/:idComment/unlike <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Postman-Token: fab6e99e-bbd3-4b36-87a7-3cc8da86a743'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document/:idDocument/comment/:idComment/unlike"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"46cb8c95-74e6-4435-9ad0-f20abeaece71"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ca32c243a6a6d45c456c495"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.dialogram.fr:8080/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document.pdf"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My document description"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"health"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"idTranslation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"idOwner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ca32c0c3a6a6d45c456c490"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-02T09:32:20.342Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"editDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1554198073930</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"favorites"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;comment_id&gt;"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A new comment"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                      </span><span class="s2">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-02T14:31:12.602Z"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"lastUpdateDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"edited"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"ownerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;owner_id&gt;"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint remove your like on a document comment.</p>
+<h4 id='http-request-13'>HTTP Request</h4>
+<p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/comment/:idComment/unlike</code></p>
+<h3 id='delete-a-document-comment'>Delete a document comment</h3><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
   http://api.dialogram.fr:8080/api/document/:idDocument/uncomment/:idComment <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: fab6e99e-bbd3-4b36-87a7-3cc8da86a743'</span> <span class="se">\</span>
@@ -2459,8 +2686,8 @@ Remember — a happy user is an authenticated user by token!
     </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint comment a document.</p>
-<h4 id='http-request-11'>HTTP Request</h4>
+<p>This endpoint delete a document comment.</p>
+<h4 id='http-request-14'>HTTP Request</h4>
 <p><code>DELETE http://api.dialogram.fr:8080/api/document/:idDocument/uncomment/:idComment</code></p>
 <h1 id='permissions'>Permissions</h1><h2 id='add-edit-permission'>Add edit permission</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
   http://api.dialogram.fr:8085/api/document/:idDocument/waccess <span class="se">\</span>
