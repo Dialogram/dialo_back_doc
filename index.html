@@ -221,68 +221,6 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#user" class="toc-h1 toc-link" data-title="User">User</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#create-a-user" class="toc-h2 toc-link" data-title="Create a user">Create a user</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-user" class="toc-h2 toc-link" data-title="Get a user">Get a user</a>
-                  </li>
-                  <li>
-                    <a href="#search-user-s" class="toc-h2 toc-link" data-title="Search user(s)">Search user(s)</a>
-                  </li>
-                  <li>
-                    <a href="#follow" class="toc-h2 toc-link" data-title="Follow 🗀">Follow 🗀</a>
-                        <ul class="toc-list-h3">
-                            <li>
-                              <a href="#follow-an-user" class="toc-h3 toc-link" data-title="Follow an user">Follow an user</a>
-                            </li>
-                            <li>
-                              <a href="#unfollow-an-user" class="toc-h3 toc-link" data-title="Unfollow an user">Unfollow an user</a>
-                            </li>
-                        </ul>
-                  </li>
-                  <li>
-                    <a href="#settings" class="toc-h2 toc-link" data-title="Settings 🗀">Settings 🗀</a>
-                        <ul class="toc-list-h3">
-                            <li>
-                              <a href="#update-public-information" class="toc-h3 toc-link" data-title="Update public information">Update public information</a>
-                            </li>
-                            <li>
-                              <a href="#update-profil-picture" class="toc-h3 toc-link" data-title="Update Profil Picture">Update Profil Picture</a>
-                            </li>
-                            <li>
-                              <a href="#update-password-account" class="toc-h3 toc-link" data-title="Update password account">Update password account</a>
-                            </li>
-                            <li>
-                              <a href="#update-account" class="toc-h3 toc-link" data-title="Update account">Update account</a>
-                            </li>
-                            <li>
-                              <a href="#confirm-mail-updated" class="toc-h3 toc-link" data-title="Confirm mail updated">Confirm mail updated</a>
-                            </li>
-                            <li>
-                              <a href="#confirm-account" class="toc-h3 toc-link" data-title="Confirm Account">Confirm Account</a>
-                            </li>
-                            <li>
-                              <a href="#delete-account" class="toc-h3 toc-link" data-title="Delete Account">Delete Account</a>
-                            </li>
-                        </ul>
-                  </li>
-                  <li>
-                    <a href="#forgot-password" class="toc-h2 toc-link" data-title="Forgot Password 🗀">Forgot Password 🗀</a>
-                        <ul class="toc-list-h3">
-                            <li>
-                              <a href="#send-token-by-email" class="toc-h3 toc-link" data-title="Send token by email">Send token by email</a>
-                            </li>
-                            <li>
-                              <a href="#reset-password-by-token" class="toc-h3 toc-link" data-title="Reset password by token">Reset password by token</a>
-                            </li>
-                        </ul>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#session" class="toc-h1 toc-link" data-title="Session">Session</a>
               <ul class="toc-list-h2">
                   <li>
@@ -479,9 +417,9 @@
         <p>Welcome to the Dialogram API documentation! You can use our API to access API endpoints, which can be used to interacte with our server. You will find all the informations you need to build your app or module according to the respectives routes.</p>
 
 <p>We have language bindings with Curl and Javascript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right. </p>
-<h1 id='user'>User</h1>
+<h2 id='user'>User</h2>
 <p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-<h2 id='create-a-user'>Create a user</h2><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just copy and paste the following request after editing the needed body parameter.</span>
+<h2 id='authentication'>Authentication 🗀</h2><h3 id='create-a-user'>Create a user</h3><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just copy and paste the following request after editing the needed body parameter.</span>
 curl -X POST <span class="se">\</span>
   http://localhost:8080/api/user <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -525,28 +463,49 @@ curl -X POST <span class="se">\</span>
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5be1e7415f019d0b44ed1ff2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;user_id&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UserName"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-12T15:20:42.823Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"createdWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"prodivder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dialogram"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
                 </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="w">
+                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui-avatars.com/api/?name=John+Bryan"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hometown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"certificated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-06T21:30:51.461Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1549490327518</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1555082426</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"follows"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsLiked"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsCommented"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsFavorite"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"session"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5be1e7425f019d0b44ed1ff3"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;User_Token&gt;"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"deviceName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Safari on AndroidOS OS"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;User ID&gt;"</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;id&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dialogram"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;user_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"device"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"userAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Safari"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"OS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AndroidOS"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;user_id&gt;"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -572,20 +531,97 @@ curl -X POST <span class="se">\</span>
 <aside class="success">
   Remember — a happy user is an authenticated user!
 </aside>
+<h3 id='authenticate-with-facebook'>Authenticate with Facebook</h3><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just copy and paste the following request after editing the needed body parameter.</span>
+curl -X POST <span class="se">\</span>
+  http://localhost:8080/api/auth/facebook <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer &lt;user_facebook_access_token&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Postman-Token: ce79c653-5c2f-40de-8df8-955ffac0ae8e'</span> <span class="se">\</span>
+  -H <span class="s1">'User-Agent: Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i Version/4.0 Mobile Safari/534.30'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code>
+<span class="err">#</span> <span class="nx">This</span> <span class="nx">snippet</span> <span class="nx">has</span> <span class="nx">been</span> <span class="nx">made</span> <span class="nx">using</span> <span class="nx">JQuery</span> <span class="o">&amp;</span> <span class="nx">Ajax</span><span class="p">.</span>
+
+<span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/auth/facebook"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"f662c84a-7b42-4bc3-91fe-057f773361b5"</span><span class="p">,</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;user_facebook_access_token&gt;"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;user_id&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UserName"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-12T15:20:42.823Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"createdWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"prodivder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dialogram"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui-avatars.com/api/?name=John+Bryan"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hometown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"certificated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1555082426</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"follows"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsLiked"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsCommented"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsFavorite"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allow you to create a user</p>
+<h4 id='http-request-2'>HTTP Request</h4>
+<p><code>POST http://api.dialogram.fr:8080/api/facebook/auth</code></p>
+
+<p>Create a Dialogram account or log in using Facebook API authentication.</p>
+<h4 id='query-parameters-2'>Query Parameters</h4>
+<p>NONE</p>
+
+<aside class="success">
+  Remember — Use your Facebook access token!
+</aside>
 <h2 id='get-a-user'>Get a user</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
   http://api.dialogram.fr:8080/api/user/ <span class="se">\</span>
-   -d <span class="s1">'{
-      nickName = "Username",
-      email = "myUser@domain.com",
-      password = "JeSuisUnTest123"
-}'</span>
+  -H <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
    <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
    <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
    <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/user/"</span><span class="p">,</span>
    <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
-   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{},</span>
-   <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\n\tnickName = \"Username\",\n\temail = \"myUser@domain.com\",\n\tpassword = \"JeSuisUnTest\"\n}"</span>
+   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{}</span>
 <span class="p">}</span>
 
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -599,36 +635,45 @@ curl -X POST <span class="se">\</span>
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5be1e7415f019d0b44ed1ff2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;user_id&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UserName"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-12T15:20:42.823Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"createdWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"prodivder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dialogram"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
                 </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="w">
+                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui-avatars.com/api/?name=John+Bryan"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hometown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"certificated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-06T21:30:51.461Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1549490327518</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1555082426</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"follows"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsLiked"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsCommented"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsFavorite"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"session"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5be1e7425f019d0b44ed1ff3"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;User_Token&gt;"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"deviceName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Safari on AndroidOS OS"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;User ID&gt;"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific user.</p>
-<h4 id='http-request-2'>HTTP Request</h4>
+<h4 id='http-request-3'>HTTP Request</h4>
 <p><code>GET http://api.dialogram.fr:8080/api/user/</code></p>
-<h4 id='query-parameters-2'>Query Parameters</h4>
+<h4 id='query-parameters-3'>Query Parameters</h4>
 <p>NONE</p>
 
 <aside class="success">
@@ -660,58 +705,28 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"userID1"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"to_find1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui-avatars.com/api/?name=John+Bryan&amp;background=AA0015&amp;color=fff"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user1@domain.com"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-10T08:49:34.263Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1549788570</span><span class="w">
+            </span><span class="s2">"&lt;user1_data&gt;"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"userID2"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"try_to_find_me"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui-avatars.com/api/?name=John+Bryan&amp;background=D6E001&amp;color=222"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user2@domain.com"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-11T05:34:15.529Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1549863210</span><span class="w">
+            </span><span class="s2">"&lt;user2_data&gt;"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"userID3"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not_hard_to_find"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui-avatars.com/api/?name=John+Bryan&amp;background=D6E001&amp;color=222"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user3@domain.com"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-11T09:24:43.314Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1549876559</span><span class="w">
+            </span><span class="s2">"&lt;user3_data&gt;"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all users wherein the query parameter can be found using fuzzy search.</p>
-<h4 id='http-request-3'>HTTP Request</h4>
+<h4 id='http-request-4'>HTTP Request</h4>
 <p><code>GET http://api.dialogram.fr:8080/api/search/user/:to_find</code></p>
-<h4 id='query-parameters-3'>Query Parameters</h4>
+<h4 id='query-parameters-4'>Query Parameters</h4>
 <p><code>
 to_find: the string that will be search in all the users nickname in database.
 </code></p>
@@ -753,36 +768,43 @@ Remember — a happy user is an authenticated user by token!
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5be1e7415f019d0b44ed1ff2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;user_id&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UserName"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-12T15:20:42.823Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"createdWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"prodivder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dialogram"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
                 </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="w">
+                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui-avatars.com/api/?name=John+Bryan"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hometown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"certificated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-06T21:30:51.461Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1549490327518</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1555082426</span><span class="p">,</span><span class="w">
             </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"follows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                    </span><span class="s2">"&lt;Indiana_jones ID&gt;"</span><span class="w">
-                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"follows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"&lt;Indiana_jones_ID&gt;"</span><span class="p">],</span><span class="w">
                 </span><span class="s2">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
                 </span><span class="s2">"documentsLiked"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
                 </span><span class="s2">"documentsCommented"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
                 </span><span class="s2">"documentsFavorite"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
             </span><span class="p">}</span><span class="w">
-          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint follow an user.</p>
-<h4 id='http-request-4'>HTTP Request</h4>
+<h4 id='http-request-5'>HTTP Request</h4>
 <p><code>PUT http://api.dialogram.fr:8080/api/user/follow</code></p>
 <h3 id='unfollow-an-user'>Unfollow an user</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
   --url http://api.dialogram.fr:8080/api/user/unfollow <span class="se">\</span>
@@ -818,19 +840,29 @@ Remember — a happy user is an authenticated user by token!
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5be1e7415f019d0b44ed1ff2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;user_id&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UserName"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-12T15:20:42.823Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"createdWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"prodivder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dialogram"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
                 </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="w">
+                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui-avatars.com/api/?name=John+Bryan"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hometown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"certificated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-06T21:30:51.461Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1549490327518</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1555082426</span><span class="p">,</span><span class="w">
             </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"follows"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
                 </span><span class="s2">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
@@ -840,12 +872,11 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint follow an user.</p>
-<h4 id='http-request-5'>HTTP Request</h4>
+<h4 id='http-request-6'>HTTP Request</h4>
 <p><code>PUT http://api.dialogram.fr:8080/api/user/unfollow</code></p>
 <h2 id='settings'>Settings 🗀</h2><h3 id='update-public-information'>Update public information</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
   --url http://api.dialogram.fr:8080/api/user/settings/public <span class="se">\</span>
@@ -855,8 +886,13 @@ Remember — a happy user is an authenticated user by token!
   --data <span class="s1">'
   {
     "profile": {
-                "firstName" : "Indiana",
-                "lastName" : "Jones"
+                "firstName" : "Harrison",
+                "lastName" : "Ford",
+                "birthday": "13/07/1942",
+                "gender": "male",
+                "country": "USA",
+                "hometown": "Chicago",
+                "description": "Acteur américain"
               }
   } '</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
@@ -870,7 +906,7 @@ Remember — a happy user is an authenticated user by token!
     <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"46cb8c95-74e6-4435-9ad0-f20abeaece71"</span>
   <span class="p">},</span>
   <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">" { \n\t\"profile\": {\n\t\t\t\"firstName\" : \"Indiana\",\n\t\t\t\"lastName\" : \"Jones\"\n\t}\n } "</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">" { \n\t\"profile\": {\n       \"firstName\" : \"Harrison\",\n       \"lastName\" : \"Ford\",\n       \"birthday\": \"13/07/1942\",\n       \"gender\": \"male\",\n       \"country\": \"USA\",\n       \"hometown\": \"Chicago\",\n       \"description\": \"Acteur américain\"\n    }\n } "</span>
 <span class="p">}</span>
 
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -884,41 +920,55 @@ Remember — a happy user is an authenticated user by token!
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5be1e7415f019d0b44ed1ff2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;user_id&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UserName"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indiana"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jones"</span><span class="w">
+                </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-12T15:20:42.823Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"createdWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"prodivder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dialogram"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Harrison"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ford"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui-avatars.com/api/?name=John+Bryan"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui-avatars.com/api/?name=Harrison+Ford"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13/07/1942"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hometown"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chicago"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acteur américain"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"certificated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-06T21:30:51.461Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1549490327518</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1555082426</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"follows"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsLiked"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsCommented"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsFavorite"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"session"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5be1e7425f019d0b44ed1ff3"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;User_Token&gt;"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"deviceName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Safari on AndroidOS OS"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;User ID&gt;"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint update all public information of users.</p>
-<h4 id='http-request-6'>HTTP Request</h4>
+<h4 id='http-request-7'>HTTP Request</h4>
 <p><code>PUT http://api.dialogram.fr:8080/api/user/settings/public</code></p>
-<h4 id='query-parameters-4'>Query Parameters</h4>
+<h4 id='query-parameters-5'>Query Parameters</h4>
 <p><code>
  {
     &quot;profile&quot;: {
-            &quot;firstName&quot; : &quot;Indiana&quot;,
-            &quot;lastName&quot; : &quot;Jones&quot;
+       &quot;firstName&quot; : &quot;Harrison&quot;,
+       &quot;lastName&quot; : &quot;Ford&quot;,
+       &quot;birthday&quot;: &quot;13/07/1942&quot;,
+       &quot;gender&quot;: &quot;male&quot;,
+       &quot;country&quot;: &quot;USA&quot;,
+       &quot;hometown&quot;: &quot;Chicago&quot;,
+       &quot;description&quot;: &quot;Acteur américain&quot;
     }
  }
 </code></p>
@@ -963,28 +1013,45 @@ Remember — a happy user is an authenticated user by token!
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c5b520b0f780b589bec0334"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;user_id&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UserName"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-12T15:20:42.823Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"createdWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"prodivder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dialogram"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Harrison"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ford"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/&lt;id&gt;.jpg"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"profile_pictures_dev/daa3ryctayyqidxoodpc"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;public_id"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13/07/1942"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hometown"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chicago"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acteur américain"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"certificated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-06T21:30:51.461Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1549490327518</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1555082426</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"follows"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsLiked"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsCommented"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsFavorite"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint upload a profil picture.</p>
-<h4 id='http-request-7'>HTTP Request</h4>
+<p>This endpoint upload a new profil picture and delete the old one.</p>
+<h4 id='http-request-8'>HTTP Request</h4>
 <p><code>POST http://api.dialogram.fr:8080/api/user/settings/profilePicture</code></p>
-<h4 id='query-parameters-5'>Query Parameters</h4>
+<h4 id='query-parameters-6'>Query Parameters</h4>
 <table><thead>
 <tr>
 <th>Key naming</th>
@@ -1035,42 +1102,135 @@ Remember — a happy user is an authenticated user by token!
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5be1e7415f019d0b44ed1ff2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;user_id&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UserName"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="w">
+                </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-12T15:20:42.823Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"createdWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"prodivder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dialogram"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Harrison"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ford"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://res.cloudinary.com/dialogram/image/&lt;URL&gt;"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"profile_pictures/&lt;ID&gt;"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/&lt;id&gt;.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;public_id"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13/07/1942"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hometown"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chicago"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acteur américain"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"certificated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-06T21:30:51.461Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1549490327518</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1555082426</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"follows"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsLiked"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsCommented"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsFavorite"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"session"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5be1e7425f019d0b44ed1ff3"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;User_Token&gt;"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"deviceName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Safari on AndroidOS OS"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;User ID&gt;"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <p>This endpoint update user password and send an email to informe the user.</p>
-<h4 id='http-request-8'>HTTP Request</h4>
+<h4 id='http-request-9'>HTTP Request</h4>
 <p><code>PUT http://api.dialogram.fr:8080/api/user/settings/password</code></p>
-<h4 id='query-parameters-6'>Query Parameters</h4>
+<h4 id='query-parameters-7'>Query Parameters</h4>
 <p><code>
 {
   &quot;currentPassword&quot; : &quot;password123&quot;,
   &quot;newPassword&quot; : &quot;qwerty123&quot;
 }
 </code></p>
+<h3 id='set-a-password'>Set a password</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
+  --url http://api.dialogram.fr:8080/api/user/settings/set/password <span class="se">\</span>
+  --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'Postman-Token: 025a15c0-6d01-4785-8013-3e679a0b12e8'</span> <span class="se">\</span>
+  --header <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  --data <span class="s1">'
+  {
+    "newPassword" : "qwerty123"
+  }'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/user/settings/set/password"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"8f458df6-6d6f-4787-b1a8-d9fb5168a0aa"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">" { \n\t\"newPassword\" : \"qwerty123\" \n }"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;user_id&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UserName"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-12T15:20:42.823Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"createdWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"prodivder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dialogram"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Harrison"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ford"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/&lt;id&gt;.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;public_id"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13/07/1942"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hometown"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chicago"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acteur américain"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"certificated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-user@domain.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1555082426</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"follows"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsLiked"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsCommented"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsFavorite"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p>This endpoint set user password and send an email to informe the user.</p>
+<h4 id='http-request-10'>HTTP Request</h4>
+<p><code>PUT http://api.dialogram.fr:8080/api/user/settings/set/password</code></p>
+<h4 id='query-parameters-8'>Query Parameters</h4>
+<p><code>
+{
+  &quot;newPassword&quot; : &quot;qwerty123&quot;
+}
+</code></p>
+
+<aside class="warning">
+    Only available when authenticated by OAuth 2.0
+</aside>
 <h3 id='update-account'>Update account</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
   --url http://api.dialogram.fr:8080/api/user/settings/account <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -1106,36 +1266,45 @@ Remember — a happy user is an authenticated user by token!
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5be1e7415f019d0b44ed1ff2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;user_id&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nickName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"editUserName"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="w">
+                </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-12T15:20:42.823Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"createdWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"prodivder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dialogram"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Harrison"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ford"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://res.cloudinary.com/dialogram/image/&lt;URL&gt;"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"profile_pictures/&lt;ID&gt;"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/&lt;id&gt;.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;public_id"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13/07/1942"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hometown"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chicago"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acteur américain"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"certificated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"editMyUser@domain.com"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"registerDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-02-06T21:30:51.461Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1549490327518</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1555082426</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"follows"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"followers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsLiked"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsCommented"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"documentsFavorite"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"session"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5be1e7425f019d0b44ed1ff3"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;User_Token&gt;"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"deviceName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Safari on AndroidOS OS"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;User ID&gt;"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint update user account settings such as mail address or nickname. You should confirm to your new mail address if it have been edited.</p>
-<h4 id='http-request-9'>HTTP Request</h4>
+<h4 id='http-request-11'>HTTP Request</h4>
 <p><code>PUT http://api.dialogram.fr:8080/api/user/settings/account</code></p>
-<h4 id='query-parameters-7'>Query Parameters</h4>
+<h4 id='query-parameters-9'>Query Parameters</h4>
 <p><code>
 {
   &quot;nickName&quot; : &quot;editUserName&quot;,
@@ -1174,7 +1343,7 @@ Remember — a happy user is an authenticated user by token!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint update the user mail address by token with the new one.</p>
-<h4 id='http-request-10'>HTTP Request</h4>
+<h4 id='http-request-12'>HTTP Request</h4>
 <p><code>GET http://api.dialogram.fr:8080/api/user/settings/account/email/:token</code></p>
 
 <aside class="success">
@@ -1212,7 +1381,7 @@ Remember — Your token will only be accessible in your mailbox !
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint confirm user account by token.</p>
-<h4 id='http-request-11'>HTTP Request</h4>
+<h4 id='http-request-13'>HTTP Request</h4>
 <p><code>GET http://api.dialogram.fr:8080/api/user/settings/confirm/:token</code></p>
 
 <aside class="success">
@@ -1252,7 +1421,7 @@ Remember — Your token will only be accessible in your mailbox !
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint delete an authenticated user account.</p>
-<h4 id='http-request-12'>HTTP Request</h4>
+<h4 id='http-request-14'>HTTP Request</h4>
 <p><code>DELETE http://api.dialogram.fr:8080/api/user/settings/account/delete</code></p>
 <h2 id='forgot-password'>Forgot Password 🗀</h2><h3 id='send-token-by-email'>Send token by email</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
    http://api.dialogram.fr:8080/api/password/reset <span class="se">\</span>
@@ -1284,9 +1453,9 @@ Remember — Your token will only be accessible in your mailbox !
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint create a token and send it to the referenced email.</p>
-<h4 id='http-request-13'>HTTP Request</h4>
+<h4 id='http-request-15'>HTTP Request</h4>
 <p><code>POST http://api.dialogram.fr:8080/api/password/reset</code></p>
-<h4 id='query-parameters-8'>Query Parameters</h4>
+<h4 id='query-parameters-10'>Query Parameters</h4>
 <p><code>
 {
     &quot;email&quot; : &quot;myMail@domain.com&quot;
@@ -1323,9 +1492,9 @@ Remember — Your token will only be accessible in your mailbox !
 </span></code></pre>
 <p>This endpoint reset the user password and create a new one.
 All the sessions will be deleted and an email will be sent to the account to inform that the password have been changed.</p>
-<h4 id='http-request-14'>HTTP Request</h4>
+<h4 id='http-request-16'>HTTP Request</h4>
 <p><code>POST http://api.dialogram.fr:8080/api/password/reset/:token</code></p>
-<h4 id='query-parameters-9'>Query Parameters</h4>
+<h4 id='query-parameters-11'>Query Parameters</h4>
 <p><code>
 {
      &quot;paswword&quot; : &quot;myNewPassword1234&quot;,
