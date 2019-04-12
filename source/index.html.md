@@ -31,11 +31,14 @@ Welcome to the Dialogram API documentation! You can use our API to access API en
 
 We have language bindings with Curl and Javascript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right. 
 
-# User
+
+## User
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
-## Create a user
+## Authentication 🗀
+
+### Create a user
 
 ```shell
 # With shell, you can just copy and paste the following request after editing the needed body parameter.
@@ -85,28 +88,49 @@ $.ajax(settings).done(function (response) {
     "data": [
         {
             "type": "user",
-            "id": "5be1e7415f019d0b44ed1ff2",
+            "id": "<user_id>",
             "nickName": "UserName",
             "profile": {
+                "registerDate": "2019-04-12T15:20:42.823Z",
+                "createdWith": {
+                    "prodivder": "Dialogram",
+                    "userId": null
+                },
                 "firstName": "John",
-                "lastName": "Bryan"
+                "lastName": "Bryan",
                 "profilePicture": {
                     "url": "https://ui-avatars.com/api/?name=John+Bryan",
                     "public_id": "null"
-                }
+                },
+                "birthday": null,
+                "gender": null,
+                "country": null,
+                "hometown": null,
+                "description": null,
+                "certificated": false
             },
             "email": "my-user@domain.com",
-            "registerDate": "2019-02-06T21:30:51.461Z",
-            "timestamp": 1549490327518
+            "timestamp": 1555082426,
+            "features": {
+                "follows": [],
+                "followers": [],
+                "documentsLiked": [],
+                "documentsCommented": [],
+                "documentsFavorite": []
+            }
         }
     ],
     "includes": [
         {
             "type": "session",
-            "id": "5be1e7425f019d0b44ed1ff3",
-            "token": "<User_Token>",
-            "deviceName": "Safari on AndroidOS OS",
-            "user": "<User ID>"
+            "id": "<id>",
+            "provider": "Dialogram",
+            "token": "<user_token>",
+            "device": {
+                "userAgent": "Safari",
+                "OS": "AndroidOS"
+            },
+            "user": "<user_id>"
         }
     ]
 }
@@ -138,16 +162,107 @@ The Dialogram API use token to allow access to the API. You can register a new D
   Remember — a happy user is an authenticated user!
 </aside>
 
+### Authenticate with Facebook
+
+```shell
+# With shell, you can just copy and paste the following request after editing the needed body parameter.
+curl -X POST \
+  http://localhost:8080/api/auth/facebook \
+  -H 'Authorization: Bearer <user_facebook_access_token>' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: ce79c653-5c2f-40de-8df8-955ffac0ae8e' \
+  -H 'User-Agent: Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i Version/4.0 Mobile Safari/534.30' \
+  -H 'cache-control: no-cache'
+```
+
+```javascript
+
+# This snippet has been made using JQuery & Ajax.
+
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/auth/facebook",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json",
+    "cache-control": "no-cache",
+    "Postman-Token": "f662c84a-7b42-4bc3-91fe-057f773361b5",
+    "Authorization": "Bearer <user_facebook_access_token>",
+  },
+  "processData": false
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+> The above request returns a JSON structured like this:
+
+```json
+{
+    "data": [
+        {
+            "type": "user",
+            "id": "<user_id>",
+            "nickName": "UserName",
+            "profile": {
+                "registerDate": "2019-04-12T15:20:42.823Z",
+                "createdWith": {
+                    "prodivder": "Dialogram",
+                    "userId": null
+                },
+                "firstName": "John",
+                "lastName": "Bryan",
+                "profilePicture": {
+                    "url": "https://ui-avatars.com/api/?name=John+Bryan",
+                    "public_id": "null"
+                },
+                "birthday": null,
+                "gender": null,
+                "country": null,
+                "hometown": null,
+                "description": null,
+                "certificated": false
+            },
+            "email": "my-user@domain.com",
+            "timestamp": 1555082426,
+            "features": {
+                "follows": [],
+                "followers": [],
+                "documentsLiked": [],
+                "documentsCommented": [],
+                "documentsFavorite": []
+            }
+        }
+    ],
+    "includes": []
+}
+```
+
+This endpoint allow you to create a user
+
+#### HTTP Request
+
+`POST http://api.dialogram.fr:8080/api/facebook/auth`
+
+Create a Dialogram account or log in using Facebook API authentication.
+
+#### Query Parameters
+
+NONE
+
+<aside class="success">
+  Remember — Use your Facebook access token!
+</aside>
+
+
 ## Get a user
 
 ```shell
 curl -X GET \
   http://api.dialogram.fr:8080/api/user/ \
-   -d '{
-      nickName = "Username",
-      email = "myUser@domain.com",
-      password = "JeSuisUnTest123"
-}'
+  -H 'cache-control: no-cache'
 ```
 
 ```javascript
@@ -156,8 +271,7 @@ var settings = {
    "crossDomain": true,
    "url": "http://api.dialogram.fr:8080/api/user/",
    "method": "GET",
-   "headers": {},
-   "data": "{\n\tnickName = \"Username\",\n\temail = \"myUser@domain.com\",\n\tpassword = \"JeSuisUnTest\"\n}"
+   "headers": {}
 }
 
 $.ajax(settings).done(function (response) {
@@ -172,30 +286,39 @@ $.ajax(settings).done(function (response) {
     "data": [
         {
             "type": "user",
-            "id": "5be1e7415f019d0b44ed1ff2",
+            "id": "<user_id>",
             "nickName": "UserName",
             "profile": {
+                "registerDate": "2019-04-12T15:20:42.823Z",
+                "createdWith": {
+                    "prodivder": "Dialogram",
+                    "userId": null
+                },
                 "firstName": "John",
-                "lastName": "Bryan"
+                "lastName": "Bryan",
                 "profilePicture": {
                     "url": "https://ui-avatars.com/api/?name=John+Bryan",
                     "public_id": "null"
-                }
+                },
+                "birthday": null,
+                "gender": null,
+                "country": null,
+                "hometown": null,
+                "description": null,
+                "certificated": false
             },
             "email": "my-user@domain.com",
-            "registerDate": "2019-02-06T21:30:51.461Z",
-            "timestamp": 1549490327518
+            "timestamp": 1555082426,
+            "features": {
+                "follows": [],
+                "followers": [],
+                "documentsLiked": [],
+                "documentsCommented": [],
+                "documentsFavorite": []
+            }
         }
     ],
-    "includes": [
-        {
-            "type": "session",
-            "id": "5be1e7425f019d0b44ed1ff3",
-            "token": "<User_Token>",
-            "deviceName": "Safari on AndroidOS OS",
-            "user": "<User ID>"
-        }
-    ]
+    "includes": []
 }
 ```
 
@@ -247,49 +370,19 @@ $.ajax(settings).done(function (response) {
             "type": "user",
             "id": "userID1",
             "nickName": "to_find1",
-            "profile": {
-                "firstName": "John",
-                "lastName": "Bryan",
-                "profilePicture": {
-                    "url": "https://ui-avatars.com/api/?name=John+Bryan&background=AA0015&color=fff",
-                    "public_id": null
-                }
-            },
-            "email": "my-user1@domain.com",
-            "registerDate": "2019-02-10T08:49:34.263Z",
-            "timestamp": 1549788570
+            "<user1_data>"
         },
         {
             "type": "user",
             "id": "userID2",
             "nickName": "try_to_find_me",
-            "profile": {
-                "firstName": "John",
-                "lastName": "Bryan",
-                "profilePicture": {
-                    "url": "https://ui-avatars.com/api/?name=John+Bryan&background=D6E001&color=222",
-                    "public_id": null
-                }
-            },
-            "email": "my-user2@domain.com",
-            "registerDate": "2019-02-11T05:34:15.529Z",
-            "timestamp": 1549863210
+            "<user2_data>"
         },
         {
             "type": "user",
             "id": "userID3",
             "nickName": "not_hard_to_find",
-            "profile": {
-                "firstName": "John",
-                "lastName": "Bryan",
-                "profilePicture": {
-                    "url": "https://ui-avatars.com/api/?name=John+Bryan&background=D6E001&color=222",
-                    "public_id": null
-                }
-            },
-            "email": "my-user3@domain.com",
-            "registerDate": "2019-02-11T09:24:43.314Z",
-            "timestamp": 1549876559
+            "<user3_data>"
         }
     ],
     "includes": []
@@ -354,32 +447,39 @@ $.ajax(settings).done(function (response) {
     "data": [
         {
             "type": "user",
-            "id": "5be1e7415f019d0b44ed1ff2",
+            "id": "<user_id>",
             "nickName": "UserName",
             "profile": {
+                "registerDate": "2019-04-12T15:20:42.823Z",
+                "createdWith": {
+                    "prodivder": "Dialogram",
+                    "userId": null
+                },
                 "firstName": "John",
-                "lastName": "Bryan"
+                "lastName": "Bryan",
                 "profilePicture": {
                     "url": "https://ui-avatars.com/api/?name=John+Bryan",
                     "public_id": "null"
-                }
+                },
+                "birthday": null,
+                "gender": null,
+                "country": null,
+                "hometown": null,
+                "description": null,
+                "certificated": false
             },
             "email": "my-user@domain.com",
-            "registerDate": "2019-02-06T21:30:51.461Z",
-            "timestamp": 1549490327518,
+            "timestamp": 1555082426,
             "features": {
-                "follows": [
-                    "<Indiana_jones ID>"
-                ],
+                "follows": ["<Indiana_jones_ID>"],
                 "followers": [],
                 "documentsLiked": [],
                 "documentsCommented": [],
                 "documentsFavorite": []
             }
-          }
+        }
     ],
-    "includes": [
-    ]
+    "includes": []
 }
 ```
 
@@ -429,19 +529,29 @@ $.ajax(settings).done(function (response) {
     "data": [
         {
             "type": "user",
-            "id": "5be1e7415f019d0b44ed1ff2",
+            "id": "<user_id>",
             "nickName": "UserName",
             "profile": {
+                "registerDate": "2019-04-12T15:20:42.823Z",
+                "createdWith": {
+                    "prodivder": "Dialogram",
+                    "userId": null
+                },
                 "firstName": "John",
-                "lastName": "Bryan"
+                "lastName": "Bryan",
                 "profilePicture": {
                     "url": "https://ui-avatars.com/api/?name=John+Bryan",
                     "public_id": "null"
-                }
+                },
+                "birthday": null,
+                "gender": null,
+                "country": null,
+                "hometown": null,
+                "description": null,
+                "certificated": false
             },
             "email": "my-user@domain.com",
-            "registerDate": "2019-02-06T21:30:51.461Z",
-            "timestamp": 1549490327518,
+            "timestamp": 1555082426,
             "features": {
                 "follows": [],
                 "followers": [],
@@ -451,8 +561,7 @@ $.ajax(settings).done(function (response) {
             }
         }
     ],
-    "includes": [
-    ]
+    "includes": []
 }
 ```
 
@@ -476,8 +585,13 @@ curl --request PUT \
   --data '
   {
   	"profile": {
-      			"firstName" : "Indiana",
-      			"lastName" : "Jones"
+      			"firstName" : "Harrison",
+      			"lastName" : "Ford",
+                "birthday": "13/07/1942",
+                "gender": "male",
+                "country": "USA",
+                "hometown": "Chicago",
+                "description": "Acteur américain"
               }
   } '
 ```
@@ -494,7 +608,7 @@ var settings = {
     "Postman-Token": "46cb8c95-74e6-4435-9ad0-f20abeaece71"
   },
   "processData": false,
-  "data": " { \n\t\"profile\": {\n\t\t\t\"firstName\" : \"Indiana\",\n\t\t\t\"lastName\" : \"Jones\"\n\t}\n } "
+  "data": " { \n\t\"profile\": {\n       \"firstName\" : \"Harrison\",\n       \"lastName\" : \"Ford\",\n       \"birthday\": \"13/07/1942\",\n       \"gender\": \"male\",\n       \"country\": \"USA\",\n       \"hometown\": \"Chicago\",\n       \"description\": \"Acteur américain\"\n    }\n } "
 }
 
 $.ajax(settings).done(function (response) {
@@ -509,30 +623,39 @@ $.ajax(settings).done(function (response) {
     "data": [
         {
             "type": "user",
-            "id": "5be1e7415f019d0b44ed1ff2",
+            "id": "<user_id>",
             "nickName": "UserName",
             "profile": {
-                "firstName": "Indiana",
-                "lastName": "Jones"
+                "registerDate": "2019-04-12T15:20:42.823Z",
+                "createdWith": {
+                    "prodivder": "Dialogram",
+                    "userId": null
+                },
+                "firstName": "Harrison",
+                "lastName": "Ford",
                 "profilePicture": {
-                    "url": "https://ui-avatars.com/api/?name=John+Bryan",
+                    "url": "https://ui-avatars.com/api/?name=Harrison+Ford",
                     "public_id": "null"
-                }
+                },
+                "birthday": "13/07/1942",
+                "gender": "male",
+                "country": "USA",
+                "hometown": "Chicago",
+                "description": "Acteur américain",
+                "certificated": false
             },
             "email": "my-user@domain.com",
-            "registerDate": "2019-02-06T21:30:51.461Z",
-            "timestamp": 1549490327518
+            "timestamp": 1555082426,
+            "features": {
+                "follows": [],
+                "followers": [],
+                "documentsLiked": [],
+                "documentsCommented": [],
+                "documentsFavorite": []
+            }
         }
     ],
-    "includes": [
-        {
-            "type": "session",
-            "id": "5be1e7425f019d0b44ed1ff3",
-            "token": "<User_Token>",
-            "deviceName": "Safari on AndroidOS OS",
-            "user": "<User ID>"
-        }
-    ]
+    "includes": []
 }
 ```
 
@@ -546,10 +669,15 @@ This endpoint update all public information of users.
 
 ``
  {
-	"profile": {
-			"firstName" : "Indiana",
-			"lastName" : "Jones"
-	}
+    "profile": {
+       "firstName" : "Harrison",
+       "lastName" : "Ford",
+       "birthday": "13/07/1942",
+       "gender": "male",
+       "country": "USA",
+       "hometown": "Chicago",
+       "description": "Acteur américain"
+    }
  }
 ``
 
@@ -601,26 +729,43 @@ $.ajax(settings).done(function (response) {
     "data": [
         {
             "type": "user",
-            "id": "5c5b520b0f780b589bec0334",
+            "id": "<user_id>",
             "nickName": "UserName",
             "profile": {
-                "firstName": "John",
-                "lastName": "Bryan",
+                "registerDate": "2019-04-12T15:20:42.823Z",
+                "createdWith": {
+                    "prodivder": "Dialogram",
+                    "userId": null
+                },
+                "firstName": "Harrison",
+                "lastName": "Ford",
                 "profilePicture": {
                     "url": "http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/<id>.jpg",
-                    "public_id": "profile_pictures_dev/daa3ryctayyqidxoodpc"
-                }
+                    "public_id": "<public_id"
+                },
+                "birthday": "13/07/1942",
+                "gender": "male",
+                "country": "USA",
+                "hometown": "Chicago",
+                "description": "Acteur américain",
+                "certificated": false
             },
             "email": "my-user@domain.com",
-            "registerDate": "2019-02-06T21:30:51.461Z",
-            "timestamp": 1549490327518
+            "timestamp": 1555082426,
+            "features": {
+                "follows": [],
+                "followers": [],
+                "documentsLiked": [],
+                "documentsCommented": [],
+                "documentsFavorite": []
+            }
         }
     ],
     "includes": []
 }
 ```
 
-This endpoint upload a profil picture.
+This endpoint upload a new profil picture and delete the old one.
 
 #### HTTP Request
 
@@ -678,31 +823,41 @@ $.ajax(settings).done(function (response) {
     "data": [
         {
             "type": "user",
-            "id": "5be1e7415f019d0b44ed1ff2",
+            "id": "<user_id>",
             "nickName": "UserName",
             "profile": {
-                "firstName": "John",
-                "lastName": "Bryan"
+                "registerDate": "2019-04-12T15:20:42.823Z",
+                "createdWith": {
+                    "prodivder": "Dialogram",
+                    "userId": null
+                },
+                "firstName": "Harrison",
+                "lastName": "Ford",
                 "profilePicture": {
-                    "url": "http://res.cloudinary.com/dialogram/image/<URL>",
-                    "public_id": "profile_pictures/<ID>"
-                }
+                    "url": "http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/<id>.jpg",
+                    "public_id": "<public_id"
+                },
+                "birthday": "13/07/1942",
+                "gender": "male",
+                "country": "USA",
+                "hometown": "Chicago",
+                "description": "Acteur américain",
+                "certificated": false
             },
             "email": "my-user@domain.com",
-            "registerDate": "2019-02-06T21:30:51.461Z",
-            "timestamp": 1549490327518
+            "timestamp": 1555082426,
+            "features": {
+                "follows": [],
+                "followers": [],
+                "documentsLiked": [],
+                "documentsCommented": [],
+                "documentsFavorite": []
+            }
         }
     ],
-    "includes": [
-        {
-            "type": "session",
-            "id": "5be1e7425f019d0b44ed1ff3",
-            "token": "<User_Token>",
-            "deviceName": "Safari on AndroidOS OS",
-            "user": "<User ID>"
-        }
-    ]
+    "includes": []
 }
+
 ```
 
 This endpoint update user password and send an email to informe the user.
@@ -719,6 +874,102 @@ This endpoint update user password and send an email to informe the user.
   "newPassword" : "qwerty123"
 }
 ``
+
+### Set a password
+
+```shell
+curl --request PUT \
+  --url http://api.dialogram.fr:8080/api/user/settings/set/password \
+  --header 'Content-Type: application/json' \
+  --header 'Postman-Token: 025a15c0-6d01-4785-8013-3e679a0b12e8' \
+  --header 'cache-control: no-cache' \
+  --data '
+  {
+    "newPassword" : "qwerty123"
+  }'
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/user/settings/set/password",
+  "method": "PUT",
+  "headers": {
+    "Content-Type": "application/json",
+    "cache-control": "no-cache",
+    "Postman-Token": "8f458df6-6d6f-4787-b1a8-d9fb5168a0aa"
+  },
+  "processData": false,
+  "data": " { \n\t\"newPassword\" : \"qwerty123\" \n }"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns JSON structured like this:
+
+```json
+{
+    "data": [
+        {
+            "type": "user",
+            "id": "<user_id>",
+            "nickName": "UserName",
+            "profile": {
+                "registerDate": "2019-04-12T15:20:42.823Z",
+                "createdWith": {
+                    "prodivder": "Dialogram",
+                    "userId": null
+                },
+                "firstName": "Harrison",
+                "lastName": "Ford",
+                "profilePicture": {
+                    "url": "http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/<id>.jpg",
+                    "public_id": "<public_id"
+                },
+                "birthday": "13/07/1942",
+                "gender": "male",
+                "country": "USA",
+                "hometown": "Chicago",
+                "description": "Acteur américain",
+                "certificated": false
+            },
+            "email": "my-user@domain.com",
+            "timestamp": 1555082426,
+            "features": {
+                "follows": [],
+                "followers": [],
+                "documentsLiked": [],
+                "documentsCommented": [],
+                "documentsFavorite": []
+            }
+        }
+    ],
+    "includes": []
+}
+
+```
+
+This endpoint set user password and send an email to informe the user.
+
+#### HTTP Request
+
+`PUT http://api.dialogram.fr:8080/api/user/settings/set/password`
+
+#### Query Parameters
+
+``
+{
+  "newPassword" : "qwerty123"
+}
+``
+
+<aside class="warning">
+    Only available when authenticated by OAuth 2.0
+</aside>
 
 ### Update account
 
@@ -762,30 +1013,39 @@ $.ajax(settings).done(function (response) {
     "data": [
         {
             "type": "user",
-            "id": "5be1e7415f019d0b44ed1ff2",
+            "id": "<user_id>",
             "nickName": "editUserName",
             "profile": {
-                "firstName": "John",
-                "lastName": "Bryan"
+                "registerDate": "2019-04-12T15:20:42.823Z",
+                "createdWith": {
+                    "prodivder": "Dialogram",
+                    "userId": null
+                },
+                "firstName": "Harrison",
+                "lastName": "Ford",
                 "profilePicture": {
-                    "url": "http://res.cloudinary.com/dialogram/image/<URL>",
-                    "public_id": "profile_pictures/<ID>"
-                }
+                    "url": "http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/<id>.jpg",
+                    "public_id": "<public_id"
+                },
+                "birthday": "13/07/1942",
+                "gender": "male",
+                "country": "USA",
+                "hometown": "Chicago",
+                "description": "Acteur américain",
+                "certificated": false
             },
             "email": "editMyUser@domain.com",
-            "registerDate": "2019-02-06T21:30:51.461Z",
-            "timestamp": 1549490327518
+            "timestamp": 1555082426,
+            "features": {
+                "follows": [],
+                "followers": [],
+                "documentsLiked": [],
+                "documentsCommented": [],
+                "documentsFavorite": []
+            }
         }
     ],
-    "includes": [
-        {
-            "type": "session",
-            "id": "5be1e7425f019d0b44ed1ff3",
-            "token": "<User_Token>",
-            "deviceName": "Safari on AndroidOS OS",
-            "user": "<User ID>"
-        }
-    ]
+    "includes": []
 }
 ```
 
