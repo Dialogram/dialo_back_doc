@@ -32,7 +32,7 @@ Welcome to the Dialogram API documentation! You can use our API to access API en
 We have language bindings with Curl and Javascript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right. 
 
 
-## User
+# User
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
