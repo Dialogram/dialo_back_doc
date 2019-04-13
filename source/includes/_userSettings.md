@@ -65,14 +65,14 @@ This endpoint update all public information of users.
 
 #### Query Parameters
 
-```json
+``
  {
 	"profile": {
 			"firstName" : "Indiana",
 			"lastName" : "Jones"
 	}
  }
-```
+``
 
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
@@ -141,12 +141,12 @@ This endpoint update user password and send an email to informe the user.
 
 #### Query Parameters
 
-```json
+``
 {
   "currentPassword" : "password123",
   "newPassword" : "qwerty123"
 }
-```
+``
 
 ## Update account
 
@@ -211,12 +211,12 @@ This endpoint update user account settings such as mail address or nickname. You
 
 #### Query Parameters
 
-```json
+``
 {
   "nickName" : "editUserName",
   "email" : "editMyUser@domain.com"
 }
-```
+``
 
 ## Confirm mail updated
 

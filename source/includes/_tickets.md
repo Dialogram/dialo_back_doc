@@ -67,13 +67,13 @@ This endpoint authenticate you to the video API
 
 #### Query Parameters
 
-```json
+``
 {
 	"title": "Bug on Video API",
 	"category": "bug",
 	"description": "Video API bug when you try to upload a video from this endpoit GET /api/video. Morever it doesnt return all the videos."
 }
-```
+``
 
 ## Get ticket by ID
 

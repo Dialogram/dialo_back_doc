@@ -45,11 +45,11 @@ This endpoint create a token and send it to the referenced email.
 
 #### Query Parameters
 
-```json
+``
 {
     "email" : "myMail@domain.com"
 }
-```
+``
 
 ### Reset password by token
 
@@ -97,9 +97,9 @@ All the sessions will be deleted and an email will be sent to the account to inf
 
 #### Query Parameters
 
-```json
+``
 {
      "paswword" : "myNewPassword1234",
      "confirm" : "myNewPassword1234"
 }
-```
+``

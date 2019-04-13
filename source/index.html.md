@@ -146,7 +146,7 @@ The Dialogram API use token to allow access to the API. You can register a new D
 
 #### Query Parameters
 
-```json
+``
 {
 "nickName" : "UserName",
   "profile": {
@@ -156,7 +156,7 @@ The Dialogram API use token to allow access to the API. You can register a new D
 "email" : "my-user@domain.com",
 "password" : "password123"
 }
-```
+``
 
 <aside class="success">
   Remember — a happy user is an authenticated user!
@@ -667,7 +667,7 @@ This endpoint update all public information of users.
 
 #### Query Parameters
 
-```json
+``
  {
     "profile": {
        "firstName" : "Harrison",
@@ -679,7 +679,7 @@ This endpoint update all public information of users.
        "description": "Acteur américain"
     }
  }
-```
+``
 
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
@@ -868,12 +868,12 @@ This endpoint update user password and send an email to informe the user.
 
 #### Query Parameters
 
-```json
+``
 {
   "currentPassword" : "password123",
   "newPassword" : "qwerty123"
 }
-```
+``
 
 ### Set a password
 
@@ -961,11 +961,11 @@ This endpoint set user password and send an email to informe the user.
 
 #### Query Parameters
 
-```json
+``
 {
   "newPassword" : "qwerty123"
 }
-```
+``
 
 <aside class="warning">
     Only available when authenticated by OAuth 2.0
@@ -1057,12 +1057,12 @@ This endpoint update user account settings such as mail address or nickname. You
 
 #### Query Parameters
 
-```json
+``
 {
   "nickName" : "editUserName",
   "email" : "editMyUser@domain.com"
 }
-```
+``
 
 ### Confirm mail updated
 
@@ -1258,11 +1258,11 @@ This endpoint create a token and send it to the referenced email.
 
 #### Query Parameters
 
-```json
+``
 {
     "email" : "myMail@domain.com"
 }
-```
+``
 
 ### Reset password by token
 
@@ -1310,9 +1310,9 @@ All the sessions will be deleted and an email will be sent to the account to inf
 
 #### Query Parameters
 
-```json
+``
 {
      "paswword" : "myNewPassword1234",
      "confirm" : "myNewPassword1234"
 }
-```
+``

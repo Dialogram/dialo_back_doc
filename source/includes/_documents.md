@@ -350,14 +350,14 @@ This endpoint update the data file. You only need to be authenticated with the u
 `PUT http://api.dialogram.fr:8080/api/document/update/:id`
 
 #### Query Parameters
-```json
+``
 {
   "name" : "newName",
 	"description": "Now we have a nice description, and the file is public",
 	"public" : "true",
   "category" : "entertainment"
 }
-```
+``
 
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
