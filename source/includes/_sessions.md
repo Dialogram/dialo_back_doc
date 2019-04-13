@@ -54,12 +54,12 @@ This endpoint create a session linked to the specified user ID.
 
 #### Query Parameters
 
-``
+```json
    {
       "email" : "usermail@domain.com",
       "password" : "password1234"
    }
-``
+```
 
 <aside class="success">
 Note that you need to create a user before being able to create its session.

@@ -98,7 +98,7 @@ This endpoint upload a video.
 `POST http://api.dialogram.fr:8080/api/video`
 
 #### Query Parameters
-``
+```json
 {
 	"title" : "Detroit records talkshow",
 	"description" : "Mike Banks, the creator of Underground Resistance tell the story of the sound of detroit",
@@ -118,7 +118,7 @@ This endpoint upload a video.
 			"thumbnail" : "https://cdn.api.video/vod/v239832923"
 	}
 }
-``
+```
 
 ## Get Video
 
@@ -384,7 +384,7 @@ This endpoint update the video data specified by ID.
 `PUT http://api.dialogram.fr:8080/api/video/:idVideo`
 
 #### Query Parameters
-``
+```json
 {
 	"title" : "Chicago records talkshow",
 	"description" : "Marshall Jefferson, the creator of House music tell the story of the sound of chicago",
@@ -393,7 +393,7 @@ This endpoint update the video data specified by ID.
 	"tags" : ["chicago", "jack youor body", "records"],
 	"metadata" : ["uno", "dos", "tres"]
 }
-``
+```
 
 ## Delete Video by ID
 

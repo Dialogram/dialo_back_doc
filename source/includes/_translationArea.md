@@ -75,7 +75,7 @@ This endpoint create a translation area of the document by indicating the field 
 `POST http://api.dialogram.fr:8080/api/document/:idDocument/translation`
 
 #### Query Parameters
-``
+```json
 {
 	"translation":[
 		[
@@ -88,7 +88,7 @@ This endpoint create a translation area of the document by indicating the field 
 		]
 	]
 }
-``
+```
 
 <aside class="success">
 Remember — a happy user is an authenticated user by token!
@@ -161,7 +161,7 @@ This endpoint update the translation area of the document.
 `PUT http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation`
 
 #### Query Parameters
-``
+```json
 {
   "translation": [
     [
@@ -170,7 +170,7 @@ This endpoint update the translation area of the document.
     ]
   ]
 }
-``
+```
 
 ## Get Document Translation Area by ID
 
