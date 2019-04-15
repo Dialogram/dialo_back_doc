@@ -109,7 +109,7 @@ idDocument: The id of the target document.
 ## Remove edit permission
 
 ```shell
-curl -X PUT \
+curl -X DELETE \
   http://api.dialogram.fr:8085/api/document/:idDocument/waccess \
   -H 'Authorization: Bearer <user token>' \
   -H 'Content-Type: application/json' \
@@ -126,7 +126,7 @@ var settings = {
   "async": true,
   "crossDomain": true,
   "url": "http://api.dialogram.fr:8085/api/document/:idDocument/waccess",
-  "method": "PUT",
+  "method": "DELETE",
   "headers": {
     "Content-Type": "application/json",
     "Authorization": "Bearer <user_token>",
@@ -152,7 +152,7 @@ This endpoint add the permission to a user or a list of user to remove the edit 
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr:8080/api/document/:idDocument/waccess`
+`DELETE http://api.dialogram.fr:8080/api/document/:idDocument/waccess`
 
 #### Query Parameters
 ``
@@ -162,7 +162,7 @@ idDocument: The id of the target document.
 ## Remove deletion permission
 
 ```shell
-curl -X PUT \
+curl -X DELETE \
   http://api.dialogram.fr:8085/api/document/:idDocument/daccess \
   -H 'Authorization: Bearer <user token>' \
   -H 'Content-Type: application/json' \
@@ -179,7 +179,7 @@ var settings = {
   "async": true,
   "crossDomain": true,
   "url": "http://api.dialogram.fr:8085/api/document/:idDocument/daccess",
-  "method": "PUT",
+  "method": "DELETE",
   "headers": {
     "Content-Type": "application/json",
     "Authorization": "Bearer <user_token>",
@@ -205,7 +205,7 @@ This endpoint add the permission to a user or a list of user to remove the delet
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr:8080/api/document/:idDocument/daccess`
+`DELETE http://api.dialogram.fr:8080/api/document/:idDocument/daccess`
 
 #### Query Parameters
 ``
