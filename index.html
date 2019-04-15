@@ -3015,7 +3015,7 @@ idDocument: The id of the target document.
 <p><code>
 idDocument: The id of the target document.
 </code></p>
-<h2 id='remove-edit-permission'>Remove edit permission</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
+<h2 id='remove-edit-permission'>Remove edit permission</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
   http://api.dialogram.fr:8085/api/document/:idDocument/waccess <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;user token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -3029,7 +3029,7 @@ idDocument: The id of the target document.
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8085/api/document/:idDocument/waccess"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
     <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;user_token&gt;"</span><span class="p">,</span>
@@ -3052,12 +3052,12 @@ idDocument: The id of the target document.
 </span></code></pre>
 <p>This endpoint add the permission to a user or a list of user to remove the edit permission of other user(s) toward the data of a specified document.</p>
 <h4 id='http-request-3'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/waccess</code></p>
+<p><code>DELETE http://api.dialogram.fr:8080/api/document/:idDocument/waccess</code></p>
 <h4 id='query-parameters-3'>Query Parameters</h4>
 <p><code>
 idDocument: The id of the target document.
 </code></p>
-<h2 id='remove-deletion-permission'>Remove deletion permission</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
+<h2 id='remove-deletion-permission'>Remove deletion permission</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
   http://api.dialogram.fr:8085/api/document/:idDocument/daccess <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;user token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -3071,7 +3071,7 @@ idDocument: The id of the target document.
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8085/api/document/:idDocument/daccess"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
     <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;user_token&gt;"</span><span class="p">,</span>
@@ -3094,7 +3094,7 @@ idDocument: The id of the target document.
 </span></code></pre>
 <p>This endpoint add the permission to a user or a list of user to remove the deletion permission of other user(s) toward the data of a specified document.</p>
 <h4 id='http-request-4'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/daccess</code></p>
+<p><code>DELETE http://api.dialogram.fr:8080/api/document/:idDocument/daccess</code></p>
 <h4 id='query-parameters-4'>Query Parameters</h4>
 <p><code>
 idDocument: The id of the target document.
