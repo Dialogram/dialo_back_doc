@@ -273,6 +273,9 @@
                               <a href="#confirm-mail-updated" class="toc-h3 toc-link" data-title="Confirm mail updated">Confirm mail updated</a>
                             </li>
                             <li>
+                              <a href="#send-confirm-account-token-by-email" class="toc-h3 toc-link" data-title="Send Confirm Account Token by Email">Send Confirm Account Token by Email</a>
+                            </li>
+                            <li>
                               <a href="#confirm-account" class="toc-h3 toc-link" data-title="Confirm Account">Confirm Account</a>
                             </li>
                             <li>
@@ -600,10 +603,6 @@ curl -X POST <span class="se">\</span>
 &quot;password&quot; : &quot;password123&quot;
 }
 </code></p>
-
-<aside class="success">
-  Remember — a happy user is an authenticated user!
-</aside>
 <h3 id='authenticate-with-facebook'>Authenticate with Facebook</h3><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just copy and paste the following request after editing the needed body parameter.</span>
 curl -X POST <span class="se">\</span>
   http://localhost:8080/api/auth/facebook <span class="se">\</span>
@@ -750,7 +749,7 @@ curl -X POST <span class="se">\</span>
 <p>NONE</p>
 
 <aside class="success">
-Remember — a happy user is an authenticated user by token!
+Remember — a happy user is a confirmed account by email and authenticated by token!
 </aside>
 <h2 id='search-user-s'>Search user(s)</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
   http://api.dialogram.fr:8080/api/search/user/to_find <span class="se">\</span>
@@ -805,7 +804,7 @@ to_find: the string that will be search in all the users nickname in database.
 </code></p>
 
 <aside class="success">
-Remember — a happy user is an authenticated user by token!
+Remember — a happy user is a confirmed account by email and authenticated by token! — a happy user is an authenticated user by token!
 </aside>
 <h2 id='follow'>Follow 🗀</h2><h3 id='follow-an-user'>Follow an user</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
   --url http://api.dialogram.fr:8080/api/user/follow <span class="se">\</span>
@@ -1047,7 +1046,7 @@ Remember — a happy user is an authenticated user by token!
 </code></p>
 
 <aside class="success">
-Remember — a happy user is an authenticated user by token!
+Remember — a happy user is a confirmed account by email and authenticated by token!
 </aside>
 <h3 id='update-profil-picture'>Update Profil Picture</h3><pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
   --url http://api.dialogram.fr:8080/api/user/settings/profilePicture <span class="se">\</span>
@@ -1138,7 +1137,7 @@ Remember — a happy user is an authenticated user by token!
 </tbody></table>
 
 <aside class="success">
-  Remember — a happy user is an authenticated user by token!
+  Remember — a happy user is a confirmed account by email and authenticated by token!
 </aside>
 <h3 id='update-password-account'>Update password account</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
   --url http://api.dialogram.fr:8080/api/user/settings/password <span class="se">\</span>
@@ -1422,6 +1421,43 @@ Remember — a happy user is an authenticated user by token!
 <aside class="success">
 Remember — Your token will only be accessible in your mailbox !
 </aside>
+<h3 id='send-confirm-account-token-by-email'>Send Confirm Account Token by Email</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
+  --url http://api.dialogram.fr:8080/api/user/settings/send/verification <span class="se">\</span>
+  --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'Postman-Token: 858fabaf-0acd-4eb7-9a63-e4057ff75bc7'</span> <span class="se">\</span>
+  --header <span class="s1">'cache-control: no-cache'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/user/settings/send/verification"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Postman-Token"</span><span class="p">:</span> <span class="s2">"47b12022-4582-4d68-972f-90de224f7ea6"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint send a token by email to validate his user account.</p>
+<h4 id='http-request-13'>HTTP Request</h4>
+<p><code>PUT http://api.dialogram.fr:8080/api/user/settings/send/verification</code></p>
+
+<aside class="success">
+  You need to be authenticated to access to this request
+</aside>
 <h3 id='confirm-account'>Confirm Account</h3><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url http://api.dialogram.fr:8080/api/user/settings/confirm/:token <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
@@ -1454,7 +1490,7 @@ Remember — Your token will only be accessible in your mailbox !
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint confirm user account by token.</p>
-<h4 id='http-request-13'>HTTP Request</h4>
+<h4 id='http-request-14'>HTTP Request</h4>
 <p><code>GET http://api.dialogram.fr:8080/api/user/settings/confirm/:token</code></p>
 
 <aside class="success">
@@ -1494,7 +1530,7 @@ Remember — Your token will only be accessible in your mailbox !
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint delete an authenticated user account.</p>
-<h4 id='http-request-14'>HTTP Request</h4>
+<h4 id='http-request-15'>HTTP Request</h4>
 <p><code>DELETE http://api.dialogram.fr:8080/api/user/settings/account/delete</code></p>
 <h2 id='forgot-password'>Forgot Password 🗀</h2><h3 id='send-token-by-email'>Send token by email</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
    http://api.dialogram.fr:8080/api/password/reset <span class="se">\</span>
@@ -1526,7 +1562,7 @@ Remember — Your token will only be accessible in your mailbox !
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint create a token and send it to the referenced email.</p>
-<h4 id='http-request-15'>HTTP Request</h4>
+<h4 id='http-request-16'>HTTP Request</h4>
 <p><code>POST http://api.dialogram.fr:8080/api/password/reset</code></p>
 <h4 id='query-parameters-10'>Query Parameters</h4>
 <p><code>
@@ -1565,7 +1601,7 @@ Remember — Your token will only be accessible in your mailbox !
 </span></code></pre>
 <p>This endpoint reset the user password and create a new one.
 All the sessions will be deleted and an email will be sent to the account to inform that the password have been changed.</p>
-<h4 id='http-request-16'>HTTP Request</h4>
+<h4 id='http-request-17'>HTTP Request</h4>
 <p><code>POST http://api.dialogram.fr:8080/api/password/reset/:token</code></p>
 <h4 id='query-parameters-11'>Query Parameters</h4>
 <p><code>
