@@ -158,10 +158,6 @@ The Dialogram API use token to allow access to the API. You can register a new D
 }
 ``
 
-<aside class="success">
-  Remember — a happy user is an authenticated user!
-</aside>
-
 ### Authenticate with Facebook
 
 ```shell
@@ -256,7 +252,6 @@ NONE
   Remember — Use your Facebook access token!
 </aside>
 
-
 ## Get a user
 
 ```shell
@@ -333,7 +328,7 @@ This endpoint retrieves a specific user.
 NONE
 
 <aside class="success">
-Remember — a happy user is an authenticated user by token!
+Remember — a happy user is a confirmed account by email and authenticated by token!
 </aside>
 
 
@@ -402,7 +397,7 @@ to_find: the string that will be search in all the users nickname in database.
 ``
 
 <aside class="success">
-Remember — a happy user is an authenticated user by token!
+Remember — a happy user is a confirmed account by email and authenticated by token! — a happy user is an authenticated user by token!
 </aside>
 
 ## Follow 🗀
@@ -682,7 +677,7 @@ This endpoint update all public information of users.
 ``
 
 <aside class="success">
-Remember — a happy user is an authenticated user by token!
+Remember — a happy user is a confirmed account by email and authenticated by token!
 </aside>
 
 ### Update Profil Picture
@@ -778,7 +773,7 @@ Key naming | Content
 image (type: file) | Your picture
 
 <aside class="success">
-  Remember — a happy user is an authenticated user by token!
+  Remember — a happy user is a confirmed account by email and authenticated by token!
 </aside>
 
 ### Update password account
@@ -1111,6 +1106,54 @@ This endpoint update the user mail address by token with the new one.
 
 <aside class="success">
 Remember — Your token will only be accessible in your mailbox !
+</aside>
+
+### Send Confirm Account Token by Email
+
+```shell
+curl --request PUT \
+  --url http://api.dialogram.fr:8080/api/user/settings/send/verification \
+  --header 'Content-Type: application/json' \
+  --header 'Postman-Token: 858fabaf-0acd-4eb7-9a63-e4057ff75bc7' \
+  --header 'cache-control: no-cache'
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.dialogram.fr:8080/api/user/settings/send/verification",
+  "method": "PUT",
+  "headers": {
+    "Content-Type": "application/json",
+    "cache-control": "no-cache",
+    "Postman-Token": "47b12022-4582-4d68-972f-90de224f7ea6"
+  },
+  "processData": false
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns JSON structured like this:
+
+```json
+{
+    "data": [],
+    "includes": []
+}
+```
+
+This endpoint send a token by email to validate his user account.
+
+#### HTTP Request
+
+`PUT http://api.dialogram.fr:8080/api/user/settings/send/verification`
+
+<aside class="success">
+  You need to be authenticated to access to this request
 </aside>
 
 ### Confirm Account
