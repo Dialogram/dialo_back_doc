@@ -390,16 +390,13 @@
             <a href="#permissions" class="toc-h1 toc-link" data-title="Permissions">Permissions</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#add-edit-permission" class="toc-h2 toc-link" data-title="Add edit permission">Add edit permission</a>
+                    <a href="#promote-switch-user-role" class="toc-h2 toc-link" data-title="Promote/Switch user role">Promote/Switch user role</a>
                   </li>
                   <li>
-                    <a href="#add-deletion-permission" class="toc-h2 toc-link" data-title="Add deletion permission">Add deletion permission</a>
+                    <a href="#deprive-user-role" class="toc-h2 toc-link" data-title="Deprive user role">Deprive user role</a>
                   </li>
                   <li>
-                    <a href="#remove-edit-permission" class="toc-h2 toc-link" data-title="Remove edit permission">Remove edit permission</a>
-                  </li>
-                  <li>
-                    <a href="#remove-deletion-permission" class="toc-h2 toc-link" data-title="Remove deletion permission">Remove deletion permission</a>
+                    <a href="#role-definitions" class="toc-h2 toc-link" data-title="Role definitions">Role definitions</a>
                   </li>
               </ul>
           </li>
@@ -483,7 +480,7 @@
         <ul class="toc-footer">
             <li><a href='http://www.dialogram.fr/'>Follow us on our website !</a></li>
             <li><a href='https://gitlab.com/Dialogram'>Contribute to the project !</a></li>
-            <li><a href='https://www.getpostman.com/collections/6939020254eac730f635'>Get the postman collection !</a></li>
+            <li><a href='https://www.getpostman.com/collections/e42e47b610196f463bbe'>Get the postman collection !</a></li>
             <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -2967,27 +2964,31 @@ Remember — a happy user is an authenticated user by token!
 <p>This endpoint delete a document comment.</p>
 <h4 id='http-request-14'>HTTP Request</h4>
 <p><code>DELETE http://api.dialogram.fr:8080/api/document/:idDocument/uncomment/:idComment</code></p>
-<h1 id='permissions'>Permissions</h1><h2 id='add-edit-permission'>Add edit permission</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
-  http://api.dialogram.fr:8085/api/document/:idDocument/waccess <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer &lt;user token&gt;'</span> <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -d <span class="s1">'{
-    "user": [
-        "userId1",
-        "userId2"
-        ]
-    }'</span>
+<h1 id='permissions'>Permissions</h1><h2 id='promote-switch-user-role'>Promote/Switch user role</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
+  http://api.dialogram.fr:8080/api/document/&lt;idDocument&gt;/editAccess/&lt;idUser&gt;/&lt;userRole&gt; <span class="se">\</span>
+  -H <span class="s1">'Accept: */*'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer &lt;your_bearer_token&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Cache-Control: no-cache'</span> <span class="se">\</span>
+  -H <span class="s1">'Connection: keep-alive'</span> <span class="se">\</span>
+  -H <span class="s1">'Host: api.dialogram.fr:8080'</span> <span class="se">\</span>
+  -H <span class="s1">'accept-encoding: gzip, deflate'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -H <span class="s1">'content-length: '</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8085/api/document/:idDocument/waccess"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document/&lt;idDocument&gt;/editAccess/&lt;idUser&gt;/&lt;userRole&gt;"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;user_token&gt;"</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\n\t\"user\": [\n\t\t\"userId\"\n\t\t]\n}"</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_bearer_token&gt;"</span><span class="p">,</span>
+    <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"*/*"</span><span class="p">,</span>
+    <span class="s2">"Cache-Control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Host"</span><span class="p">:</span> <span class="s2">"api.dialogram.fr:8080"</span><span class="p">,</span>
+    <span class="s2">"accept-encoding"</span><span class="p">:</span> <span class="s2">"gzip, deflate"</span><span class="p">,</span>
+    <span class="s2">"content-length"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="s2">"Connection"</span><span class="p">:</span> <span class="s2">"keep-alive"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -3002,34 +3003,56 @@ Remember — a happy user is an authenticated user by token!
     </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint add the permission to a user or a list of user to edit the data of a specified document.</p>
+<p>This endpoint allow the owner/moderator of a document to give a new role to another one. Note that a user cannot be at moderator and collaborator at the same time.</p>
+
+<p>For more informations about role, see the section below this sub-section.</p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/waccess</code></p>
+<p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/editAccess/:idUser/:role</code></p>
 <h4 id='query-parameters'>Query Parameters</h4>
-<p><code>
-idDocument: The id of the target document.
-</code></p>
-<h2 id='add-deletion-permission'>Add deletion permission</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
-  http://api.dialogram.fr:8085/api/document/:idDocument/daccess <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer &lt;user token&gt;'</span> <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -d <span class="s1">'{
-    "user": [
-        "userId1",
-        "userId2"
-        ]
-    }'</span>
+<table><thead>
+<tr>
+<th>Key naming</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>idDocument</td>
+<td>The id of the target document.</td>
+</tr>
+<tr>
+<td>idUser</td>
+<td>the user you want grant permission to.</td>
+</tr>
+<tr>
+<td>role</td>
+<td>the role you want to give to the target user.</td>
+</tr>
+</tbody></table>
+<h2 id='deprive-user-role'>Deprive user role</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
+  http://api.dialogram.fr:8080/api/document/&lt;idDocument&gt;/editAccess/&lt;idUser&gt;/&lt;userRole&gt; <span class="se">\</span>
+  -H <span class="s1">'Accept: */*'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer &lt;your_bearer_token&gt;'</span> <span class="se">\</span>
+  -H <span class="s1">'Cache-Control: no-cache'</span> <span class="se">\</span>
+  -H <span class="s1">'Connection: keep-alive'</span> <span class="se">\</span>
+  -H <span class="s1">'Host: api.dialogram.fr:8080'</span> <span class="se">\</span>
+  -H <span class="s1">'accept-encoding: gzip, deflate'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -H <span class="s1">'content-length: '</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8085/api/document/:idDocument/daccess"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8080/api/document/&lt;idDocument&gt;/editAccess/&lt;idUser&gt;/&lt;userRole&gt;"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;user_token&gt;"</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\n\t\"user\": [\n\t\t\"userId\"\n\t\t]\n}"</span>
+    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_bearer_token&gt;"</span><span class="p">,</span>
+    <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"*/*"</span><span class="p">,</span>
+    <span class="s2">"Cache-Control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+    <span class="s2">"Host"</span><span class="p">:</span> <span class="s2">"api.dialogram.fr:8080"</span><span class="p">,</span>
+    <span class="s2">"accept-encoding"</span><span class="p">:</span> <span class="s2">"gzip, deflate"</span><span class="p">,</span>
+    <span class="s2">"content-length"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="s2">"Connection"</span><span class="p">:</span> <span class="s2">"keep-alive"</span><span class="p">,</span>
+    <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s2">"no-cache"</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -3044,97 +3067,51 @@ idDocument: The id of the target document.
     </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint add the permission to a user or a list of user to delete the data of a specified document.</p>
+<p>This endpoint allow the owner/moderator of a document to deprive a role to another user. Note that you cannot deprive a document owner of any rights.</p>
+
+<p>For more informations about role, see the section below this sub-section.</p>
 <h4 id='http-request-2'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr:8080/api/document/:idDocument/daccess</code></p>
+<p><code>DELETE http://api.dialogram.fr:8080/api/document/:idDocument/editAccess/:idUser/:role</code></p>
 <h4 id='query-parameters-2'>Query Parameters</h4>
-<p><code>
-idDocument: The id of the target document.
-</code></p>
-<h2 id='remove-edit-permission'>Remove edit permission</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
-  http://api.dialogram.fr:8085/api/document/:idDocument/waccess <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer &lt;user token&gt;'</span> <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -d <span class="s1">'{
-    "user": [
-        "userId1",
-        "userId2"
-        ]
-    }'</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8085/api/document/:idDocument/waccess"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
-  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;user_token&gt;"</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\n\t\"user\": [\n\t\t\"userId\"\n\t\t]\n}"</span>
-<span class="p">}</span>
-
-<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>The above request returns a JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint add the permission to a user or a list of user to remove the edit permission of other user(s) toward the data of a specified document.</p>
-<h4 id='http-request-3'>HTTP Request</h4>
-<p><code>DELETE http://api.dialogram.fr:8080/api/document/:idDocument/waccess</code></p>
-<h4 id='query-parameters-3'>Query Parameters</h4>
-<p><code>
-idDocument: The id of the target document.
-</code></p>
-<h2 id='remove-deletion-permission'>Remove deletion permission</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
-  http://api.dialogram.fr:8085/api/document/:idDocument/daccess <span class="se">\</span>
-  -H <span class="s1">'Authorization: Bearer &lt;user token&gt;'</span> <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -d <span class="s1">'{
-    "user": [
-        "userId1",
-        "userId2"
-        ]
-    }'</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr:8085/api/document/:idDocument/daccess"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
-  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
-    <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;user_token&gt;"</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\n\t\"user\": [\n\t\t\"userId\"\n\t\t]\n}"</span>
-<span class="p">}</span>
-
-<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>The above request returns a JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"includes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint add the permission to a user or a list of user to remove the deletion permission of other user(s) toward the data of a specified document.</p>
-<h4 id='http-request-4'>HTTP Request</h4>
-<p><code>DELETE http://api.dialogram.fr:8080/api/document/:idDocument/daccess</code></p>
-<h4 id='query-parameters-4'>Query Parameters</h4>
-<p><code>
-idDocument: The id of the target document.
-</code></p>
+<table><thead>
+<tr>
+<th>Key naming</th>
+<th>Content</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>idDocument</td>
+<td>The id of the target document.</td>
+</tr>
+<tr>
+<td>idUser</td>
+<td>the user you want grant permission to.</td>
+</tr>
+<tr>
+<td>role</td>
+<td>the role you want to give to the target user.</td>
+</tr>
+</tbody></table>
+<h2 id='role-definitions'>Role definitions</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>owner</td>
+<td>The user that uploadead the document. Cannot loose this status and have all rights on his document.</td>
+</tr>
+<tr>
+<td>moderator</td>
+<td>This user have the rights of edition, deletion on the documents; he can also affect other user&#39;s role.</td>
+</tr>
+<tr>
+<td>collaborator</td>
+<td>Have edition/reading access on private document.</td>
+</tr>
+</tbody></table>
 <h1 id='translation-areas'>Translation Areas</h1><h2 id='create-an-document-translation-area'>Create an Document Translation Area</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://api.dialogram.fr:8080/api/document/:idDocument/translation <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
