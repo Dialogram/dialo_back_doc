@@ -252,7 +252,86 @@ NONE
   Remember — Use your Facebook access token!
 </aside>
 
-## Get a user
+## Get a user by ID
+
+```shell
+curl -X GET \
+  http://api.dialogram.fr:8080/api/user/profile/:idUser \
+  -H 'cache-control: no-cache'
+```
+
+```javascript
+var settings = {
+   "async": true,
+   "crossDomain": true,
+   "url": "http://api.dialogram.fr:8080/api/user/profile/:idUser",
+   "method": "GET",
+   "headers": {}
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above request returns JSON structured like this:
+
+```json
+{
+    "data": [
+        {
+            "type": "user",
+            "id": "<user_id>",
+            "nickName": "UserName",
+            "profile": {
+                "registerDate": "2019-04-12T15:20:42.823Z",
+                "createdWith": {
+                    "prodivder": "Dialogram",
+                    "userId": null
+                },
+                "firstName": "John",
+                "lastName": "Bryan",
+                "profilePicture": {
+                    "url": "https://ui-avatars.com/api/?name=John+Bryan",
+                    "public_id": "null"
+                },
+                "birthday": null,
+                "gender": null,
+                "country": null,
+                "hometown": null,
+                "description": null,
+                "certificated": false
+            },
+            "email": "my-user@domain.com",
+            "timestamp": 1555082426,
+            "features": {
+                "follows": [],
+                "followers": [],
+                "documentsLiked": [],
+                "documentsCommented": [],
+                "documentsFavorite": []
+            }
+        }
+    ],
+    "includes": []
+}
+```
+
+This endpoint retrieves a specific user.
+
+#### HTTP Request
+
+`GET http://api.dialogram.fr:8080/api/user/profile/:idUser`
+
+#### Query Parameters
+
+NONE
+
+<aside class="success">
+Remember — a happy user is a confirmed account by email and authenticated by token!
+</aside>
+
+## Get my user
 
 ```shell
 curl -X GET \
@@ -317,7 +396,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-This endpoint retrieves a specific user.
+This endpoint retrieves your user.
 
 #### HTTP Request
 
