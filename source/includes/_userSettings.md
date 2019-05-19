@@ -4,7 +4,7 @@
 
 ```shell
 curl --request PUT \
-  --url http://api.dialogram.fr/api/user/settings/public \
+  --url https://api.dialogram.fr/api/user/settings/public \
   --header 'Content-Type: application/json' \
   --header 'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc' \
   --header 'cache-control: no-cache' \
@@ -21,7 +21,7 @@ curl --request PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/user/settings/public",
+  "url": "https://api.dialogram.fr/api/user/settings/public",
   "method": "PUT",
   "headers": {
     "Content-Type": "application/json",
@@ -61,7 +61,7 @@ This endpoint update all public information of users.
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr/api/user/settings/public`
+`PUT https://api.dialogram.fr/api/user/settings/public`
 
 #### Query Parameters
 
@@ -82,7 +82,7 @@ Remember — a happy user is an authenticated user by token!
 
 ```shell
 curl --request PUT \
-  --url http://api.dialogram.fr/api/user/settings/password \
+  --url https://api.dialogram.fr/api/user/settings/password \
   --header 'Content-Type: application/json' \
   --header 'Postman-Token: 025a15c0-6d01-4785-8013-3e679a0b12e8' \
   --header 'cache-control: no-cache' \
@@ -97,7 +97,7 @@ curl --request PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/user/settings/password",
+  "url": "https://api.dialogram.fr/api/user/settings/password",
   "method": "PUT",
   "headers": {
     "Content-Type": "application/json",
@@ -137,7 +137,7 @@ This endpoint update user password and send an email to informe the user.
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr/api/user/settings/password`
+`PUT https://api.dialogram.fr/api/user/settings/password`
 
 #### Query Parameters
 
@@ -152,7 +152,7 @@ This endpoint update user password and send an email to informe the user.
 
 ```shell
 curl --request PUT \
-  --url http://api.dialogram.fr/api/user/settings/account \
+  --url https://api.dialogram.fr/api/user/settings/account \
   --header 'Content-Type: application/json' \
   --header 'Postman-Token: d72ba363-5244-4415-bc54-2abaaa687ccc' \
   --header 'cache-control: no-cache' \
@@ -167,7 +167,7 @@ curl --request PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/user/settings/account",
+  "url": "https://api.dialogram.fr/api/user/settings/account",
   "method": "PUT",
   "headers": {
     "Content-Type": "application/json",
@@ -207,7 +207,7 @@ This endpoint update user account settings such as mail address or nickname. You
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr/api/user/settings/account`
+`PUT https://api.dialogram.fr/api/user/settings/account`
 
 #### Query Parameters
 
@@ -222,7 +222,7 @@ This endpoint update user account settings such as mail address or nickname. You
 
 ```shell
 curl --request GET \
-  --url http://api.dialogram.fr/api/user/settings/account/email/ \
+  --url https://api.dialogram.fr/api/user/settings/account/email/ \
   --header 'Content-Type: application/json' \
   --header 'Postman-Token: ae95d1d7-026c-43b3-8119-6635bdb5d0b6' \
   --header 'cache-control: no-cache'
@@ -232,7 +232,7 @@ curl --request GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/user/settings/account/email/",
+  "url": "https://api.dialogram.fr/api/user/settings/account/email/",
   "method": "GET",
   "headers": {
     "Content-Type": "application/json",
@@ -261,7 +261,7 @@ This endpoint update the user mail address by token with the new one.
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr/api/user/settings/account/email/:token`
+`GET https://api.dialogram.fr/api/user/settings/account/email/:token`
 
 <aside class="success">
 Remember — Your token will only be accessible in your mailbox !
@@ -271,7 +271,7 @@ Remember — Your token will only be accessible in your mailbox !
 
 ```shell
 curl --request GET \
-  --url http://api.dialogram.fr/api/user/settings/confirm/:token \
+  --url https://api.dialogram.fr/api/user/settings/confirm/:token \
   --header 'Content-Type: application/json' \
   --header 'Postman-Token: 858fabaf-0acd-4eb7-9a63-e4057ff75bc7' \
   --header 'cache-control: no-cache'
@@ -281,7 +281,7 @@ curl --request GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/user/settings/confirm/:token",
+  "url": "https://api.dialogram.fr/api/user/settings/confirm/:token",
   "method": "GET",
   "headers": {
     "Content-Type": "application/json",
@@ -310,7 +310,7 @@ This endpoint confirm user account by token.
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr/api/user/settings/confirm/:token`
+`GET https://api.dialogram.fr/api/user/settings/confirm/:token`
 
 <aside class="success">
 Remember — Your token will only be accessible in your mailbox !
@@ -320,7 +320,7 @@ Remember — Your token will only be accessible in your mailbox !
 
 ```shell
 curl -X GET \
-  http://api.dialogram.fr/api/user/settings/account/delete \
+  https://api.dialogram.fr/api/user/settings/account/delete \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: 8c338b67-b8ff-4303-9463-dcdf8868f8ee' \
   -H 'cache-control: no-cache'
@@ -330,7 +330,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/user/settings/account/delete",
+  "url": "https://api.dialogram.fr/api/user/settings/account/delete",
   "method": "GET",
   "headers": {
     "Content-Type": "application/json",
@@ -359,14 +359,14 @@ This endpoint is the landing page for deleting your user account.
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr/api/user/settings/account/delete`
+`GET https://api.dialogram.fr/api/user/settings/account/delete`
 
 
 ## Delete Account
 
 ```shell
 curl -X DELETE \
-  http://api.dialogram.fr/api/user/settings/account/delete \
+  https://api.dialogram.fr/api/user/settings/account/delete \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: abcdff79-f8a5-4130-a870-426d100b03fc' \
@@ -377,7 +377,7 @@ curl -X DELETE \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/user/settings/account/delete",
+  "url": "https://api.dialogram.fr/api/user/settings/account/delete",
   "method": "DELETE",
   "headers": {
     "Content-Type": "application/json",
@@ -407,4 +407,4 @@ This endpoint delete an authenticated user account.
 
 #### HTTP Request
 
-`DELETE http://api.dialogram.fr/api/user/settings/account/delete`
+`DELETE https://api.dialogram.fr/api/user/settings/account/delete`

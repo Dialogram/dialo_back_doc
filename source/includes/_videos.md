@@ -4,7 +4,7 @@
 
 ```shell
 curl -X POST \
-  http://api.dialogram.fr/api/video \
+  https://api.dialogram.fr/api/video \
   --header 'Authorization: Bearer <your_access_token>' \
   --header 'Content-Type: application/json' \
   --header 'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0' \
@@ -27,7 +27,7 @@ form.append("public", "true");
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/video",
+  "url": "https://api.dialogram.fr/api/video",
   "method": "POST",
   "headers": {
     "Content-Type": "application/json",
@@ -83,7 +83,7 @@ This endpoint upload a video.
 
 #### HTTP Request
 
-`POST http://api.dialogram.fr/api/video`
+`POST https://api.dialogram.fr/api/video`
 
 #### Query Parameters
 
@@ -99,7 +99,7 @@ category (type: string) | Your video category (health, finance, administrative e
 
 ```shell
 curl -X GET \
-  http://api.dialogram.fr/api/video/:idVideo \
+  https://api.dialogram.fr/api/video/:idVideo \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'cache-control: no-cache'
 ```
@@ -108,7 +108,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/video/:idVideo",
+  "url": "https://api.dialogram.fr/api/video/:idVideo",
   "method": "GET",
   "headers": {
     "Authorization": "Bearer <your_access_token>",
@@ -159,7 +159,7 @@ This endpoint get the video by ID.
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr/api/video/:idVideo`
+`GET https://api.dialogram.fr/api/video/:idVideo`
 
 #### Query Parameters
 
@@ -169,7 +169,7 @@ NONE
 
 ```shell
 curl -X GET \
-  http://api.dialogram.fr/api/user/video \
+  https://api.dialogram.fr/api/user/video \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'cache-control: no-cache'
 ```
@@ -178,7 +178,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/user/video",
+  "url": "https://api.dialogram.fr/api/user/video",
   "method": "GET",
   "headers": {
     "Authorization": "Bearer <your_access_token>",
@@ -253,7 +253,7 @@ This endpoint get all the user videos.
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr/api/user/video`
+`GET https://api.dialogram.fr/api/user/video`
 
 #### Query Parameters
 
@@ -264,7 +264,7 @@ NONE
 
 ```shell
 curl -X PUT \
-  http://api.dialogram.fr/api/video/:idVideo \
+  https://api.dialogram.fr/api/video/:idVideo \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: 5927c68a-c72f-4da5-a1ca-49de4aa6d072' \
@@ -281,7 +281,7 @@ curl -X PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/video/:idVideo",
+  "url": "https://api.dialogram.fr/api/video/:idVideo",
   "method": "PUT",
   "headers": {
     "Content-Type": "application/json",
@@ -337,7 +337,7 @@ This endpoint update the video data specified by ID.
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr/api/video/:idVideo`
+`PUT https://api.dialogram.fr/api/video/:idVideo`
 
 #### Query Parameters
 ``
@@ -355,7 +355,7 @@ This endpoint update the video data specified by ID.
 
 ```shell
 curl -X DELETE \
-  http://api.dialogram.fr/api/video/:idVideo \
+  https://api.dialogram.fr/api/video/:idVideo \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Postman-Token: f2472e62-d64f-496e-8190-a115225d1e94' \
   -H 'cache-control: no-cache'
@@ -365,7 +365,7 @@ curl -X DELETE \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/video/:idVideo",
+  "url": "https://api.dialogram.fr/api/video/:idVideo",
   "method": "DELETE",
   "headers": {
     "Authorization": "Bearer <your_access_token>",
@@ -392,7 +392,7 @@ This endpoint delete a video by ID.
 
 #### HTTP Request
 
-`DELETE http://api.dialogram.fr/api/video/:idVideo`
+`DELETE https://api.dialogram.fr/api/video/:idVideo`
 
 #### Query Parameters
 

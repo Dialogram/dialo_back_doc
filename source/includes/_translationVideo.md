@@ -4,7 +4,7 @@
 
 ```shell
 curl -X POST \
-  http://api.dialogram.fr/api/translationVideo \
+  https://api.dialogram.fr/api/translationVideo \
   --header 'Authorization: Bearer <your_access_token>' \
   --header 'Content-Type: application/json' \
   --header 'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0' \
@@ -25,7 +25,7 @@ form.append("public", "true");
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/translationVideo",
+  "url": "https://api.dialogram.fr/api/translationVideo",
   "method": "POST",
   "headers": {
     "Content-Type": "application/json",
@@ -80,7 +80,7 @@ This endpoint upload a video translation for the document or video to be transla
 
 #### HTTP Request
 
-`POST http://api.dialogram.fr/api/translationVideo`
+`POST https://api.dialogram.fr/api/translationVideo`
 
 #### Query Parameters
 
@@ -96,7 +96,7 @@ public (type: boolean) | Your video privacy
 
 ```shell
 curl -X GET \
-  http://api.dialogram.fr/api/translationVideo/:idApiVideo \
+  https://api.dialogram.fr/api/translationVideo/:idApiVideo \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Postman-Token: f2472e62-d64f-496e-8190-a115225d1e94' \
   -H 'cache-control: no-cache'
@@ -106,7 +106,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/translationVideo/:idApiVideo",
+  "url": "https://api.dialogram.fr/api/translationVideo/:idApiVideo",
   "method": "GET",
   "headers": {
     "Authorization": "Bearer <your_access_token>",
@@ -157,7 +157,7 @@ This endpoint get the translation video by ID.
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr/api/translationVideo/:idApiVideo`
+`GET https://api.dialogram.fr/api/translationVideo/:idApiVideo`
 
 #### Query Parameters
 
@@ -167,7 +167,7 @@ NONE
 
 ```shell
 curl -X GET \
-  http://api.dialogram.fr/api/user/videos \
+  https://api.dialogram.fr/api/user/videos \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'cache-control: no-cache'
 ```
@@ -176,7 +176,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/user/videos",
+  "url": "https://api.dialogram.fr/api/user/videos",
   "method": "GET",
   "headers": {
     "Authorization": "Bearer <your_access_token>",
@@ -250,7 +250,7 @@ This endpoint get all the user translation videos.
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr/api/user/translationVideos`
+`GET https://api.dialogram.fr/api/user/translationVideos`
 
 #### Query Parameters
 
@@ -261,7 +261,7 @@ NONE
 
 ```shell
 curl -X PUT \
-  http://api.dialogram.fr/api/translationVideo/:idApiVideo \
+  https://api.dialogram.fr/api/translationVideo/:idApiVideo \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: 5927c68a-c72f-4da5-a1ca-49de4aa6d072' \
@@ -277,7 +277,7 @@ curl -X PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/translationVideo/:idApiVideo",
+  "url": "https://api.dialogram.fr/api/translationVideo/:idApiVideo",
   "method": "PUT",
   "headers": {
     "Content-Type": "application/json",
@@ -330,7 +330,7 @@ This endpoint update the translation video data specified by ID.
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr/api/video/:idApiVideo`
+`PUT https://api.dialogram.fr/api/video/:idApiVideo`
 
 #### Query Parameters
 ``
@@ -345,7 +345,7 @@ This endpoint update the translation video data specified by ID.
 
 ```shell
 curl -X DELETE \
-  http://api.dialogram.fr/api/video/:idApiVideo \
+  https://api.dialogram.fr/api/video/:idApiVideo \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'cache-control: no-cache'
 ```
@@ -354,7 +354,7 @@ curl -X DELETE \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/video/:idApiVideo",
+  "url": "https://api.dialogram.fr/api/video/:idApiVideo",
   "method": "DELETE",
   "headers": {
     "Authorization": "Bearer <your_access_token>",
@@ -380,7 +380,7 @@ This endpoint delete a translation video by ID.
 
 #### HTTP Request
 
-`DELETE http://api.dialogram.fr/api/translationVideo/:idApiVideo`
+`DELETE https://api.dialogram.fr/api/translationVideo/:idApiVideo`
 
 #### Query Parameters
 

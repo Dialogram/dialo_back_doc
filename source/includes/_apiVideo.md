@@ -4,7 +4,7 @@
 
 ```shell
 curl -X GET \
-  http://api.dialogram.fr/api/apiVideo/auth \ \
+  https://api.dialogram.fr/api/apiVideo/auth \ \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0' \
@@ -15,7 +15,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr/api/apiVideo/auth",
+  "url": "https://api.dialogram.fr/api/apiVideo/auth",
   "method": "GET",
   "headers": {
     "Content-Type": "application/json",
@@ -49,7 +49,7 @@ This endpoint authenticate you to the video API
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr/api/apiVideo/auth`
+`GET https://api.dialogram.fr/api/apiVideo/auth`
 
 #### Query Parameters
 
