@@ -482,9 +482,10 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='http://www.dialogram.fr/'>Follow us on our website !</a></li>
+            <li><a href='https://www.dialogram.fr/'>Follow us on our website !</a></li>
             <li><a href='https://gitlab.com/Dialogram'>Contribute to the project !</a></li>
             <li><a href='https://www.getpostman.com/collections/e42e47b610196f463bbe'>Get the postman collection !</a></li>
+            <li><a href='https://www.getpostman.com/collections/5e4ac786b9f225a9d125'>Get the staging postman collection !</a></li>
             <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -498,7 +499,7 @@
 <p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
 <h2 id='authentication'>Authentication 🗀</h2><h3 id='create-a-user'>Create a user</h3><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just copy and paste the following request after editing the needed body parameter.</span>
 curl -X POST <span class="se">\</span>
-  http://localhost/api/user <span class="se">\</span>
+  https://localhost/api/user <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: ce79c653-5c2f-40de-8df8-955ffac0ae8e'</span> <span class="se">\</span>
   -H <span class="s1">'User-Agent: Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i Version/4.0 Mobile Safari/534.30'</span> <span class="se">\</span>
@@ -518,7 +519,7 @@ curl -X POST <span class="se">\</span>
 <span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/user"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/user"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -589,7 +590,7 @@ curl -X POST <span class="se">\</span>
 </span></code></pre>
 <p>This endpoint allow you to create a user</p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>POST http://api.dialogram.fr/api/user</code></p>
+<p><code>POST https://api.dialogram.fr/api/user</code></p>
 
 <p>The Dialogram API use token to allow access to the API. You can register a new Dialogram API token by creating a new user according the user creation route&#39;s specifications.</p>
 <h4 id='query-parameters'>Query Parameters</h4>
@@ -606,7 +607,7 @@ curl -X POST <span class="se">\</span>
 </code></p>
 <h3 id='authenticate-with-facebook'>Authenticate with Facebook</h3><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just copy and paste the following request after editing the needed body parameter.</span>
 curl -X POST <span class="se">\</span>
-  http://localhost/api/auth/facebook <span class="se">\</span>
+  https://localhost/api/auth/facebook <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;user_facebook_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: ce79c653-5c2f-40de-8df8-955ffac0ae8e'</span> <span class="se">\</span>
@@ -618,7 +619,7 @@ curl -X POST <span class="se">\</span>
 <span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/auth/facebook"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/auth/facebook"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -651,7 +652,7 @@ curl -X POST <span class="se">\</span>
                 </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bryan"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/&lt;id&gt;.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/&lt;id&gt;.jpg"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;public_id&gt;"</span><span class="w">
                 </span><span class="p">},</span><span class="w">
                 </span><span class="s2">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;facebook_user_birthday&gt;"</span><span class="p">,</span><span class="w">
@@ -677,7 +678,7 @@ curl -X POST <span class="se">\</span>
 </span></code></pre>
 <p>This endpoint allow you to create a user</p>
 <h4 id='http-request-2'>HTTP Request</h4>
-<p><code>POST http://api.dialogram.fr/api/facebook/auth</code></p>
+<p><code>POST https://api.dialogram.fr/api/facebook/auth</code></p>
 
 <p>Create a Dialogram account or log in using Facebook API authentication.</p>
 <h4 id='query-parameters-2'>Query Parameters</h4>
@@ -687,12 +688,12 @@ curl -X POST <span class="se">\</span>
   Remember — Use your Facebook access token!
 </aside>
 <h2 id='get-a-user-by-id'>Get a user by ID</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr/api/user/profile/:idUser <span class="se">\</span>
+  https://api.dialogram.fr/api/user/profile/:idUser <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
    <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
    <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-   <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/user/profile/:idUser"</span><span class="p">,</span>
+   <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/user/profile/:idUser"</span><span class="p">,</span>
    <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
    <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{}</span>
 <span class="p">}</span>
@@ -745,7 +746,7 @@ curl -X POST <span class="se">\</span>
 </span></code></pre>
 <p>This endpoint retrieves a specific user.</p>
 <h4 id='http-request-3'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr/api/user/profile/:idUser</code></p>
+<p><code>GET https://api.dialogram.fr/api/user/profile/:idUser</code></p>
 <h4 id='query-parameters-3'>Query Parameters</h4>
 <p>NONE</p>
 
@@ -753,12 +754,12 @@ curl -X POST <span class="se">\</span>
 Remember — a happy user is a confirmed account by email and authenticated by token!
 </aside>
 <h2 id='get-my-user'>Get my user</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr/api/user/ <span class="se">\</span>
+  https://api.dialogram.fr/api/user/ <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
    <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
    <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-   <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/user/"</span><span class="p">,</span>
+   <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/user/"</span><span class="p">,</span>
    <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
    <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{}</span>
 <span class="p">}</span>
@@ -811,7 +812,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 </span></code></pre>
 <p>This endpoint retrieves your user.</p>
 <h4 id='http-request-4'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr/api/user/</code></p>
+<p><code>GET https://api.dialogram.fr/api/user/</code></p>
 <h4 id='query-parameters-4'>Query Parameters</h4>
 <p>NONE</p>
 
@@ -819,12 +820,12 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 Remember — a happy user is a confirmed account by email and authenticated by token!
 </aside>
 <h2 id='search-user-s'>Search user(s)</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr/api/search/user/to_find <span class="se">\</span>
+  https://api.dialogram.fr/api/search/user/to_find <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YzYxM2Y1YmQ0YTMzYjc5ZWNiZjU1ZTMiLCJpYXQiOjE1NDk4NzcwODMsImV4cCI6MTU4MTQzNDY4M30.FW6yuM4x3-Oi7Nlxv_iRTE-pSwpIzgBC_Kuyf45sRY8'</span> <span class="se">\</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/search/user/to_find"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/search/user/to_find"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YzYxM2Y1YmQ0YTMzYjc5ZWNiZjU1ZTMiLCJpYXQiOjE1NDk4NzcwODMsImV4cCI6MTU4MTQzNDY4M30.FW6yuM4x3-Oi7Nlxv_iRTE-pSwpIzgBC_Kuyf45sRY8"</span>
@@ -864,7 +865,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 </span></code></pre>
 <p>This endpoint retrieves all users wherein the query parameter can be found using fuzzy search.</p>
 <h4 id='http-request-5'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr/api/search/user/:to_find</code></p>
+<p><code>GET https://api.dialogram.fr/api/search/user/:to_find</code></p>
 <h4 id='query-parameters-5'>Query Parameters</h4>
 <p><code>
 to_find: the string that will be search in all the users nickname in database.
@@ -874,7 +875,7 @@ to_find: the string that will be search in all the users nickname in database.
 Remember — a happy user is a confirmed account by email and authenticated by token! — a happy user is an authenticated user by token!
 </aside>
 <h2 id='follow'>Follow 🗀</h2><h3 id='follow-an-user'>Follow an user</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
-  --url http://api.dialogram.fr/api/user/follow <span class="se">\</span>
+  --url https://api.dialogram.fr/api/user/follow <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc'</span> <span class="se">\</span>
   --header <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -885,7 +886,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/user/follow"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/user/follow"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -944,9 +945,9 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 </span></code></pre>
 <p>This endpoint follow an user.</p>
 <h4 id='http-request-6'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/user/follow</code></p>
+<p><code>PUT https://api.dialogram.fr/api/user/follow</code></p>
 <h3 id='unfollow-an-user'>Unfollow an user</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
-  --url http://api.dialogram.fr/api/user/unfollow <span class="se">\</span>
+  --url https://api.dialogram.fr/api/user/unfollow <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc'</span> <span class="se">\</span>
   --header <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -957,7 +958,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/user/unfollow"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/user/unfollow"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1016,9 +1017,9 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 </span></code></pre>
 <p>This endpoint follow an user.</p>
 <h4 id='http-request-7'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/user/unfollow</code></p>
+<p><code>PUT https://api.dialogram.fr/api/user/unfollow</code></p>
 <h2 id='settings'>Settings 🗀</h2><h3 id='update-public-information'>Update public information</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
-  --url http://api.dialogram.fr/api/user/settings/public <span class="se">\</span>
+  --url https://api.dialogram.fr/api/user/settings/public <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc'</span> <span class="se">\</span>
   --header <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -1037,7 +1038,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/user/settings/public"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/user/settings/public"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1096,7 +1097,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 </span></code></pre>
 <p>This endpoint update all public information of users.</p>
 <h4 id='http-request-8'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/user/settings/public</code></p>
+<p><code>PUT https://api.dialogram.fr/api/user/settings/public</code></p>
 <h4 id='query-parameters-6'>Query Parameters</h4>
 <p><code>
  {
@@ -1116,7 +1117,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 Remember — a happy user is a confirmed account by email and authenticated by token!
 </aside>
 <h3 id='update-profil-picture'>Update Profil Picture</h3><pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
-  --url http://api.dialogram.fr/api/user/settings/profilePicture <span class="se">\</span>
+  --url https://api.dialogram.fr/api/user/settings/profilePicture <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc'</span> <span class="se">\</span>
   --header <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -1128,7 +1129,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 <span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/user/settings/profilePicture"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/user/settings/profilePicture"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1163,7 +1164,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
                 </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Harrison"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ford"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/&lt;id&gt;.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/&lt;id&gt;.jpg"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;public_id"</span><span class="w">
                 </span><span class="p">},</span><span class="w">
                 </span><span class="s2">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13/07/1942"</span><span class="p">,</span><span class="w">
@@ -1189,7 +1190,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 </span></code></pre>
 <p>This endpoint upload a new profil picture and delete the old one.</p>
 <h4 id='http-request-9'>HTTP Request</h4>
-<p><code>POST http://api.dialogram.fr/api/user/settings/profilePicture</code></p>
+<p><code>POST https://api.dialogram.fr/api/user/settings/profilePicture</code></p>
 <h4 id='query-parameters-7'>Query Parameters</h4>
 <table><thead>
 <tr>
@@ -1207,7 +1208,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
   Remember — a happy user is a confirmed account by email and authenticated by token!
 </aside>
 <h3 id='update-password-account'>Update password account</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
-  --url http://api.dialogram.fr/api/user/settings/password <span class="se">\</span>
+  --url https://api.dialogram.fr/api/user/settings/password <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'Postman-Token: 025a15c0-6d01-4785-8013-3e679a0b12e8'</span> <span class="se">\</span>
   --header <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -1219,7 +1220,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/user/settings/password"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/user/settings/password"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1252,7 +1253,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
                 </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Harrison"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ford"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/&lt;id&gt;.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/&lt;id&gt;.jpg"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;public_id"</span><span class="w">
                 </span><span class="p">},</span><span class="w">
                 </span><span class="s2">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13/07/1942"</span><span class="p">,</span><span class="w">
@@ -1279,7 +1280,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 </span></code></pre>
 <p>This endpoint update user password and send an email to informe the user.</p>
 <h4 id='http-request-10'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/user/settings/password</code></p>
+<p><code>PUT https://api.dialogram.fr/api/user/settings/password</code></p>
 <h4 id='query-parameters-8'>Query Parameters</h4>
 <p><code>
 {
@@ -1288,7 +1289,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 }
 </code></p>
 <h3 id='set-a-password'>Set a password</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
-  --url http://api.dialogram.fr/api/user/settings/set/password <span class="se">\</span>
+  --url https://api.dialogram.fr/api/user/settings/set/password <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'Postman-Token: 025a15c0-6d01-4785-8013-3e679a0b12e8'</span> <span class="se">\</span>
   --header <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -1299,7 +1300,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/user/settings/set/password"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/user/settings/set/password"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1332,7 +1333,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
                 </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Harrison"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ford"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/&lt;id&gt;.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/&lt;id&gt;.jpg"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;public_id"</span><span class="w">
                 </span><span class="p">},</span><span class="w">
                 </span><span class="s2">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13/07/1942"</span><span class="p">,</span><span class="w">
@@ -1359,7 +1360,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 </span></code></pre>
 <p>This endpoint set user password and send an email to informe the user.</p>
 <h4 id='http-request-11'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/user/settings/set/password</code></p>
+<p><code>PUT https://api.dialogram.fr/api/user/settings/set/password</code></p>
 <h4 id='query-parameters-9'>Query Parameters</h4>
 <p><code>
 {
@@ -1371,7 +1372,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
     Only available when authenticated by OAuth 2.0
 </aside>
 <h3 id='update-account'>Update account</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
-  --url http://api.dialogram.fr/api/user/settings/account <span class="se">\</span>
+  --url https://api.dialogram.fr/api/user/settings/account <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'Postman-Token: d72ba363-5244-4415-bc54-2abaaa687ccc'</span> <span class="se">\</span>
   --header <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -1383,7 +1384,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/user/settings/account"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/user/settings/account"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1416,7 +1417,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
                 </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Harrison"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ford"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/&lt;id&gt;.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/&lt;id&gt;.jpg"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"public_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;public_id"</span><span class="w">
                 </span><span class="p">},</span><span class="w">
                 </span><span class="s2">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13/07/1942"</span><span class="p">,</span><span class="w">
@@ -1442,7 +1443,7 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 </span></code></pre>
 <p>This endpoint update user account settings such as mail address or nickname. You should confirm to your new mail address if it have been edited.</p>
 <h4 id='http-request-12'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/user/settings/account</code></p>
+<p><code>PUT https://api.dialogram.fr/api/user/settings/account</code></p>
 <h4 id='query-parameters-10'>Query Parameters</h4>
 <p><code>
 {
@@ -1451,14 +1452,14 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 }
 </code></p>
 <h3 id='confirm-mail-updated'>Confirm mail updated</h3><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url http://api.dialogram.fr/api/user/settings/account/email/ <span class="se">\</span>
+  --url https://api.dialogram.fr/api/user/settings/account/email/ <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'Postman-Token: ae95d1d7-026c-43b3-8119-6635bdb5d0b6'</span> <span class="se">\</span>
   --header <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/user/settings/account/email/"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/user/settings/account/email/"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1483,20 +1484,20 @@ Remember — a happy user is a confirmed account by email and authenticated by t
 </span></code></pre>
 <p>This endpoint update the user mail address by token with the new one.</p>
 <h4 id='http-request-13'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr/api/user/settings/account/email/:token</code></p>
+<p><code>GET https://api.dialogram.fr/api/user/settings/account/email/:token</code></p>
 
 <aside class="success">
 Remember — Your token will only be accessible in your mailbox !
 </aside>
 <h3 id='send-confirm-account-token-by-email'>Send Confirm Account Token by Email</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
-  --url http://api.dialogram.fr/api/user/settings/send/verification <span class="se">\</span>
+  --url https://api.dialogram.fr/api/user/settings/send/verification <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'Postman-Token: 858fabaf-0acd-4eb7-9a63-e4057ff75bc7'</span> <span class="se">\</span>
   --header <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/user/settings/send/verification"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/user/settings/send/verification"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1520,20 +1521,20 @@ Remember — Your token will only be accessible in your mailbox !
 </span></code></pre>
 <p>This endpoint send a token by email to validate his user account.</p>
 <h4 id='http-request-14'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/user/settings/send/verification</code></p>
+<p><code>PUT https://api.dialogram.fr/api/user/settings/send/verification</code></p>
 
 <aside class="success">
   You need to be authenticated to access to this request
 </aside>
 <h3 id='confirm-account'>Confirm Account</h3><pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url http://api.dialogram.fr/api/user/settings/confirm/:token <span class="se">\</span>
+  --url https://api.dialogram.fr/api/user/settings/confirm/:token <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'Postman-Token: 858fabaf-0acd-4eb7-9a63-e4057ff75bc7'</span> <span class="se">\</span>
   --header <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/user/settings/confirm/:token"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/user/settings/confirm/:token"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1558,13 +1559,13 @@ Remember — Your token will only be accessible in your mailbox !
 </span></code></pre>
 <p>This endpoint confirm user account by token.</p>
 <h4 id='http-request-15'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr/api/user/settings/confirm/:token</code></p>
+<p><code>GET https://api.dialogram.fr/api/user/settings/confirm/:token</code></p>
 
 <aside class="success">
 Remember — Your token will only be accessible in your mailbox !
 </aside>
 <h3 id='delete-account'>Delete Account</h3><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
-  http://api.dialogram.fr/api/user/settings/account/delete <span class="se">\</span>
+  https://api.dialogram.fr/api/user/settings/account/delete <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: abcdff79-f8a5-4130-a870-426d100b03fc'</span> <span class="se">\</span>
@@ -1572,7 +1573,7 @@ Remember — Your token will only be accessible in your mailbox !
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/user/settings/account/delete"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/user/settings/account/delete"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1598,16 +1599,16 @@ Remember — Your token will only be accessible in your mailbox !
 </span></code></pre>
 <p>This endpoint delete an authenticated user account.</p>
 <h4 id='http-request-16'>HTTP Request</h4>
-<p><code>DELETE http://api.dialogram.fr/api/user/settings/account/delete</code></p>
+<p><code>DELETE https://api.dialogram.fr/api/user/settings/account/delete</code></p>
 <h2 id='forgot-password'>Forgot Password 🗀</h2><h3 id='send-token-by-email'>Send token by email</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-   http://api.dialogram.fr/api/password/reset <span class="se">\</span>
+   https://api.dialogram.fr/api/password/reset <span class="se">\</span>
    -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
    -d <span class="s1">'{
 }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/password/reset"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/password/reset"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1630,7 +1631,7 @@ Remember — Your token will only be accessible in your mailbox !
 </span></code></pre>
 <p>This endpoint create a token and send it to the referenced email.</p>
 <h4 id='http-request-17'>HTTP Request</h4>
-<p><code>POST http://api.dialogram.fr/api/password/reset</code></p>
+<p><code>POST https://api.dialogram.fr/api/password/reset</code></p>
 <h4 id='query-parameters-11'>Query Parameters</h4>
 <p><code>
 {
@@ -1638,14 +1639,14 @@ Remember — Your token will only be accessible in your mailbox !
 }
 </code></p>
 <h3 id='reset-password-by-token'>Reset password by token</h3><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-   http://api.dialogram.fr/api/password/reset/:token <span class="se">\</span>
+   https://api.dialogram.fr/api/password/reset/:token <span class="se">\</span>
    -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
    -d <span class="s1">'{
 }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/password/reset/:token"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/password/reset/:token"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1669,7 +1670,7 @@ Remember — Your token will only be accessible in your mailbox !
 <p>This endpoint reset the user password and create a new one.
 All the sessions will be deleted and an email will be sent to the account to inform that the password have been changed.</p>
 <h4 id='http-request-18'>HTTP Request</h4>
-<p><code>POST http://api.dialogram.fr/api/password/reset/:token</code></p>
+<p><code>POST https://api.dialogram.fr/api/password/reset/:token</code></p>
 <h4 id='query-parameters-12'>Query Parameters</h4>
 <p><code>
 {
@@ -1678,7 +1679,7 @@ All the sessions will be deleted and an email will be sent to the account to inf
 }
 </code></p>
 <h1 id='session'>Session</h1><h2 id='create-a-session'>Create a session</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-   http://api.dialogram.fr/api/session <span class="se">\</span>
+   https://api.dialogram.fr/api/session <span class="se">\</span>
    -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
    -d <span class="s1">'{
       "email" : "usermail@domain.com",
@@ -1687,7 +1688,7 @@ All the sessions will be deleted and an email will be sent to the account to inf
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/session"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/session"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1717,7 +1718,7 @@ All the sessions will be deleted and an email will be sent to the account to inf
 </span></code></pre>
 <p>This endpoint create a session linked to the specified user ID.</p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>POST http://api.dialogram.fr/api/session</code></p>
+<p><code>POST https://api.dialogram.fr/api/session</code></p>
 <h4 id='query-parameters'>Query Parameters</h4>
 <p><code>
    {
@@ -1730,7 +1731,7 @@ All the sessions will be deleted and an email will be sent to the account to inf
 Note that you need to create a user before being able to create its session.
 </aside>
 <h1 id='videos'>Videos</h1><h2 id='upload-a-video'>Upload A Video</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://api.dialogram.fr/api/video <span class="se">\</span>
+  https://api.dialogram.fr/api/video <span class="se">\</span>
   --header <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0'</span> <span class="se">\</span>
@@ -1750,7 +1751,7 @@ Note that you need to create a user before being able to create its session.
 <span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/video"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/video"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -1802,7 +1803,7 @@ Note that you need to create a user before being able to create its session.
 </span></code></pre>
 <p>This endpoint upload a video.</p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>POST http://api.dialogram.fr/api/video</code></p>
+<p><code>POST https://api.dialogram.fr/api/video</code></p>
 <h4 id='query-parameters'>Query Parameters</h4>
 <table><thead>
 <tr>
@@ -1832,13 +1833,13 @@ Note that you need to create a user before being able to create its session.
 </tr>
 </tbody></table>
 <h2 id='get-video'>Get Video</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr/api/video/:idVideo <span class="se">\</span>
+  https://api.dialogram.fr/api/video/:idVideo <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/video/:idVideo"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/video/:idVideo"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
@@ -1885,17 +1886,17 @@ Note that you need to create a user before being able to create its session.
 </span></code></pre>
 <p>This endpoint get the video by ID.</p>
 <h4 id='http-request-2'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr/api/video/:idVideo</code></p>
+<p><code>GET https://api.dialogram.fr/api/video/:idVideo</code></p>
 <h4 id='query-parameters-2'>Query Parameters</h4>
 <p>NONE</p>
 <h2 id='get-user-videos'>Get User Videos</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr/api/user/video <span class="se">\</span>
+  https://api.dialogram.fr/api/user/video <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/user/video"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/user/video"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
@@ -1966,11 +1967,11 @@ Note that you need to create a user before being able to create its session.
 </span></code></pre>
 <p>This endpoint get all the user videos.</p>
 <h4 id='http-request-3'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr/api/user/video</code></p>
+<p><code>GET https://api.dialogram.fr/api/user/video</code></p>
 <h4 id='query-parameters-3'>Query Parameters</h4>
 <p>NONE</p>
 <h2 id='update-video'>Update Video</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
-  http://api.dialogram.fr/api/video/:idVideo <span class="se">\</span>
+  https://api.dialogram.fr/api/video/:idVideo <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: 5927c68a-c72f-4da5-a1ca-49de4aa6d072'</span> <span class="se">\</span>
@@ -1984,7 +1985,7 @@ Note that you need to create a user before being able to create its session.
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/video/:idVideo"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/video/:idVideo"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -2035,7 +2036,7 @@ Note that you need to create a user before being able to create its session.
 </span></code></pre>
 <p>This endpoint update the video data specified by ID.</p>
 <h4 id='http-request-4'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/video/:idVideo</code></p>
+<p><code>PUT https://api.dialogram.fr/api/video/:idVideo</code></p>
 <h4 id='query-parameters-4'>Query Parameters</h4>
 <p><code>
 {
@@ -2048,14 +2049,14 @@ Note that you need to create a user before being able to create its session.
 }
 </code></p>
 <h2 id='delete-video-by-id'>Delete Video by ID</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
-  http://api.dialogram.fr/api/video/:idVideo <span class="se">\</span>
+  https://api.dialogram.fr/api/video/:idVideo <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: f2472e62-d64f-496e-8190-a115225d1e94'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/video/:idVideo"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/video/:idVideo"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
@@ -2078,11 +2079,11 @@ Note that you need to create a user before being able to create its session.
 </span></code></pre>
 <p>This endpoint delete a video by ID.</p>
 <h4 id='http-request-5'>HTTP Request</h4>
-<p><code>DELETE http://api.dialogram.fr/api/video/:idVideo</code></p>
+<p><code>DELETE https://api.dialogram.fr/api/video/:idVideo</code></p>
 <h4 id='query-parameters-5'>Query Parameters</h4>
 <p>NONE</p>
 <h1 id='documents'>Documents</h1><h2 id='upload-pdf-document'>Upload PDF document</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://api.dialogram.fr/api/document <span class="se">\</span>
+  https://api.dialogram.fr/api/document <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/x-www-form-urlencoded'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'</span> <span class="se">\</span>
@@ -2100,7 +2101,7 @@ Note that you need to create a user before being able to create its session.
 <span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/x-www-form-urlencoded"</span><span class="p">,</span>
@@ -2149,7 +2150,7 @@ Note that you need to create a user before being able to create its session.
 </span></code></pre>
 <p>This endpoint upload a new PDF document to the remote server. You will need to send the data by form-data since we are dealing with documents using HTTP.</p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>POST http://api.dialogram.fr/api/document</code></p>
+<p><code>POST https://api.dialogram.fr/api/document</code></p>
 <h4 id='query-parameters'>Query Parameters</h4>
 <table><thead>
 <tr>
@@ -2183,12 +2184,12 @@ Note that you need to create a user before being able to create its session.
 Remember — a happy user is an authenticated user by token!
 </aside>
 <h2 id='get-pdf-document'>Get PDF document</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr/api/document/:idDocument <span class="se">\</span>
+  https://api.dialogram.fr/api/document/:idDocument <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/:idDocument"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/:idDocument"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
@@ -2232,7 +2233,7 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint get a previously created PDF document from the remote server. You only need to be authenticated with the user that uploads the document and the document id.</p>
 <h4 id='http-request-2'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr/api/document/:idDocument</code></p>
+<p><code>GET https://api.dialogram.fr/api/document/:idDocument</code></p>
 <h4 id='query-parameters-2'>Query Parameters</h4>
 <p>NONE</p>
 
@@ -2240,14 +2241,14 @@ Remember — a happy user is an authenticated user by token!
 Remember — a happy user is an authenticated user by token!
 </aside>
 <h2 id='get-user-documents'>Get User Documents</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr/api/user/documents <span class="se">\</span>
+  https://api.dialogram.fr/api/user/documents <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: 5127421b-d83a-4730-b9b8-7a20955dac1c'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/user/documents"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/user/documents"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
@@ -2269,7 +2270,7 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c2e260e581ae035587a4346"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLD Dialogram"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.dialogram.fr/medias/1546528270492-PLD_DIALOGRAM.pdf?accessToken=&lt;your_access_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.dialogram.fr/medias/1546528270492-PLD_DIALOGRAM.pdf?accessToken=&lt;your_access_token&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;timestamp&gt;-&lt;file_name&gt;.pdf"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -2295,7 +2296,7 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c2e349d1679630b18f5636f"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Insurance file"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.dialogram.fr/medias/1546531997311-INSURANCE_FILE.pdf?accessToken=&lt;your_access_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.dialogram.fr/medias/1546531997311-INSURANCE_FILE.pdf?accessToken=&lt;your_access_token&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;timestamp&gt;-&lt;file_name&gt;.pdf"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -2323,7 +2324,7 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint get all the user documents</p>
 <h4 id='http-request-3'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr/api/user/documents</code></p>
+<p><code>GET https://api.dialogram.fr/api/user/documents</code></p>
 <h4 id='query-parameters-3'>Query Parameters</h4>
 <p>NONE</p>
 
@@ -2331,7 +2332,7 @@ Remember — a happy user is an authenticated user by token!
 Remember — a happy user is an authenticated user by token!
 </aside>
 <h2 id='update-pdf-document'>Update PDF document</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
-  http://api.dialogram.fr/api/document/update/:idDocument <span class="se">\</span>
+  https://api.dialogram.fr/api/document/update/:idDocument <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -2344,7 +2345,7 @@ Remember — a happy user is an authenticated user by token!
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/update/:idDocument"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/update/:idDocument"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -2397,7 +2398,7 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint update the data file. You only need to be authenticated with the user that uploads the document and the document id. A new field &quot;editDate&quot; will be set with the date of edit.</p>
 <h4 id='http-request-4'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/document/update/:id</code></p>
+<p><code>PUT https://api.dialogram.fr/api/document/update/:id</code></p>
 <h4 id='query-parameters-4'>Query Parameters</h4>
 <p><code>
 {
@@ -2412,14 +2413,14 @@ Remember — a happy user is an authenticated user by token!
 Remember — a happy user is an authenticated user by token!
 </aside>
 <h2 id='delete-document-by-id'>Delete Document by ID</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
-  http://api.dialogram.fr/api/document/:idDocument <span class="se">\</span>
+  https://api.dialogram.fr/api/document/:idDocument <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: f2472e62-d64f-496e-8190-a115225d1e94'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/:idDocument"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/:idDocument"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
@@ -2442,18 +2443,18 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint delete a document by ID.</p>
 <h4 id='http-request-5'>HTTP Request</h4>
-<p><code>DELETE http://api.dialogram.fr/api/document/:idDocument</code></p>
+<p><code>DELETE https://api.dialogram.fr/api/document/:idDocument</code></p>
 <h4 id='query-parameters-5'>Query Parameters</h4>
 <p>NONE</p>
 <h2 id='likes'>Likes 🗀</h2><h3 id='likes-a-document'>Likes a document</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
-  --url http://api.dialogram.fr/api/document/:idDocument/like <span class="se">\</span>
+  --url https://api.dialogram.fr/api/document/:idDocument/like <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc'</span> <span class="se">\</span>
   --header <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/:idDocument/like"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/:idDocument/like"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -2476,7 +2477,7 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ca32c243a6a6d45c456c495"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document.pdf"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -2502,16 +2503,16 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint like a document.</p>
 <h4 id='http-request-6'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/document/:idDocument/like</code></p>
+<p><code>PUT https://api.dialogram.fr/api/document/:idDocument/like</code></p>
 <h3 id='remove-like-on-a-document'>Remove like on a document</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
-  --url http://api.dialogram.fr/api/document/:idDocument/unlike <span class="se">\</span>
+  --url https://api.dialogram.fr/api/document/:idDocument/unlike <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc'</span> <span class="se">\</span>
   --header <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/:idDocument/unlike"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/:idDocument/unlike"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -2534,7 +2535,7 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ca32c243a6a6d45c456c495"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document.pdf"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -2558,16 +2559,16 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint remove the like of a document previously liked.</p>
 <h4 id='http-request-7'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/document/:idDocument/unlike</code></p>
+<p><code>PUT https://api.dialogram.fr/api/document/:idDocument/unlike</code></p>
 <h2 id='favorite'>Favorite 🗀</h2><h3 id='favorite-a-document'>Favorite a document</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
-  --url http://api.dialogram.fr/api/document/:idDocument/favorite <span class="se">\</span>
+  --url https://api.dialogram.fr/api/document/:idDocument/favorite <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc'</span> <span class="se">\</span>
   --header <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/:idDocument/favorite"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/:idDocument/favorite"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -2590,7 +2591,7 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ca32c243a6a6d45c456c495"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document.pdf"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -2616,16 +2617,16 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint favorite a document.</p>
 <h4 id='http-request-8'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/document/:idDocument/favorite</code></p>
+<p><code>PUT https://api.dialogram.fr/api/document/:idDocument/favorite</code></p>
 <h3 id='remove-favorite-on-a-document'>Remove favorite on a document</h3><pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
-  --url http://api.dialogram.fr/api/document/:idDocument/unfavorite <span class="se">\</span>
+  --url https://api.dialogram.fr/api/document/:idDocument/unfavorite <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc'</span> <span class="se">\</span>
   --header <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/:idDocument/unfavorite"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/:idDocument/unfavorite"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -2648,7 +2649,7 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ca32c243a6a6d45c456c495"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document.pdf"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -2672,9 +2673,9 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint remove the favorite of a document.</p>
 <h4 id='http-request-9'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/document/:idDocument/unfavorite</code></p>
+<p><code>PUT https://api.dialogram.fr/api/document/:idDocument/unfavorite</code></p>
 <h2 id='comment'>Comment 🗀</h2><h3 id='comment-a-document'>Comment a document</h3><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
-  http://api.dialogram.fr/api/document/:idDocument/comment <span class="se">\</span>
+  https://api.dialogram.fr/api/document/:idDocument/comment <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: fab6e99e-bbd3-4b36-87a7-3cc8da86a743'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -2684,7 +2685,7 @@ Remember — a happy user is an authenticated user by token!
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/:idDocument/comment"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/:idDocument/comment"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -2708,7 +2709,7 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ca32c243a6a6d45c456c495"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document.pdf"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -2743,9 +2744,9 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint comment a document.</p>
 <h4 id='http-request-10'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/document/:idDocument/comment</code></p>
+<p><code>PUT https://api.dialogram.fr/api/document/:idDocument/comment</code></p>
 <h3 id='edit-your-document-comment'>Edit your document comment</h3><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
-  http://api.dialogram.fr/api/document/:idDocument/comment/edit/:idComment <span class="se">\</span>
+  https://api.dialogram.fr/api/document/:idDocument/comment/edit/:idComment <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: fab6e99e-bbd3-4b36-87a7-3cc8da86a743'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -2755,7 +2756,7 @@ Remember — a happy user is an authenticated user by token!
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/:idDocument/comment/edit/:idComment"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/:idDocument/comment/edit/:idComment"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -2779,7 +2780,7 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ca32c243a6a6d45c456c495"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document.pdf"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -2814,16 +2815,16 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint comment a document.</p>
 <h4 id='http-request-11'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/document/:idDocument/comment/edit/:idComment</code></p>
+<p><code>PUT https://api.dialogram.fr/api/document/:idDocument/comment/edit/:idComment</code></p>
 <h3 id='like-a-document-comment'>Like a document comment</h3><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
-  http://api.dialogram.fr/api/document/:idDocument/comment/:idComment/like <span class="se">\</span>
+  https://api.dialogram.fr/api/document/:idDocument/comment/:idComment/like <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: fab6e99e-bbd3-4b36-87a7-3cc8da86a743'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/:idDocument/comment/:idComment/like"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/:idDocument/comment/:idComment/like"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -2846,7 +2847,7 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ca32c243a6a6d45c456c495"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document.pdf"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -2883,16 +2884,16 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint like a document comment.</p>
 <h4 id='http-request-12'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/document/:idDocument/comment/:idComment/like</code></p>
+<p><code>PUT https://api.dialogram.fr/api/document/:idDocument/comment/:idComment/like</code></p>
 <h3 id='remove-like-on-a-document-comment'>Remove like on a document comment</h3><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
-  http://api.dialogram.fr/api/document/:idDocument/comment/:idComment/unlike <span class="se">\</span>
+  https://api.dialogram.fr/api/document/:idDocument/comment/:idComment/unlike <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: fab6e99e-bbd3-4b36-87a7-3cc8da86a743'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/:idDocument/comment/:idComment/unlike"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/:idDocument/comment/:idComment/unlike"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -2915,7 +2916,7 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ca32c243a6a6d45c456c495"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document.pdf"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -2950,16 +2951,16 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint remove your like on a document comment.</p>
 <h4 id='http-request-13'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/document/:idDocument/comment/:idComment/unlike</code></p>
+<p><code>PUT https://api.dialogram.fr/api/document/:idDocument/comment/:idComment/unlike</code></p>
 <h3 id='delete-a-document-comment'>Delete a document comment</h3><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
-  http://api.dialogram.fr/api/document/:idDocument/uncomment/:idComment <span class="se">\</span>
+  https://api.dialogram.fr/api/document/:idDocument/uncomment/:idComment <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: fab6e99e-bbd3-4b36-87a7-3cc8da86a743'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/:idDocument/uncomment/:idComment"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/:idDocument/uncomment/:idComment"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -2983,7 +2984,7 @@ Remember — a happy user is an authenticated user by token!
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"documents"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ca32c243a6a6d45c456c495"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDocument"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.dialogram.fr/medias/document.pdf?accessToken=&lt;acess_token&gt;"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"usageName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"document.pdf"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"nbPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
             </span><span class="s2">"public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -3007,9 +3008,9 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint delete a document comment.</p>
 <h4 id='http-request-14'>HTTP Request</h4>
-<p><code>DELETE http://api.dialogram.fr/api/document/:idDocument/uncomment/:idComment</code></p>
+<p><code>DELETE https://api.dialogram.fr/api/document/:idDocument/uncomment/:idComment</code></p>
 <h1 id='permissions'>Permissions</h1><h2 id='promote-switch-user-role'>Promote/Switch user role</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
-  http://api.dialogram.fr/api/document/&lt;idDocument&gt;/editAccess/&lt;idUser&gt;/&lt;userRole&gt; <span class="se">\</span>
+  https://api.dialogram.fr/api/document/&lt;idDocument&gt;/editAccess/&lt;idUser&gt;/&lt;userRole&gt; <span class="se">\</span>
   -H <span class="s1">'Accept: */*'</span> <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_bearer_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Cache-Control: no-cache'</span> <span class="se">\</span>
@@ -3021,7 +3022,7 @@ Remember — a happy user is an authenticated user by token!
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/&lt;idDocument&gt;/editAccess/&lt;idUser&gt;/&lt;userRole&gt;"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/&lt;idDocument&gt;/editAccess/&lt;idUser&gt;/&lt;userRole&gt;"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_bearer_token&gt;"</span><span class="p">,</span>
@@ -3051,7 +3052,7 @@ Remember — a happy user is an authenticated user by token!
 
 <p>For more informations about role, see the section below this sub-section.</p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/document/:idDocument/editAccess/:idUser/:role</code></p>
+<p><code>PUT https://api.dialogram.fr/api/document/:idDocument/editAccess/:idUser/:role</code></p>
 <h4 id='query-parameters'>Query Parameters</h4>
 <table><thead>
 <tr>
@@ -3073,7 +3074,7 @@ Remember — a happy user is an authenticated user by token!
 </tr>
 </tbody></table>
 <h2 id='deprive-user-role'>Deprive user role</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
-  http://api.dialogram.fr/api/document/&lt;idDocument&gt;/editAccess/&lt;idUser&gt;/&lt;userRole&gt; <span class="se">\</span>
+  https://api.dialogram.fr/api/document/&lt;idDocument&gt;/editAccess/&lt;idUser&gt;/&lt;userRole&gt; <span class="se">\</span>
   -H <span class="s1">'Accept: */*'</span> <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_bearer_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Cache-Control: no-cache'</span> <span class="se">\</span>
@@ -3085,7 +3086,7 @@ Remember — a happy user is an authenticated user by token!
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/&lt;idDocument&gt;/editAccess/&lt;idUser&gt;/&lt;userRole&gt;"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/&lt;idDocument&gt;/editAccess/&lt;idUser&gt;/&lt;userRole&gt;"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_bearer_token&gt;"</span><span class="p">,</span>
@@ -3115,7 +3116,7 @@ Remember — a happy user is an authenticated user by token!
 
 <p>For more informations about role, see the section below this sub-section.</p>
 <h4 id='http-request-2'>HTTP Request</h4>
-<p><code>DELETE http://api.dialogram.fr/api/document/:idDocument/editAccess/:idUser/:role</code></p>
+<p><code>DELETE https://api.dialogram.fr/api/document/:idDocument/editAccess/:idUser/:role</code></p>
 <h4 id='query-parameters-2'>Query Parameters</h4>
 <table><thead>
 <tr>
@@ -3157,7 +3158,7 @@ Remember — a happy user is an authenticated user by token!
 </tr>
 </tbody></table>
 <h1 id='translation-areas'>Translation Areas</h1><h2 id='create-an-document-translation-area'>Create an Document Translation Area</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://api.dialogram.fr/api/document/:idDocument/translation <span class="se">\</span>
+  https://api.dialogram.fr/api/document/:idDocument/translation <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: ebeff399-a623-42a5-a917-0dbbcf01c189'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -3177,7 +3178,7 @@ Remember — a happy user is an authenticated user by token!
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/:idDocument/translation"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/:idDocument/translation"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -3218,7 +3219,7 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint create a translation area of the document by indicating the field that should be translated.</p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>POST http://api.dialogram.fr/api/document/:idDocument/translation</code></p>
+<p><code>POST https://api.dialogram.fr/api/document/:idDocument/translation</code></p>
 <h4 id='query-parameters'>Query Parameters</h4>
 <p><code>
 {
@@ -3239,7 +3240,7 @@ Remember — a happy user is an authenticated user by token!
 Remember — a happy user is an authenticated user by token!
 </aside>
 <h2 id='update-document-translation-area'>Update Document Translation Area</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
-  http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation <span class="se">\</span>
+  https://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: ebeff399-a623-42a5-a917-0dbbcf01c189'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -3255,7 +3256,7 @@ Remember — a happy user is an authenticated user by token!
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -3292,7 +3293,7 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint update the translation area of the document.</p>
 <h4 id='http-request-2'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation</code></p>
+<p><code>PUT https://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation</code></p>
 <h4 id='query-parameters-2'>Query Parameters</h4>
 <p><code>
 {
@@ -3305,7 +3306,7 @@ Remember — a happy user is an authenticated user by token!
 }
 </code></p>
 <h2 id='get-document-translation-area-by-id'>Get Document Translation Area by ID</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation <span class="se">\</span>
+  https://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: 18c389d0-37ca-4762-8ea1-e0d61489c0b6'</span> <span class="se">\</span>
@@ -3313,7 +3314,7 @@ Remember — a happy user is an authenticated user by token!
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -3355,11 +3356,11 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint get the translation area of the document. </p>
 <h4 id='http-request-3'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation</code></p>
+<p><code>GET https://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation</code></p>
 <h4 id='query-parameters-3'>Query Parameters</h4>
 <p>NONE</p>
 <h2 id='delete-document-translation-area'>Delete Document Translation Area</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
-  http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation <span class="se">\</span>
+  https://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: abcdff79-f8a5-4130-a870-426d100b03fc'</span> <span class="se">\</span>
@@ -3367,7 +3368,7 @@ Remember — a happy user is an authenticated user by token!
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -3393,9 +3394,9 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint delete the translation area.</p>
 <h4 id='http-request-4'>HTTP Request</h4>
-<p><code>DELETE http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation</code></p>
+<p><code>DELETE https://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation</code></p>
 <h1 id='translation-videos'>Translation Videos</h1><h2 id='upload-a-translation-video'>Upload A Translation Video</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://api.dialogram.fr/api/translationVideo <span class="se">\</span>
+  https://api.dialogram.fr/api/translationVideo <span class="se">\</span>
   --header <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0'</span> <span class="se">\</span>
@@ -3413,7 +3414,7 @@ Remember — a happy user is an authenticated user by token!
 <span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/translationVideo"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/translationVideo"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -3464,7 +3465,7 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint upload a video translation for the document or video to be translated.</p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>POST http://api.dialogram.fr/api/translationVideo</code></p>
+<p><code>POST https://api.dialogram.fr/api/translationVideo</code></p>
 <h4 id='query-parameters'>Query Parameters</h4>
 <table><thead>
 <tr>
@@ -3490,14 +3491,14 @@ Remember — a happy user is an authenticated user by token!
 </tr>
 </tbody></table>
 <h2 id='get-translation-video'>Get Translation Video</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr/api/translationVideo/:idApiVideo <span class="se">\</span>
+  https://api.dialogram.fr/api/translationVideo/:idApiVideo <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: f2472e62-d64f-496e-8190-a115225d1e94'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/translationVideo/:idApiVideo"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/translationVideo/:idApiVideo"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
@@ -3544,17 +3545,17 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint get the translation video by ID.</p>
 <h4 id='http-request-2'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr/api/translationVideo/:idApiVideo</code></p>
+<p><code>GET https://api.dialogram.fr/api/translationVideo/:idApiVideo</code></p>
 <h4 id='query-parameters-2'>Query Parameters</h4>
 <p>NONE</p>
 <h2 id='get-user-translation-videos'>Get User Translation Videos</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr/api/user/videos <span class="se">\</span>
+  https://api.dialogram.fr/api/user/videos <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/user/videos"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/user/videos"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
@@ -3624,11 +3625,11 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint get all the user translation videos.</p>
 <h4 id='http-request-3'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr/api/user/translationVideos</code></p>
+<p><code>GET https://api.dialogram.fr/api/user/translationVideos</code></p>
 <h4 id='query-parameters-3'>Query Parameters</h4>
 <p>NONE</p>
 <h2 id='update-translation-video'>Update Translation Video</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
-  http://api.dialogram.fr/api/translationVideo/:idApiVideo <span class="se">\</span>
+  https://api.dialogram.fr/api/translationVideo/:idApiVideo <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: 5927c68a-c72f-4da5-a1ca-49de4aa6d072'</span> <span class="se">\</span>
@@ -3641,7 +3642,7 @@ Remember — a happy user is an authenticated user by token!
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/translationVideo/:idApiVideo"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/translationVideo/:idApiVideo"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -3690,7 +3691,7 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint update the translation video data specified by ID.</p>
 <h4 id='http-request-4'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/video/:idApiVideo</code></p>
+<p><code>PUT https://api.dialogram.fr/api/video/:idApiVideo</code></p>
 <h4 id='query-parameters-4'>Query Parameters</h4>
 <p><code>
 {
@@ -3700,13 +3701,13 @@ Remember — a happy user is an authenticated user by token!
 }
 </code></p>
 <h2 id='delete-video-by-id'>Delete Video by ID</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
-  http://api.dialogram.fr/api/video/:idApiVideo <span class="se">\</span>
+  https://api.dialogram.fr/api/video/:idApiVideo <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/video/:idApiVideo"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/video/:idApiVideo"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
@@ -3728,18 +3729,18 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint delete a translation video by ID.</p>
 <h4 id='http-request-5'>HTTP Request</h4>
-<p><code>DELETE http://api.dialogram.fr/api/translationVideo/:idApiVideo</code></p>
+<p><code>DELETE https://api.dialogram.fr/api/translationVideo/:idApiVideo</code></p>
 <h4 id='query-parameters-5'>Query Parameters</h4>
 <p>NONE</p>
 <h1 id='explore'>Explore</h1><h2 id='search'>Search</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  <span class="s1">'http://api.dialogram.fr/api/search/?limit=5&amp;page=2'</span> <span class="se">\</span>
+  <span class="s1">'https://api.dialogram.fr/api/search/?limit=5&amp;page=2'</span> <span class="se">\</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: 9ae7f131-5f76-4cf6-9c54-51c0a31af75c'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/search/?limit=5&amp;page=2"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/search/?limit=5&amp;page=2"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Authorization"</span><span class="p">:</span> <span class="s2">"Bearer &lt;your_access_token&gt;"</span><span class="p">,</span>
@@ -3801,7 +3802,7 @@ Remember — a happy user is an authenticated user by token!
 </span></code></pre>
 <p>This endpoint return all the documents using a pagination system.</p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr/api/search/</code></p>
+<p><code>GET https://api.dialogram.fr/api/search/</code></p>
 <h4 id='query-parameters'>Query Parameters</h4>
 <table><thead>
 <tr>
@@ -3832,10 +3833,10 @@ Remember — a happy user is an authenticated user by token!
 </tbody></table>
 
 <aside class="success">
-Exemple of request : http://api.dialogram.fr/api/search/?limit=5&page=2&category=health&sort=name%2Casc
+Exemple of request : https://api.dialogram.fr/api/search/?limit=5&page=2&category=health&sort=name%2Casc
 </aside>
 <h1 id='api-video'>API Video</h1><h2 id='api-video-auth'>API Video Auth</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr/api/apiVideo/auth <span class="se">\ \</span>
+  https://api.dialogram.fr/api/apiVideo/auth <span class="se">\ \</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0'</span> <span class="se">\</span>
@@ -3843,7 +3844,7 @@ Exemple of request : http://api.dialogram.fr/api/search/?limit=5&page=2&category
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/apiVideo/auth"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/apiVideo/auth"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -3873,11 +3874,11 @@ Exemple of request : http://api.dialogram.fr/api/search/?limit=5&page=2&category
 </span></code></pre>
 <p>This endpoint authenticate you to the video API</p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr/api/apiVideo/auth</code></p>
+<p><code>GET https://api.dialogram.fr/api/apiVideo/auth</code></p>
 <h4 id='query-parameters'>Query Parameters</h4>
 <p>NONE</p>
 <h1 id='tickets'>Tickets</h1><h2 id='create-a-ticket'>Create a ticket</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://api.dialogram.fr/api/report <span class="se">\ \</span>
+  https://api.dialogram.fr/api/report <span class="se">\ \</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0'</span> <span class="se">\</span>
@@ -3890,7 +3891,7 @@ Exemple of request : http://api.dialogram.fr/api/search/?limit=5&page=2&category
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/report"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/report"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -3929,7 +3930,7 @@ Exemple of request : http://api.dialogram.fr/api/search/?limit=5&page=2&category
 </span></code></pre>
 <p>This endpoint authenticate you to the video API</p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>POST http://api.dialogram.fr/api/report</code></p>
+<p><code>POST https://api.dialogram.fr/api/report</code></p>
 <h4 id='query-parameters'>Query Parameters</h4>
 <p><code>
 {
@@ -3939,14 +3940,14 @@ Exemple of request : http://api.dialogram.fr/api/search/?limit=5&page=2&category
 }
 </code></p>
 <h2 id='get-ticket-by-id'>Get ticket by ID</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr/api/report/:idTicket <span class="se">\ \</span>
+  https://api.dialogram.fr/api/report/:idTicket <span class="se">\ \</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0'</span> <span class="se">\</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/report/:idTicket"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/report/:idTicket"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -3983,18 +3984,18 @@ Exemple of request : http://api.dialogram.fr/api/search/?limit=5&page=2&category
 </span></code></pre>
 <p>This endpoint get a ticket by ID.</p>
 <h4 id='http-request-2'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr/api/report/:idTicket</code></p>
+<p><code>GET https://api.dialogram.fr/api/report/:idTicket</code></p>
 <h4 id='query-parameters-2'>Query Parameters</h4>
 <p>NONE</p>
 <h2 id='get-ticket-by-category'>Get ticket by category</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr/api/report/category/:category <span class="se">\ \</span>
+  https://api.dialogram.fr/api/report/category/:category <span class="se">\ \</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0'</span> <span class="se">\</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/report/category/:category"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/report/category/:category"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -4031,18 +4032,18 @@ Exemple of request : http://api.dialogram.fr/api/search/?limit=5&page=2&category
 </span></code></pre>
 <p>This endpoint get a ticket by category.</p>
 <h4 id='http-request-3'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr/api/report/category/:category</code></p>
+<p><code>GET https://api.dialogram.fr/api/report/category/:category</code></p>
 <h4 id='query-parameters-3'>Query Parameters</h4>
 <p>NONE</p>
 <h2 id='get-ticket-by-status'>Get ticket by status</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://api.dialogram.fr/api/report/category/:category <span class="se">\ \</span>
+  https://api.dialogram.fr/api/report/category/:category <span class="se">\ \</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0'</span> <span class="se">\</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/report/status/:status"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/report/status/:status"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -4079,18 +4080,18 @@ Exemple of request : http://api.dialogram.fr/api/search/?limit=5&page=2&category
 </span></code></pre>
 <p>This endpoint get a ticket by status.</p>
 <h4 id='http-request-4'>HTTP Request</h4>
-<p><code>GET http://api.dialogram.fr/api/report/status/:status</code></p>
+<p><code>GET https://api.dialogram.fr/api/report/status/:status</code></p>
 <h4 id='query-parameters-4'>Query Parameters</h4>
 <p>NONE</p>
 <h2 id='close-ticket'>Close ticket</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
-  http://api.dialogram.fr/api/report/close/:idTicket <span class="se">\ \</span>
+  https://api.dialogram.fr/api/report/close/:idTicket <span class="se">\ \</span>
   -H <span class="s1">'Authorization: Bearer &lt;your_access_token&gt;'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0'</span> <span class="se">\</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://api.dialogram.fr/api/report/close/:idTicket"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://api.dialogram.fr/api/report/close/:idTicket"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
@@ -4127,7 +4128,7 @@ Exemple of request : http://api.dialogram.fr/api/search/?limit=5&page=2&category
 </span></code></pre>
 <p>This endpoint close a ticket.</p>
 <h4 id='http-request-5'>HTTP Request</h4>
-<p><code>PUT http://api.dialogram.fr/api/report/close/:idTicket</code></p>
+<p><code>PUT https://api.dialogram.fr/api/report/close/:idTicket</code></p>
 <h4 id='query-parameters-5'>Query Parameters</h4>
 <p>NONE</p>
 <h1 id='errors'>Errors</h1>
