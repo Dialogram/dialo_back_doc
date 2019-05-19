@@ -4,7 +4,7 @@
 
 ```shell
 curl -X POST \
-  http://api.dialogram.fr:8080/api/report \ \
+  http://api.dialogram.fr/api/report \ \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0' \
@@ -20,7 +20,7 @@ curl -X POST \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/report",
+  "url": "http://api.dialogram.fr/api/report",
   "method": "POST",
   "headers": {
     "Content-Type": "application/json",
@@ -63,7 +63,7 @@ This endpoint authenticate you to the video API
 
 #### HTTP Request
 
-`POST http://api.dialogram.fr:8080/api/report`
+`POST http://api.dialogram.fr/api/report`
 
 #### Query Parameters
 
@@ -79,7 +79,7 @@ This endpoint authenticate you to the video API
 
 ```shell
 curl -X GET \
-  http://api.dialogram.fr:8080/api/report/:idTicket \ \
+  http://api.dialogram.fr/api/report/:idTicket \ \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0' \
@@ -89,7 +89,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/report/:idTicket",
+  "url": "http://api.dialogram.fr/api/report/:idTicket",
   "method": "GET",
   "headers": {
     "Content-Type": "application/json",
@@ -130,7 +130,7 @@ This endpoint get a ticket by ID.
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr:8080/api/report/:idTicket`
+`GET http://api.dialogram.fr/api/report/:idTicket`
 
 #### Query Parameters
 
@@ -140,7 +140,7 @@ NONE
 
 ```shell
 curl -X GET \
-  http://api.dialogram.fr:8080/api/report/category/:category \ \
+  http://api.dialogram.fr/api/report/category/:category \ \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0' \
@@ -150,7 +150,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/report/category/:category",
+  "url": "http://api.dialogram.fr/api/report/category/:category",
   "method": "GET",
   "headers": {
     "Content-Type": "application/json",
@@ -191,7 +191,7 @@ This endpoint get a ticket by category.
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr:8080/api/report/category/:category`
+`GET http://api.dialogram.fr/api/report/category/:category`
 
 #### Query Parameters
 
@@ -201,7 +201,7 @@ NONE
 
 ```shell
 curl -X GET \
-  http://api.dialogram.fr:8080/api/report/category/:category \ \
+  http://api.dialogram.fr/api/report/category/:category \ \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0' \
@@ -211,7 +211,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/report/status/:status",
+  "url": "http://api.dialogram.fr/api/report/status/:status",
   "method": "GET",
   "headers": {
     "Content-Type": "application/json",
@@ -252,7 +252,7 @@ This endpoint get a ticket by status.
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr:8080/api/report/status/:status`
+`GET http://api.dialogram.fr/api/report/status/:status`
 
 #### Query Parameters
 
@@ -262,7 +262,7 @@ NONE
 
 ```shell
 curl -X PUT \
-  http://api.dialogram.fr:8080/api/report/close/:idTicket \ \
+  http://api.dialogram.fr/api/report/close/:idTicket \ \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: 701b451b-a5a6-4ab0-b262-80413d7e5fd0' \
@@ -272,7 +272,7 @@ curl -X PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/report/close/:idTicket",
+  "url": "http://api.dialogram.fr/api/report/close/:idTicket",
   "method": "PUT",
   "headers": {
     "Content-Type": "application/json",
@@ -313,7 +313,7 @@ This endpoint close a ticket.
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr:8080/api/report/close/:idTicket`
+`PUT http://api.dialogram.fr/api/report/close/:idTicket`
 
 #### Query Parameters
 

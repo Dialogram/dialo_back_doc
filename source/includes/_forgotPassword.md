@@ -4,7 +4,7 @@
 
 ```shell
 curl -X POST \
-   http://api.dialogram.fr:8080/api/password/reset \
+   http://api.dialogram.fr/api/password/reset \
    -H 'Content-Type: application/json' \
    -d '{
 }'
@@ -14,7 +14,7 @@ curl -X POST \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/password/reset",
+  "url": "http://api.dialogram.fr/api/password/reset",
   "method": "POST",
   "headers": {
     "Content-Type": "application/json",
@@ -41,7 +41,7 @@ This endpoint create a token and send it to the referenced email.
 
 #### HTTP Request
 
-`POST http://api.dialogram.fr:8080/api/password/reset`
+`POST http://api.dialogram.fr/api/password/reset`
 
 #### Query Parameters
 
@@ -55,7 +55,7 @@ This endpoint create a token and send it to the referenced email.
 
 ```shell
 curl -X POST \
-   http://api.dialogram.fr:8080/api/password/reset/:token \
+   http://api.dialogram.fr/api/password/reset/:token \
    -H 'Content-Type: application/json' \
    -d '{
 }'
@@ -65,7 +65,7 @@ curl -X POST \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/password/reset/:token",
+  "url": "http://api.dialogram.fr/api/password/reset/:token",
   "method": "POST",
   "headers": {
     "Content-Type": "application/json",
@@ -93,7 +93,7 @@ All the sessions will be deleted and an email will be sent to the account to inf
 
 #### HTTP Request
 
-`POST http://api.dialogram.fr:8080/api/password/reset/:token`
+`POST http://api.dialogram.fr/api/password/reset/:token`
 
 #### Query Parameters
 

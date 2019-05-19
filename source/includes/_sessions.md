@@ -4,7 +4,7 @@
 
 ```shell
 curl -X POST \
-   http://api.dialogram.fr:8080/api/session \
+   http://api.dialogram.fr/api/session \
    -H 'Content-Type: application/json' \
    -d '{
       "email" : "usermail@domain.com",
@@ -16,7 +16,7 @@ curl -X POST \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/session",
+  "url": "http://api.dialogram.fr/api/session",
   "method": "POST",
   "headers": {
     "Content-Type": "application/json",
@@ -50,7 +50,7 @@ This endpoint create a session linked to the specified user ID.
 
 #### HTTP Request
 
-`POST http://api.dialogram.fr:8080/api/session`
+`POST http://api.dialogram.fr/api/session`
 
 #### Query Parameters
 

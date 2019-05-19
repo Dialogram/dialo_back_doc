@@ -4,12 +4,12 @@
 
 ```shell
 curl -X PUT \
-  http://api.dialogram.fr:8080/api/document/<idDocument>/editAccess/<idUser>/<userRole> \
+  http://api.dialogram.fr/api/document/<idDocument>/editAccess/<idUser>/<userRole> \
   -H 'Accept: */*' \
   -H 'Authorization: Bearer <your_bearer_token>' \
   -H 'Cache-Control: no-cache' \
   -H 'Connection: keep-alive' \
-  -H 'Host: api.dialogram.fr:8080' \
+  -H 'Host: api.dialogram.fr' \
   -H 'accept-encoding: gzip, deflate' \
   -H 'cache-control: no-cache' \
   -H 'content-length: '
@@ -19,13 +19,13 @@ curl -X PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/<idDocument>/editAccess/<idUser>/<userRole>",
+  "url": "http://api.dialogram.fr/api/document/<idDocument>/editAccess/<idUser>/<userRole>",
   "method": "PUT",
   "headers": {
     "Authorization": "Bearer <your_bearer_token>",
     "Accept": "*/*",
     "Cache-Control": "no-cache",
-    "Host": "api.dialogram.fr:8080",
+    "Host": "api.dialogram.fr",
     "accept-encoding": "gzip, deflate",
     "content-length": "",
     "Connection": "keep-alive",
@@ -52,7 +52,7 @@ For more informations about role, see the section below this sub-section.
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr:8080/api/document/:idDocument/editAccess/:idUser/:role`
+`PUT http://api.dialogram.fr/api/document/:idDocument/editAccess/:idUser/:role`
 
 #### Query Parameters
 
@@ -66,12 +66,12 @@ role | the role you want to give to the target user.
 
 ```shell
 curl -X DELETE \
-  http://api.dialogram.fr:8080/api/document/<idDocument>/editAccess/<idUser>/<userRole> \
+  http://api.dialogram.fr/api/document/<idDocument>/editAccess/<idUser>/<userRole> \
   -H 'Accept: */*' \
   -H 'Authorization: Bearer <your_bearer_token>' \
   -H 'Cache-Control: no-cache' \
   -H 'Connection: keep-alive' \
-  -H 'Host: api.dialogram.fr:8080' \
+  -H 'Host: api.dialogram.fr' \
   -H 'accept-encoding: gzip, deflate' \
   -H 'cache-control: no-cache' \
   -H 'content-length: '
@@ -81,13 +81,13 @@ curl -X DELETE \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/<idDocument>/editAccess/<idUser>/<userRole>",
+  "url": "http://api.dialogram.fr/api/document/<idDocument>/editAccess/<idUser>/<userRole>",
   "method": "DELETE",
   "headers": {
     "Authorization": "Bearer <your_bearer_token>",
     "Accept": "*/*",
     "Cache-Control": "no-cache",
-    "Host": "api.dialogram.fr:8080",
+    "Host": "api.dialogram.fr",
     "accept-encoding": "gzip, deflate",
     "content-length": "",
     "Connection": "keep-alive",
@@ -114,7 +114,7 @@ For more informations about role, see the section below this sub-section.
 
 #### HTTP Request
 
-`DELETE http://api.dialogram.fr:8080/api/document/:idDocument/editAccess/:idUser/:role`
+`DELETE http://api.dialogram.fr/api/document/:idDocument/editAccess/:idUser/:role`
 
 #### Query Parameters
 

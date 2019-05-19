@@ -4,7 +4,7 @@
 
 ```shell
 curl -X GET \
-  'http://api.dialogram.fr:8080/api/search/?limit=5&page=2' \
+  'http://api.dialogram.fr/api/search/?limit=5&page=2' \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Postman-Token: 9ae7f131-5f76-4cf6-9c54-51c0a31af75c' \
   -H 'cache-control: no-cache'
@@ -14,7 +14,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/search/?limit=5&page=2",
+  "url": "http://api.dialogram.fr/api/search/?limit=5&page=2",
   "method": "GET",
   "headers": {
     "Authorization": "Bearer <your_access_token>",
@@ -37,7 +37,7 @@ $.ajax(settings).done(function (response) {
             "type": "documents",
             "id": "<document_id>",
             "name": "myDocument",
-            "link": "api.dialogram.fr:8080/medias/<timestamp>-<file_name>.pdf?accessToken=<your_access_token>",
+            "link": "api.dialogram.fr/medias/<timestamp>-<file_name>.pdf?accessToken=<your_access_token>",
             "usageName": "<timestamp>-<file_name>.pdf",
             "nbPage": 35,
             "public": false,
@@ -53,7 +53,7 @@ $.ajax(settings).done(function (response) {
             "type": "documents",
             "id": "<document_id>",
             "name": "myDocument",
-            "link": "api.dialogram.fr:8080/medias/<timestamp>-<file_name>.pdf?accessToken=<your_access_token>",
+            "link": "api.dialogram.fr/medias/<timestamp>-<file_name>.pdf?accessToken=<your_access_token>",
             "usageName": "<timestamp>-<file_name>.pdf",
             "nbPage": 35,
             "public": false,
@@ -80,7 +80,7 @@ This endpoint return all the documents using a pagination system.
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr:8080/api/search/`
+`GET http://api.dialogram.fr/api/search/`
 
 #### Query Parameters
 
@@ -93,5 +93,5 @@ field | Use a document field
 sort | Use a field and a sort system ('asc' or 'desc')
 
 <aside class="success">
-Exemple of request : http://api.dialogram.fr:8080/api/search/?limit=5&page=2&category=health&sort=name%2Casc
+Exemple of request : http://api.dialogram.fr/api/search/?limit=5&page=2&category=health&sort=name%2Casc
 </aside>

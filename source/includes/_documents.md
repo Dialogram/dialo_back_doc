@@ -4,7 +4,7 @@
 
 ```shell
 curl -X POST \
-  http://api.dialogram.fr:8080/api/document \
+  http://api.dialogram.fr/api/document \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
   -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
@@ -25,7 +25,7 @@ form.append("category", "entertainment")
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document",
+  "url": "http://api.dialogram.fr/api/document",
   "method": "POST",
   "headers": {
     "Content-Type": "application/x-www-form-urlencoded",
@@ -51,7 +51,7 @@ $.ajax(settings).done(function (response) {
             "type": "documents",
             "id": "<document_id>",
             "name": "myDocument",
-            "link": "api.dialogram.fr:8080/medias/<timestamp>-<file_name>.pdf?accessToken=<your_access_token>",
+            "link": "api.dialogram.fr/medias/<timestamp>-<file_name>.pdf?accessToken=<your_access_token>",
             "usageName": "<timestamp>-<file_name>.pdf",
             "nbPage": 35,
             "public": false,
@@ -78,7 +78,7 @@ This endpoint upload a new PDF document to the remote server. You will need to s
 
 #### HTTP Request
 
-`POST http://api.dialogram.fr:8080/api/document`
+`POST http://api.dialogram.fr/api/document`
 
 #### Query Parameters
 
@@ -98,7 +98,7 @@ Remember — a happy user is an authenticated user by token!
 
 ```shell
 curl -X GET \
-  http://api.dialogram.fr:8080/api/document/:idDocument \
+  http://api.dialogram.fr/api/document/:idDocument \
   -H 'Authorization: Bearer <your_access_token>' \
 ```
 
@@ -106,7 +106,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/:idDocument",
+  "url": "http://api.dialogram.fr/api/document/:idDocument",
   "method": "GET",
   "headers": {
     "Authorization": "Bearer <your_access_token>",
@@ -127,7 +127,7 @@ $.ajax(settings).done(function (response) {
             "type": "documents",
             "id": "<document_id>",
             "name": "myDocument",
-            "link": "api.dialogram.fr:8080/medias/<timestamp>-<file_name>.pdf?accessToken=<your_access_token>",
+            "link": "api.dialogram.fr/medias/<timestamp>-<file_name>.pdf?accessToken=<your_access_token>",
             "usageName": "<timestamp>-<file_name>.pdf",
             "nbPage": 35,
             "public": false,
@@ -154,7 +154,7 @@ This endpoint get a previously created PDF document from the remote server. You 
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr:8080/api/document/:idDocument`
+`GET http://api.dialogram.fr/api/document/:idDocument`
 
 #### Query Parameters
 
@@ -169,7 +169,7 @@ Remember — a happy user is an authenticated user by token!
 
 ```shell
 curl -X GET \
-  http://api.dialogram.fr:8080/api/user/documents \
+  http://api.dialogram.fr/api/user/documents \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Postman-Token: 5127421b-d83a-4730-b9b8-7a20955dac1c' \
   -H 'cache-control: no-cache'
@@ -179,7 +179,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/user/documents",
+  "url": "http://api.dialogram.fr/api/user/documents",
   "method": "GET",
   "headers": {
     "Authorization": "Bearer <your_access_token>",
@@ -202,7 +202,7 @@ $.ajax(settings).done(function (response) {
             "type": "documents",
             "id": "5c2e260e581ae035587a4346",
             "name": "PLD Dialogram",
-            "link": "http://api.dialogram.fr:8080/medias/1546528270492-PLD_DIALOGRAM.pdf?accessToken=<your_access_token>",
+            "link": "http://api.dialogram.fr/medias/1546528270492-PLD_DIALOGRAM.pdf?accessToken=<your_access_token>",
             "usageName": "<timestamp>-<file_name>.pdf",
             "nbPage": 23,
             "public": false,
@@ -228,7 +228,7 @@ $.ajax(settings).done(function (response) {
             "type": "documents",
             "id": "5c2e349d1679630b18f5636f",
             "name": "Insurance file",
-            "link": "http://api.dialogram.fr:8080/medias/1546531997311-INSURANCE_FILE.pdf?accessToken=<your_access_token>",
+            "link": "http://api.dialogram.fr/medias/1546531997311-INSURANCE_FILE.pdf?accessToken=<your_access_token>",
             "usageName": "<timestamp>-<file_name>.pdf",
             "nbPage": 2,
             "public": false,
@@ -259,7 +259,7 @@ This endpoint get all the user documents
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr:8080/api/user/documents`
+`GET http://api.dialogram.fr/api/user/documents`
 
 #### Query Parameters
 
@@ -274,7 +274,7 @@ Remember — a happy user is an authenticated user by token!
 
 ```shell
 curl -X PUT \
-  http://api.dialogram.fr:8080/api/document/update/:idDocument \
+  http://api.dialogram.fr/api/document/update/:idDocument \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache' \
@@ -290,7 +290,7 @@ curl -X PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/update/:idDocument",
+  "url": "http://api.dialogram.fr/api/document/update/:idDocument",
   "method": "PUT",
   "headers": {
     "Content-Type": "application/json",
@@ -315,7 +315,7 @@ $.ajax(settings).done(function (response) {
           "type": "documents",
           "id": "<document_id>",
           "name": "newName",
-          "link": "api.dialogram.fr:8080/medias/<timestamp>-<file_name>.pdf?accessToken=<your_access_token>",
+          "link": "api.dialogram.fr/medias/<timestamp>-<file_name>.pdf?accessToken=<your_access_token>",
           "usageName": "<timestamp>-<file_name>.pdf",
           "nbPage": 35,
           "public": true,
@@ -347,7 +347,7 @@ This endpoint update the data file. You only need to be authenticated with the u
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr:8080/api/document/update/:id`
+`PUT http://api.dialogram.fr/api/document/update/:id`
 
 #### Query Parameters
 ``
@@ -367,7 +367,7 @@ Remember — a happy user is an authenticated user by token!
 
 ```shell
 curl -X DELETE \
-  http://api.dialogram.fr:8080/api/document/:idDocument \
+  http://api.dialogram.fr/api/document/:idDocument \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Postman-Token: f2472e62-d64f-496e-8190-a115225d1e94' \
   -H 'cache-control: no-cache'
@@ -377,7 +377,7 @@ curl -X DELETE \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/:idDocument",
+  "url": "http://api.dialogram.fr/api/document/:idDocument",
   "method": "DELETE",
   "headers": {
     "Authorization": "Bearer <your_access_token>",
@@ -404,7 +404,7 @@ This endpoint delete a document by ID.
 
 #### HTTP Request
 
-`DELETE http://api.dialogram.fr:8080/api/document/:idDocument`
+`DELETE http://api.dialogram.fr/api/document/:idDocument`
 
 #### Query Parameters
 
@@ -415,7 +415,7 @@ NONE
 ### Likes a document
 ```shell
 curl --request PUT \
-  --url http://api.dialogram.fr:8080/api/document/:idDocument/like \
+  --url http://api.dialogram.fr/api/document/:idDocument/like \
   --header 'Content-Type: application/json' \
   --header 'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc' \
   --header 'cache-control: no-cache' \
@@ -425,7 +425,7 @@ curl --request PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/:idDocument/like",
+  "url": "http://api.dialogram.fr/api/document/:idDocument/like",
   "method": "PUT",
   "headers": {
     "Content-Type": "application/json",
@@ -449,7 +449,7 @@ $.ajax(settings).done(function (response) {
             "type": "documents",
             "id": "5ca32c243a6a6d45c456c495",
             "name": "myDocument",
-            "link": "http://api.dialogram.fr:8080/medias/document.pdf?accessToken=<acess_token>",
+            "link": "http://api.dialogram.fr/medias/document.pdf?accessToken=<acess_token>",
             "usageName": "document.pdf",
             "nbPage": 35,
             "public": true,
@@ -478,12 +478,12 @@ This endpoint like a document.
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr:8080/api/document/:idDocument/like`
+`PUT http://api.dialogram.fr/api/document/:idDocument/like`
 
 ### Remove like on a document
 ```shell
 curl --request PUT \
-  --url http://api.dialogram.fr:8080/api/document/:idDocument/unlike \
+  --url http://api.dialogram.fr/api/document/:idDocument/unlike \
   --header 'Content-Type: application/json' \
   --header 'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc' \
   --header 'cache-control: no-cache' \
@@ -493,7 +493,7 @@ curl --request PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/:idDocument/unlike",
+  "url": "http://api.dialogram.fr/api/document/:idDocument/unlike",
   "method": "PUT",
   "headers": {
     "Content-Type": "application/json",
@@ -517,7 +517,7 @@ $.ajax(settings).done(function (response) {
             "type": "documents",
             "id": "5ca32c243a6a6d45c456c495",
             "name": "myDocument",
-            "link": "http://api.dialogram.fr:8080/medias/document.pdf?accessToken=<acess_token>",
+            "link": "http://api.dialogram.fr/medias/document.pdf?accessToken=<acess_token>",
             "usageName": "document.pdf",
             "nbPage": 35,
             "public": true,
@@ -544,14 +544,14 @@ This endpoint remove the like of a document previously liked.
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr:8080/api/document/:idDocument/unlike`
+`PUT http://api.dialogram.fr/api/document/:idDocument/unlike`
 
 ## Favorite 🗀
 
 ### Favorite a document
 ```shell
 curl --request PUT \
-  --url http://api.dialogram.fr:8080/api/document/:idDocument/favorite \
+  --url http://api.dialogram.fr/api/document/:idDocument/favorite \
   --header 'Content-Type: application/json' \
   --header 'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc' \
   --header 'cache-control: no-cache' \
@@ -561,7 +561,7 @@ curl --request PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/:idDocument/favorite",
+  "url": "http://api.dialogram.fr/api/document/:idDocument/favorite",
   "method": "PUT",
   "headers": {
     "Content-Type": "application/json",
@@ -585,7 +585,7 @@ $.ajax(settings).done(function (response) {
             "type": "documents",
             "id": "5ca32c243a6a6d45c456c495",
             "name": "myDocument",
-            "link": "http://api.dialogram.fr:8080/medias/document.pdf?accessToken=<acess_token>",
+            "link": "http://api.dialogram.fr/medias/document.pdf?accessToken=<acess_token>",
             "usageName": "document.pdf",
             "nbPage": 35,
             "public": true,
@@ -614,12 +614,12 @@ This endpoint favorite a document.
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr:8080/api/document/:idDocument/favorite`
+`PUT http://api.dialogram.fr/api/document/:idDocument/favorite`
 
 ### Remove favorite on a document
 ```shell
 curl --request PUT \
-  --url http://api.dialogram.fr:8080/api/document/:idDocument/unfavorite \
+  --url http://api.dialogram.fr/api/document/:idDocument/unfavorite \
   --header 'Content-Type: application/json' \
   --header 'Postman-Token: 19cc57d1-5777-476b-8784-ec3b8d4ef5bc' \
   --header 'cache-control: no-cache' \
@@ -629,7 +629,7 @@ curl --request PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/:idDocument/unfavorite",
+  "url": "http://api.dialogram.fr/api/document/:idDocument/unfavorite",
   "method": "PUT",
   "headers": {
     "Content-Type": "application/json",
@@ -653,7 +653,7 @@ $.ajax(settings).done(function (response) {
             "type": "documents",
             "id": "5ca32c243a6a6d45c456c495",
             "name": "myDocument",
-            "link": "http://api.dialogram.fr:8080/medias/document.pdf?accessToken=<acess_token>",
+            "link": "http://api.dialogram.fr/medias/document.pdf?accessToken=<acess_token>",
             "usageName": "document.pdf",
             "nbPage": 35,
             "public": true,
@@ -680,14 +680,14 @@ This endpoint remove the favorite of a document.
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr:8080/api/document/:idDocument/unfavorite`
+`PUT http://api.dialogram.fr/api/document/:idDocument/unfavorite`
 
 ## Comment 🗀
 
 ### Comment a document
 ```shell
 curl -X PUT \
-  http://api.dialogram.fr:8080/api/document/:idDocument/comment \
+  http://api.dialogram.fr/api/document/:idDocument/comment \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: fab6e99e-bbd3-4b36-87a7-3cc8da86a743' \
   -H 'cache-control: no-cache' \
@@ -700,7 +700,7 @@ curl -X PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/:idDocument/comment",
+  "url": "http://api.dialogram.fr/api/document/:idDocument/comment",
   "method": "PUT",
   "headers": {
     "Content-Type": "application/json",
@@ -725,7 +725,7 @@ $.ajax(settings).done(function (response) {
             "type": "documents",
             "id": "5ca32c243a6a6d45c456c495",
             "name": "myDocument",
-            "link": "http://api.dialogram.fr:8080/medias/document.pdf?accessToken=<acess_token>",
+            "link": "http://api.dialogram.fr/medias/document.pdf?accessToken=<acess_token>",
             "usageName": "document.pdf",
             "nbPage": 35,
             "public": true,
@@ -763,12 +763,12 @@ This endpoint comment a document.
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr:8080/api/document/:idDocument/comment`
+`PUT http://api.dialogram.fr/api/document/:idDocument/comment`
 
 ### Edit your document comment
 ```shell
 curl -X PUT \
-  http://api.dialogram.fr:8080/api/document/:idDocument/comment/edit/:idComment \
+  http://api.dialogram.fr/api/document/:idDocument/comment/edit/:idComment \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: fab6e99e-bbd3-4b36-87a7-3cc8da86a743' \
   -H 'cache-control: no-cache' \
@@ -781,7 +781,7 @@ curl -X PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/:idDocument/comment/edit/:idComment",
+  "url": "http://api.dialogram.fr/api/document/:idDocument/comment/edit/:idComment",
   "method": "PUT",
   "headers": {
     "Content-Type": "application/json",
@@ -806,7 +806,7 @@ $.ajax(settings).done(function (response) {
             "type": "documents",
             "id": "5ca32c243a6a6d45c456c495",
             "name": "myDocument",
-            "link": "http://api.dialogram.fr:8080/medias/document.pdf?accessToken=<acess_token>",
+            "link": "http://api.dialogram.fr/medias/document.pdf?accessToken=<acess_token>",
             "usageName": "document.pdf",
             "nbPage": 35,
             "public": true,
@@ -844,12 +844,12 @@ This endpoint comment a document.
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr:8080/api/document/:idDocument/comment/edit/:idComment`
+`PUT http://api.dialogram.fr/api/document/:idDocument/comment/edit/:idComment`
 
 ### Like a document comment
 ```shell
 curl -X PUT \
-  http://api.dialogram.fr:8080/api/document/:idDocument/comment/:idComment/like \
+  http://api.dialogram.fr/api/document/:idDocument/comment/:idComment/like \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: fab6e99e-bbd3-4b36-87a7-3cc8da86a743' \
   -H 'cache-control: no-cache'
@@ -859,7 +859,7 @@ curl -X PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/:idDocument/comment/:idComment/like",
+  "url": "http://api.dialogram.fr/api/document/:idDocument/comment/:idComment/like",
   "method": "PUT",
   "headers": {
     "Content-Type": "application/json",
@@ -883,7 +883,7 @@ $.ajax(settings).done(function (response) {
             "type": "documents",
             "id": "5ca32c243a6a6d45c456c495",
             "name": "myDocument",
-            "link": "http://api.dialogram.fr:8080/medias/document.pdf?accessToken=<acess_token>",
+            "link": "http://api.dialogram.fr/medias/document.pdf?accessToken=<acess_token>",
             "usageName": "document.pdf",
             "nbPage": 35,
             "public": true,
@@ -923,12 +923,12 @@ This endpoint like a document comment.
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr:8080/api/document/:idDocument/comment/:idComment/like`
+`PUT http://api.dialogram.fr/api/document/:idDocument/comment/:idComment/like`
 
 ### Remove like on a document comment
 ```shell
 curl -X PUT \
-  http://api.dialogram.fr:8080/api/document/:idDocument/comment/:idComment/unlike \
+  http://api.dialogram.fr/api/document/:idDocument/comment/:idComment/unlike \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: fab6e99e-bbd3-4b36-87a7-3cc8da86a743' \
   -H 'cache-control: no-cache'
@@ -938,7 +938,7 @@ curl -X PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/:idDocument/comment/:idComment/unlike",
+  "url": "http://api.dialogram.fr/api/document/:idDocument/comment/:idComment/unlike",
   "method": "PUT",
   "headers": {
     "Content-Type": "application/json",
@@ -962,7 +962,7 @@ $.ajax(settings).done(function (response) {
             "type": "documents",
             "id": "5ca32c243a6a6d45c456c495",
             "name": "myDocument",
-            "link": "http://api.dialogram.fr:8080/medias/document.pdf?accessToken=<acess_token>",
+            "link": "http://api.dialogram.fr/medias/document.pdf?accessToken=<acess_token>",
             "usageName": "document.pdf",
             "nbPage": 35,
             "public": true,
@@ -1000,12 +1000,12 @@ This endpoint remove your like on a document comment.
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr:8080/api/document/:idDocument/comment/:idComment/unlike`
+`PUT http://api.dialogram.fr/api/document/:idDocument/comment/:idComment/unlike`
 
 ### Delete a document comment
 ```shell
 curl -X DELETE \
-  http://api.dialogram.fr:8080/api/document/:idDocument/uncomment/:idComment \
+  http://api.dialogram.fr/api/document/:idDocument/uncomment/:idComment \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: fab6e99e-bbd3-4b36-87a7-3cc8da86a743' \
   -H 'cache-control: no-cache'
@@ -1015,7 +1015,7 @@ curl -X DELETE \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/:idDocument/uncomment/:idComment",
+  "url": "http://api.dialogram.fr/api/document/:idDocument/uncomment/:idComment",
   "method": "DELETE",
   "headers": {
     "Content-Type": "application/json",
@@ -1040,7 +1040,7 @@ $.ajax(settings).done(function (response) {
             "type": "documents",
             "id": "5ca32c243a6a6d45c456c495",
             "name": "myDocument",
-            "link": "http://api.dialogram.fr:8080/medias/document.pdf?accessToken=<acess_token>",
+            "link": "http://api.dialogram.fr/medias/document.pdf?accessToken=<acess_token>",
             "usageName": "document.pdf",
             "nbPage": 35,
             "public": true,
@@ -1067,4 +1067,4 @@ This endpoint delete a document comment.
 
 #### HTTP Request
 
-`DELETE http://api.dialogram.fr:8080/api/document/:idDocument/uncomment/:idComment`
+`DELETE http://api.dialogram.fr/api/document/:idDocument/uncomment/:idComment`

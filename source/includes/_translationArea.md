@@ -4,7 +4,7 @@
 
 ```shell
 curl -X POST \
-  http://api.dialogram.fr:8080/api/document/:idDocument/translation \
+  http://api.dialogram.fr/api/document/:idDocument/translation \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: ebeff399-a623-42a5-a917-0dbbcf01c189' \
   -H 'cache-control: no-cache' \
@@ -27,7 +27,7 @@ curl -X POST \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/:idDocument/translation",
+  "url": "http://api.dialogram.fr/api/document/:idDocument/translation",
   "method": "POST",
   "headers": {
     "Content-Type": "application/json",
@@ -72,7 +72,7 @@ This endpoint create a translation area of the document by indicating the field 
 
 #### HTTP Request
 
-`POST http://api.dialogram.fr:8080/api/document/:idDocument/translation`
+`POST http://api.dialogram.fr/api/document/:idDocument/translation`
 
 #### Query Parameters
 ``
@@ -98,7 +98,7 @@ Remember — a happy user is an authenticated user by token!
 
 ```shell
 curl -X PUT \
-  http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation \
+  http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: ebeff399-a623-42a5-a917-0dbbcf01c189' \
   -H 'cache-control: no-cache' \
@@ -117,7 +117,7 @@ curl -X PUT \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation",
+  "url": "http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation",
   "method": "PUT",
   "headers": {
     "Content-Type": "application/json",
@@ -158,7 +158,7 @@ This endpoint update the translation area of the document.
 
 #### HTTP Request
 
-`PUT http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation`
+`PUT http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation`
 
 #### Query Parameters
 ``
@@ -176,7 +176,7 @@ This endpoint update the translation area of the document.
 
 ```shell
 curl -X GET \
-  http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation \
+  http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: 18c389d0-37ca-4762-8ea1-e0d61489c0b6' \
@@ -187,7 +187,7 @@ curl -X GET \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation",
+  "url": "http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation",
   "method": "GET",
   "headers": {
     "Content-Type": "application/json",
@@ -233,7 +233,7 @@ This endpoint get the translation area of the document.
 
 #### HTTP Request
 
-`GET http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation`
+`GET http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation`
 
 #### Query Parameters
 
@@ -243,7 +243,7 @@ NONE
 
 ```shell
 curl -X DELETE \
-  http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation \
+  http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation \
   -H 'Authorization: Bearer <your_access_token>' \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: abcdff79-f8a5-4130-a870-426d100b03fc' \
@@ -254,7 +254,7 @@ curl -X DELETE \
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation",
+  "url": "http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation",
   "method": "DELETE",
   "headers": {
     "Content-Type": "application/json",
@@ -284,4 +284,4 @@ This endpoint delete the translation area.
 
 #### HTTP Request
 
-`DELETE http://api.dialogram.fr:8080/api/document/:idDocument/translation/:idTranslation`
+`DELETE http://api.dialogram.fr/api/document/:idDocument/translation/:idTranslation`
