@@ -44,7 +44,7 @@ We have language bindings in Shell, Ruby, Python, and JavaScript! You can view c
 ```shell
 # With shell, you can just copy and paste the following request after editing the needed body parameter.
 curl -X POST \
-  https://localhost/api/user \
+  https://api.dialogram.fr/api/user \
   -H 'Content-Type: application/json' \
   -H 'Postman-Token: ce79c653-5c2f-40de-8df8-955ffac0ae8e' \
   -H 'User-Agent: Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i Version/4.0 Mobile Safari/534.30' \
@@ -164,11 +164,9 @@ The Dialogram API use token to allow access to the API. You can register a new D
 ```shell
 # With shell, you can just copy and paste the following request after editing the needed body parameter.
 curl -X POST \
-  https://localhost/api/auth/facebook \
+  https://api.dialogram.fr/api/auth/facebook \
   -H 'Authorization: Bearer <user_facebook_access_token>' \
   -H 'Content-Type: application/json' \
-  -H 'Postman-Token: ce79c653-5c2f-40de-8df8-955ffac0ae8e' \
-  -H 'User-Agent: Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i Version/4.0 Mobile Safari/534.30' \
   -H 'cache-control: no-cache'
 ```
 
@@ -184,7 +182,6 @@ var settings = {
   "headers": {
     "Content-Type": "application/json",
     "cache-control": "no-cache",
-    "Postman-Token": "f662c84a-7b42-4bc3-91fe-057f773361b5",
     "Authorization": "Bearer <user_facebook_access_token>",
   },
   "processData": false
@@ -241,7 +238,7 @@ This endpoint allow you to create a user
 
 #### HTTP Request
 
-`POST https://api.dialogram.fr/api/facebook/auth`
+`POST https://api.dialogram.fr/api/auth/facebook`
 
 Create a Dialogram account or log in using Facebook API authentication.
 
@@ -252,6 +249,93 @@ NONE
 <aside class="success">
   Remember — Use your Facebook access token!
 </aside>
+
+### Authenticate with Google
+
+```shell
+curl -X POST \
+  https://api.dialogram.fr/api/auth/google \
+  -H 'Authorization: Bearer <user_google_access_token>' \
+  -H 'Content-Type: application/json' \
+  -H 'cache-control: no-cache'
+```
+
+```javascript
+
+# This snippet has been made using JQuery & Ajax.
+
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.dialogram.fr/api/auth/google",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json",
+    "cache-control": "no-cache",
+    "Postman-Token": "f662c84a-7b42-4bc3-91fe-057f773361b5",
+    "Authorization": "Bearer <user_google_access_token>",
+  },
+  "processData": false
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+> The above request returns a JSON structured like this:
+
+```json
+{
+    "data": [
+        {
+            "type": "user",
+            "id": "<user_id>",
+            "nickName": "UserName",
+            "profile": {
+                "registerDate": "2019-04-12T15:20:42.823Z",
+                "createdWith": {
+                    "prodivder": "Google",
+                    "userId": "<user_id>"
+                },
+                "firstName": "John",
+                "lastName": "Bryan",
+                "profilePicture": {
+                    "url": "https://res.cloudinary.com/dialogram/image/upload/v1549490326/profile_pictures/<id>.jpg",
+                    "public_id": "<public_id>"
+                },
+                "birthday": "<google_user_birthday>",
+                "gender": "<google_user_gender>",
+                "country": null,
+                "hometown": "<google_user_hometown>",
+                "description": null,
+                "certificated": false
+            },
+            "email": "my-user@domain.com",
+            "timestamp": 1555082426,
+            "features": {
+                "follows": [],
+                "followers": [],
+                "documentsLiked": [],
+                "documentsCommented": [],
+                "documentsFavorite": []
+            }
+        }
+    ],
+    "includes": []
+}
+```
+
+This endpoint allow you to create a user
+
+#### HTTP Request
+
+`POST https://api.dialogram.fr/api/auth/google`
+
+Create a Dialogram account or log in using Google API authentication.
+
+#### Query Parameters
+
+NONE
 
 ## Get a user by ID
 
