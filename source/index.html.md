@@ -18,6 +18,7 @@ includes:
   - videos
   - documents
   - permissions
+  - branches
   - translationArea
   - translationVideo
   - explore

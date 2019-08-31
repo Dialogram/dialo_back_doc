@@ -75,6 +75,7 @@ $.ajax(settings).done(function (response) {
 ```
 
 This endpoint upload a new PDF document to the remote server. You will need to send the data by form-data since we are dealing with documents using HTTP.
+A MASTER branche will be created automatically when you create a new document.
 
 #### HTTP Request
 
