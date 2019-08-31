@@ -10,7 +10,7 @@ toc_footers:
   - <a href='https://www.dialogram.fr/'>Follow us on our website !</a>
   - <a href='https://gitlab.com/Dialogram'>Contribute to the project !</a>
   - <a href='https://www.getpostman.com/collections/e42e47b610196f463bbe'>Get the postman collection !</a>
-  - <a href='https://www.getpostman.com/collections/5e4ac786b9f225a9d125'>Get the staging postman collection !</a>
+  - <a href='https://www.getpostman.com/collections/0bb1a3b10bb6f8c802a4'>Get the staging postman collection !</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -19,7 +19,6 @@ includes:
   - documents
   - permissions
   - branches
-  - translationArea
   - translationVideo
   - explore
   - apiVideo
